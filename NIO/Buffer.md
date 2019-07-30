@@ -47,7 +47,7 @@ rewind() 使缓冲区为通道读取或相对放置操作的新序列做好准�
 
 ## Read-only buffers 只读缓冲区
 
-每个缓冲区都是可读的,但并不是每个缓冲区都是可写的,当在只读缓冲区上调用时，这些操作将抛出ReadOnlyBufferException
+每个缓冲区都是可读的,但并不是每个缓冲区都是可写的,当在只读缓冲区上调用时，这些操作将抛出ReadOnlyBufferException.
 
 一个只读缓冲区不允许改变其内容,但是 mark,position 和 limit 是可变得, 一个Buffer 得 read-only 属性通过isReadOnly 方法修改.
 
@@ -57,15 +57,12 @@ rewind() 使缓冲区为通道读取或相对放置操作的新序列做好准�
 
 ## Invocation chaining 调用链
 
+invocation chaining
+
 支持调用链
 
 ```java
 b.flip().position(23).limit(42);
 ```
 
-
-
-
-
-​	
 
