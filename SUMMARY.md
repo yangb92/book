@@ -13,5 +13,5 @@
   * [Buffer](NIO/Buffer.md)
   * [Channel](NIO/Channel.md)
 * [Netty](Netty/Netty.md)
-* [Spring Cloud](SpringCloud/SpringCloud.md)
-  * [Spring Cloud 上下文配置](SpringCloud/SpringCloudContext.md)
+* Spring Cloud
+  * [Spring Cloud Context](SpringCloud/SpringCloudContext.md)
