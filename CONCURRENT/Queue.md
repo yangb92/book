@@ -1,4 +1,6 @@
-# BlockingQueue
+# 队列
+
+## BlockingQueue
 
 一个队列，它还支持在检索元素时等待队列变为非空的操作，以及在存储元素时等待队列中的空间变为可用的操作。
 
@@ -17,3 +19,12 @@
 BlockingQueue实现是线程安全的
 
 BlockingQueue本质上不支持任何“关闭”或“关闭”操作，以指示不再添加任何项。这些特性的需求和使用往往依赖于实现
+
+## ConcurrentLinkedQueue
+
+- 基于链接节点的无界线程安全队列
+- FIFO(先进先出),
+- 不允许使用空元素。
+- 许多线程共享对公共集合的访问时，ConcurrentLinkedQueue是一个合适的选择.
+- 迭代器是弱一致的,反映队列在迭代器创建时或创建后某个时点的状态的元素。它们不会抛出ConcurrentModificationException，并且可以与其他操作并发进行。自创建迭代器以来，队列中包含的元素将只返回一次。
+

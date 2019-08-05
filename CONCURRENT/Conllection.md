@@ -1,4 +1,6 @@
-# ConcurrentHashMap
+# 多线程的数据结构
+
+## ConcurrentHashMap
 
 一个支持异步检索和高预期并发更新的哈希表. 这个类和HashTable遵循相同的规范，并且包含了Hashtable每个方法相对应的版本。
 

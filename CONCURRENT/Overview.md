@@ -1,4 +1,4 @@
-# java.util.concurrent 学习
+# java.util.concurrent 概述
 
 [官方英文文档](<https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/package-summary.html#MemoryVisibility>)
 
