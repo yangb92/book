@@ -4,7 +4,7 @@
 
 ## 1.1 @EnableDiscoveryClient 开启服务发现
 
-Spring Cloud Commons 提供了`@EnableDiscoveryClient`注解，这将查找 `META-INF/spring.factories` 中`DiscoveryClient`接口的实现。服务发现的实现类添加到`spring.factories`的`org.springframework.cloud.client.discovery.EnableDiscoveryClient`的键下面。 例如`DiscoveryClient`的实现类有  [Spring Cloud Netflix Eureka](https://cloud.spring.io/spring-cloud-netflix/), [Spring Cloud Consul Discovery](https://cloud.spring.io/spring-cloud-consul/), and [Spring Cloud Zookeeper Discovery](https://cloud.spring.io/spring-cloud-zookeeper/).
+Spring Cloud Commons 提供了`@EnableDiscoveryClient`注解，这将查找 `META-INF/spring.factories` 中`DiscoveryClient`接口的实现。服务发现的实现类添加到`spring.factories`的org.springframework.cloud.client.discovery.EnableDiscoveryClient的键下面。 例如`DiscoveryClient`的实现类有  [Spring Cloud Netflix Eureka](https://cloud.spring.io/spring-cloud-netflix/), [Spring Cloud Consul Discovery](https://cloud.spring.io/spring-cloud-consul/), and [Spring Cloud Zookeeper Discovery](https://cloud.spring.io/spring-cloud-zookeeper/).
 
 默认情况，`DiscoverClient` 实现将本地SpringBoot 自动注册到远程服务发现服务器, 可以通过在`@EnableDiscoveryClient`中设置`autoRegister = false`来禁用其行为。
 
@@ -14,9 +14,9 @@ Spring Cloud Commons 提供了`@EnableDiscoveryClient`注解，这将查找 `MET
 
 ## 1.2 健康指标 Health Indicator
 
-Commons 创建了一个Spring Boot 的 HealthIndicator，Discover实现可以通过DiscoverHealthIndicator来参与其中. 禁用混合的HealthIndicator,设置`spring.cloud.discovery.client.composite-indicator.enabled=false` 一个基于DiscoverClient 的HealthIndicator 是自动配置的(`DiscoveryClientHealthIndicator`) 如果要关闭，设置set `spring.cloud.discovery.client.health-indicator.enabled=false`,关闭属性的描述`DiscoveryClientHealthIndicator` 
+Commons 创建了一个Spring Boot 的 HealthIndicator，Discover实现可以通过DiscoverHealthIndicator来参与其中. 禁用混合的HealthIndicator,设置`spring.cloud.discovery.client.composite-indicator.enabled=false` 一个基于DiscoverClient 的HealthIndicator 是自动配置的(`DiscoveryClientHealthIndicator`) 如果要关闭，设置set spring.cloud.discovery.client.health-indicator.enabled=false,关闭属性的描述`DiscoveryClientHealthIndicator` 
 
-设置`spring.cloud.discovery.client.health-indicator.include-description=false`.否则，它可能会像卷起的HealthIndicator的描述一样冒出来。
+设置spring.cloud.discovery.client.health-indicator.include-description=false.否则，它可能会像卷起的HealthIndicator的描述一样冒出来。
 
 
 
