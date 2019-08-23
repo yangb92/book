@@ -21,6 +21,7 @@
   * [内存一致性](JVM/Memory_Consistency_Properties.md)
 * [Spring Boot](SpringBoot/SpringBoot.md)
   * [使用Spring Boot](SpringBoot/Using.md)
+  * [Spring Boot 特点](SpringBoot/Features.md)
 * Spring Cloud
   * Cloud Native Applications
     * [Spring Cloud Context](SpringCloud/SpringCloudContext.md)
