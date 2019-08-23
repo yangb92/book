@@ -50,4 +50,31 @@ eureka:
 
 在上面的例子中, defaultZone 是一个神奇的后备字符串,它为任何没有表示首选项的客户机提供服务URL.(换句话说,它是一个有用的默认值)
 
-应用程序的默认名称(它作为Service ID)
+应用程序的默认名称(即 Service ID),虚拟主机和非安全端口(来自环境配置)的属性分别是`${spring.application.name}`, `${spring.application.name}` and `${server.port}`.
+
+当应用的类路径有 `spring-cloud-starter-netflix-eureka-client`  使应用注册为一个实例(即注册它自己)和一个客户端(它可以查询注册到本地的其他Services). 实例的行为有 eureka.instance.* 的配置驱动, 但是在默认情况下,但是，如果您确保您的应用程序具有spring.application.name的值(这是Eureka服务ID或VIP的默认值)，那么默认值是没有问题的。
+
+See [EurekaInstanceConfigBean](https://github.com/spring-cloud/spring-cloud-netflix/tree/master/spring-cloud-netflix-eureka-client/src/main/java/org/springframework/cloud/netflix/eureka/EurekaInstanceConfigBean.java) and [EurekaClientConfigBean](https://github.com/spring-cloud/spring-cloud-netflix/tree/master/spring-cloud-netflix-eureka-client/src/main/java/org/springframework/cloud/netflix/eureka/EurekaClientConfigBean.java) for more details on the configurable options.
+
+关闭Eureka Discovery Client, 设置 eureka.client.enabled 为 false,也可以设置spring.cloud.discovery.enabled 为 false.
+
+### Eureka Server 验证
+
+如果其中一个 eureka.client.serviceUrl.defaultZone 的url嵌入凭证(curl 风格所示:  `http://user:password@localhost:8761/eureka`), Http basic 认证自动添加到eureka 客户端,对于更复杂的需求,你可以创建一个@Bean 实例DiscoveryClientOptionalArgs 注入到 ClientFilter中,所有这些都应用于客户机到服务器的调用。
+
+> 由于Eureka的限制，无法支持每服务器基本身份验证凭据，因此仅使用找到的第一个集合。
+
+### 状态页面和健康指标监控
+
+状态页和健康指标在Eureka 实例中分别是 `/info` 和 `/health `这是Spring Boot Actuator应用程序中有用端点的默认位置。如果使用非默认上下文路径或servlet路径(类如 `server.servletPath=/custom`，则需要更改这些，即使对于Actuator应用程序也是如此.
+
+以下示例显示了两个设置的默认值：
+
+**application.yml.** 
+
+```yaml
+eureka:
+  instance:
+    statusPageUrlPath: ${server.servletPath}/info
+    healthCheckUrlPath: ${server.servletPath}/health
+```
