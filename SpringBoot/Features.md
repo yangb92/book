@@ -76,5 +76,16 @@ new SpringApplicationBuilder()
 5. 在调用任何应用程序和命令行运行程序之后，都会发送一个`ApplicationReadyEvent`。它表明应用程序已经准备好为请求提供服务。
 6. 如果启动时出现异常，则发送`ApplicationFailedEvent`.
 
+### Web 环境
+`SpringApplication` 尝试创建正确的`ApplicationContext`,用于确定WebApplicationType的算法非常简单
+1. 如果 SpringMVC存在，则使用AnnotationConfigServletWebServerApplicationContext。
+2. 如果Spring MVC不存在，而Spring WebFlux存在，则使用AnnotationConfigReactiveWebServerApplicationContext 
+3. 其他情况下使用 AnnotationConfigApplicationContext
+
+这意味着，如果您在同一个应用程序中使用Spring MVC和Spring WebFlux中的新WebClient，默认情况下将使用Spring MVC。您可以通过调用setWebApplicationType(WebApplicationType)轻松地覆盖它。
+
+还可以通过调用setApplicationContextClass()来完全控制ApplicationContext类型。
+>在JUnit测试中使用SpringApplication时，通常需要调用setWebApplicationType(WebApplicationType.NONE)。
+
 
 
