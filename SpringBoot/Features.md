@@ -87,5 +87,50 @@ new SpringApplicationBuilder()
 还可以通过调用setApplicationContextClass()来完全控制ApplicationContext类型。
 >在JUnit测试中使用SpringApplication时，通常需要调用setWebApplicationType(WebApplicationType.NONE)。
 
+### 访问程序的参数
+如果你需要访问传递个SpringApplication.run(...) 的参数，可以通过注入org.springframework.boot.ApplicationArguments实现，ApplicationArguments接口提供了参数String[]，和包含非包含的选项，例如：
+```java
+import org.springframework.boot.*;
+import org.springframework.beans.factory.annotation.*;
+import org.springframework.stereotype.*;
+
+@Component
+public class MyBean {
+
+	@Autowired
+	public MyBean(ApplicationArguments args) {
+		boolean debug = args.containsOption("debug");
+		List<String> files = args.getNonOptionArgs();
+		// if run with "--debug logfile.txt" debug=true, files=["logfile.txt"]
+	}
+
+}
+```
+>Spring Boot还向Spring环境注册了一个CommandLinePropertySource。这还允许您通过使用@Value注释注入单个应用程序参数
+
+### 使用ApplicationRunner 或 CommandLineRunner
+如果你希望在SpringBoot程序启动时运行一些特定的代码，你可以实现接口ApplicationRunner or CommandLineRunner，这两个接口之提供一个run方法，SpringApplication.run(...)方法执行前调用。
+
+CommandLineRunner接口以简单的字符串数组的形式提供对应用程序参数的访问，而ApplicationRunner使用前面讨论的ApplicationArguments接口。
+
+```java
+import org.springframework.boot.*;
+import org.springframework.stereotype.*;
+
+@Component
+public class MyBean implements CommandLineRunner {
+
+	public void run(String... args) {
+		// Do something...
+	}
+
+}
+```
+
+### 退出程序
+每个SpringApplication都会向JVM注册一个关闭钩子，以确保ApplicationContext在退出时正常关闭。可以使用所有标准的Spring生命周期回调（例如DisposableBean接口或@PreDestroy注释）。
+
+### 管理员特性
+通过指定spring.application.admin.enabled属性，可以为应用程序启用与管理相关的功能。这会在平台MBeanServer上公开SpringApplicationAdminMXBean。您可以使用此功能远程管理Spring Boot应用程序。 此功能对于任何服务包装器实现也很有用。
 
 
