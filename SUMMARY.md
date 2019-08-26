@@ -20,8 +20,15 @@
   * [内存模型](JVM/Memory_Model.md)
   * [内存一致性](JVM/Memory_Consistency_Properties.md)
 * [Spring Boot](SpringBoot/SpringBoot.md)
-  * [使用Spring Boot](SpringBoot/Using.md)
-  * [Spring Boot 特点](SpringBoot/Features.md)
+  * [Spring Boot 使用](SpringBoot/Using.md)
+  * Spring Boot 特性
+    * [SpringApplication](SpringBoot/SpringApplication.md)
+    * [外部配置](SpringBoot/ExternalizedConfiguration.md)
+    * [Profiles](SpringBoot/Profiles.md)
+    * [日志Logging](SpringBoot/Logging.md)
+    * [国际化](SpringBoot/Internationalization.md)
+    * [Web应用开发](SpringBoot/DevelopingWebApplication.md)
+    * [安全](SpringBoot/Security.md)
 * Spring Cloud
   * Cloud Native Applications
     * [Spring Cloud Context](SpringCloud/SpringCloudContext.md)
