@@ -29,6 +29,8 @@
     * [国际化](SpringBoot/Internationalization.md)
     * [Web应用开发](SpringBoot/DevelopingWebApplication.md)
     * [安全](SpringBoot/Security.md)
+    * [SQL数据库配置](SpringBoot/DataSource.md)
+* [Spring Security](SpringSecurity/Security.md)
 * Spring Cloud
   * Cloud Native Applications
     * [Spring Cloud Context](SpringCloud/SpringCloudContext.md)
