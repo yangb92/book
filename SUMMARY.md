@@ -32,6 +32,11 @@
     * [安全](SpringBoot/Security.md)
     * [SQL数据库配置](SpringBoot/DataSource.md)
 * [Spring Security](SpringSecurity/Security.md)
+  * [OAuth2-Security](SpringSecurity/OAuth2.md)
+* Spring Data
+  * [Spring-Data-Jdbc]((SpringData/SpringDataJdbc.md))
+  * [Spring-Data-JPA](SpringData/SpringDataJPA.md)
+  * [SpringBoot-Mybatis](Mybatis.md)
 * Spring Cloud
   * Cloud Native Applications
     * [Spring Cloud Context](SpringCloud/SpringCloudContext.md)
