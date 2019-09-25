@@ -1,5 +1,3 @@
-
-
 # 目录
 
 * [介绍](README.md)
@@ -50,6 +48,6 @@
 * Node.js
 * [单片机](MCU/MicroControllerUnit.md)
 * [maven](maven/maven.md)
-* Python
-  * [Python 虚拟环境开发](Python/virtualenv.md)
+* [Python](Python/Python.md)
+* [Andorid](Android/adb.md)
 
