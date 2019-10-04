@@ -1,0 +1,837 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>事件 · 学习笔记</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="杨斌">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-donate/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-pageview-count/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../styles/website.css">
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../OAuth/OAuth2.html" />
+    
+    
+    <link rel="prev" href="webpack.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="React.html">
+            
+                <a href="React.html">
+            
+                    
+                    React
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="components.html">
+            
+                <a href="components.html">
+            
+                    
+                    组件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="webpack.html">
+            
+                <a href="webpack.html">
+            
+                    
+                    webpack
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.3" data-path="event.html">
+            
+                <a href="event.html">
+            
+                    
+                    事件
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../OAuth/OAuth2.html">
+            
+                <a href="../OAuth/OAuth2.html">
+            
+                    
+                    OAuth2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../Shell/crontab.html">
+            
+                <a href="../Shell/crontab.html">
+            
+                    
+                    Linux
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../Concurrent/Overview.html">
+            
+                <a href="../Concurrent/Overview.html">
+            
+                    
+                    Java 多线程
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../Concurrent/Executor.html">
+            
+                <a href="../Concurrent/Executor.html">
+            
+                    
+                    Executor 线程池
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../Concurrent/Queue.html">
+            
+                <a href="../Concurrent/Queue.html">
+            
+                    
+                    Queue 队列
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../Concurrent/Conllection.html">
+            
+                <a href="../Concurrent/Conllection.html">
+            
+                    
+                    数据结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../Netty/Netty.html">
+            
+                <a href="../Netty/Netty.html">
+            
+                    
+                    Netty
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../JVM/Memory_Consistency_Properties.html">
+            
+                <a href="../JVM/Memory_Consistency_Properties.html">
+            
+                    
+                    JVM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../SpringBoot/SpringBoot.html">
+            
+                <a href="../SpringBoot/SpringBoot.html">
+            
+                    
+                    Spring Boot
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../SpringBoot/Using.html">
+            
+                <a href="../SpringBoot/Using.html">
+            
+                    
+                    Spring Boot 使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../SpringBoot/SpringApplication.html">
+            
+                <a href="../SpringBoot/SpringApplication.html">
+            
+                    
+                    SpringApplication
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../SpringBoot/ExternalizedConfiguration.html">
+            
+                <a href="../SpringBoot/ExternalizedConfiguration.html">
+            
+                    
+                    外部配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="../SpringBoot/Profiles.html">
+            
+                <a href="../SpringBoot/Profiles.html">
+            
+                    
+                    Profiles
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.5" data-path="../SpringBoot/Logging.html">
+            
+                <a href="../SpringBoot/Logging.html">
+            
+                    
+                    日志Logging
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.6" data-path="../SpringBoot/Internationalization.html">
+            
+                <a href="../SpringBoot/Internationalization.html">
+            
+                    
+                    国际化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.7" data-path="../SpringBoot/DevelopingWebApplication.html">
+            
+                <a href="../SpringBoot/DevelopingWebApplication.html">
+            
+                    
+                    Web应用开发
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.8" data-path="../SpringBoot/Security.html">
+            
+                <a href="../SpringBoot/Security.html">
+            
+                    
+                    安全
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.9" data-path="../SpringBoot/DataSource.html">
+            
+                <a href="../SpringBoot/DataSource.html">
+            
+                    
+                    SQL数据库配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../SpringSecurity/Security.html">
+            
+                <a href="../SpringSecurity/Security.html">
+            
+                    
+                    Spring Security
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../SpringSecurity/OAuth2.html">
+            
+                <a href="../SpringSecurity/OAuth2.html">
+            
+                    
+                    OAuth2-Security
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../SpringData/SpringDataJdbc.html">
+            
+                <a href="../SpringData/SpringDataJdbc.html">
+            
+                    
+                    Spring Data
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="../SpringData/SpringDataJPA.html">
+            
+                <a href="../SpringData/SpringDataJPA.html">
+            
+                    
+                    Spring-Data-JPA
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../SpringCloud/SpringCloudContext.html">
+            
+                <a href="../SpringCloud/SpringCloudContext.html">
+            
+                    
+                    Spring Cloud
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="../SpringCloud/CommonAbstractions.html">
+            
+                <a href="../SpringCloud/CommonAbstractions.html">
+            
+                    
+                    Spring Cloud Common Abstractions 概念
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2" data-path="../SpringCloud/SpringCloudConfig.html">
+            
+                <a href="../SpringCloud/SpringCloudConfig.html">
+            
+                    
+                    Spring Cloud Config
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.3" data-path="../SpringCloud/Netflix.html">
+            
+                <a href="../SpringCloud/Netflix.html">
+            
+                    
+                    Spring Cloud Netflix
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.4" data-path="../SpringCloud/SpringCloudSecurity.html">
+            
+                <a href="../SpringCloud/SpringCloudSecurity.html">
+            
+                    
+                    Spring Cloud Security
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="../Docker/Docker.html">
+            
+                <a href="../Docker/Docker.html">
+            
+                    
+                    Docker
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" >
+            
+                <span>
+            
+                    
+                    Node.js
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="../MCU/MicroControllerUnit.html">
+            
+                <a href="../MCU/MicroControllerUnit.html">
+            
+                    
+                    单片机
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="../maven/maven.html">
+            
+                <a href="../maven/maven.html">
+            
+                    
+                    maven
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="../Python/Python.html">
+            
+                <a href="../Python/Python.html">
+            
+                    
+                    Python
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" data-path="../Android/adb.html">
+            
+                <a href="../Android/adb.html">
+            
+                    
+                    Andorid
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" data-path="../Gitbook/gitbook.html">
+            
+                <a href="../Gitbook/gitbook.html">
+            
+                    
+                    gitbook
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >事件</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="react-&#x4E8B;&#x4EF6;">React &#x4E8B;&#x4EF6;</h1>
+<p>&#x5728;React&#x6709;&#x4E00;&#x5957;&#x81EA;&#x5DF1;&#x7684;&#x4E8B;&#x4EF6;&#x7ED1;&#x5B9A;&#x673A;&#x5236;, &#x4E8B;&#x4EF6;&#x540D;&#x662F;&#x9A7C;&#x5CF0;&#x89C4;&#x5219;.</p>
+<p>&#x793A;&#x4F8B;: &#x7BAD;&#x5934;&#x51FD;&#x6570;&#x7684;&#x597D;&#x5904;&#x662F;this &#x73AF;&#x5883;&#x6307;&#x7684;&#x662F;&#x5F53;&#x524D;class&#x7684;&#x73AF;&#x5883;.&#x53EF;&#x4EE5;&#x4F7F;&#x7528;this&#x83B7;&#x53D6;&#x5F53;&#x524D;class&#x4E2D;&#x7684;&#x5C5E;&#x6027;.</p>
+<h2 id="&#x4FEE;&#x6539;state&#x7684;&#x6570;&#x636E;">&#x4FEE;&#x6539;state&#x7684;&#x6570;&#x636E;</h2>
+<ul>
+<li><p>&#x5728;React&#x4E2D;,&#x60F3;&#x8981;&#x4E3A;state&#x4E2D;&#x7684;&#x6570;&#x636E;&#x91CD;&#x65B0;&#x8D4B;&#x503C;,&#x4E0D;&#x8981;&#x4F7F;&#x7528; this.state.<em>*</em> = &#x503C;</p>
+</li>
+<li><p>&#x5E94;&#x8BE5;&#x8C03;&#x7528; React&#x63D0;&#x4F9B;&#x7684; this.setState({msg:123})</p>
+</li>
+<li><p>&#x5728;setState&#x4E2D;,&#x53EA;&#x4F1A;&#x66F4;&#x65B0;&#x5BF9;&#x5E94;&#x7684;&#x503C;,&#x800C;&#x4E0D;&#x4F1A;&#x8986;&#x76D6;&#x5176;&#x4ED6;&#x7684;&#x503C;.</p>
+</li>
+<li>this.setState&#x7684;&#x65B9;&#x6CD5;&#x6267;&#x884C;&#x662F;&#x5F02;&#x6B65;&#x7684;,&#x5728;&#x8C03;&#x7528;&#x5B8C;setState&#x4E4B;&#x540E;&#x8981;&#x7ACB;&#x5373;&#x83B7;&#x53D6;&#x8BBE;&#x7F6E;&#x5B8C;&#x7684;&#x503C;,&#x9700;&#x8981;&#x4F7F;&#x7528;this.setState({},callable)</li>
+</ul>
+<h2 id="&#x793A;&#x4F8B;&#x4EE3;&#x7801;">&#x793A;&#x4F8B;&#x4EE3;&#x7801;</h2>
+<pre><code class="lang-jsx"><span class="hljs-keyword">import</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react&apos;</span>
+<span class="hljs-keyword">import</span> <span class="hljs-string">&apos;bootstrap/dist/css/bootstrap.css&apos;</span>
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">BindEvent</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span></span>{
+
+    <span class="hljs-keyword">constructor</span>(){
+        <span class="hljs-keyword">super</span>()
+        <span class="hljs-keyword">this</span>.state = {
+            msg: <span class="hljs-string">&quot;&#x4F60;&#x597D;&quot;</span>
+        }
+    }
+
+    render(){
+        <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span> 
+            {/* &#x5728;React&#x6709;&#x4E00;&#x5957;&#x81EA;&#x5DF1;&#x7684;&#x4E8B;&#x4EF6;&#x7ED1;&#x5B9A;&#x673A;&#x5236;, &#x4E8B;&#x4EF6;&#x540D;&#x662F;&#x9A7C;&#x5CF0;&#x89C4;&#x5219;. */}
+            <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&apos;btn&apos;</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">{()</span> =&gt;</span> this.show(&apos;&#x54C8;&#x54C8;&apos;)}&gt; &#x6309;&#x94AE; <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>{this.state.msg}<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+    }
+
+    <span class="hljs-comment">// &#x7BAD;&#x5934;&#x51FD;&#x6570;&#x7684;&#x597D;&#x5904;&#x662F;this &#x73AF;&#x5883;&#x6307;&#x7684;&#x662F;&#x5F53;&#x524D;class&#x7684;&#x73AF;&#x5883;.&#x53EF;&#x4EE5;&#x4F7F;&#x7528;this&#x83B7;&#x53D6;&#x5F53;&#x524D;class&#x4E2D;&#x7684;&#x5C5E;&#x6027;.</span>
+    show = (args) =&gt; {
+        <span class="hljs-comment">// &#x5728;React&#x4E2D;,&#x60F3;&#x8981;&#x4E3A;state&#x4E2D;&#x7684;&#x6570;&#x636E;&#x91CD;&#x65B0;&#x8D4B;&#x503C;,&#x4E0D;&#x8981;&#x4F7F;&#x7528; this.state.*** = &#x503C; </span>
+        <span class="hljs-comment">// &#x5E94;&#x8BE5;&#x8C03;&#x7528; React&#x63D0;&#x4F9B;&#x7684; this.setState({msg:123})</span>
+        <span class="hljs-comment">// &#x5728;setState&#x4E2D;,&#x53EA;&#x4F1A;&#x66F4;&#x65B0;&#x5BF9;&#x5E94;&#x7684;&#x503C;,&#x800C;&#x4E0D;&#x4F1A;&#x8986;&#x76D6;&#x5176;&#x4ED6;&#x7684;&#x503C;.</span>
+        <span class="hljs-comment">// this.setState&#x7684;&#x65B9;&#x6CD5;&#x6267;&#x884C;&#x662F;&#x5F02;&#x6B65;&#x7684;,&#x5728;&#x8C03;&#x7528;&#x5B8C;setState&#x4E4B;&#x540E;&#x8981;&#x7ACB;&#x5373;&#x83B7;&#x53D6;&#x8BBE;&#x7F6E;&#x5B8C;&#x7684;&#x503C;,&#x9700;&#x8981;&#x4F7F;&#x7528;this.setState({},callable)</span>
+        <span class="hljs-keyword">this</span>.setState({
+            msg:<span class="hljs-string">&quot;&#x4F60;&#x8BF4;: &quot;</span>+args
+        },() =&gt; {
+            <span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">this</span>.state.msg)
+        })
+    }
+}
+</code></pre>
+<h2 id="&#x540C;&#x6B65;&#x6587;&#x672C;&#x6846;&#x7684;&#x503C;">&#x540C;&#x6B65;&#x6587;&#x672C;&#x6846;&#x7684;&#x503C;</h2>
+<p>React &#x4E0D;&#x652F;&#x6301;&#x53CC;&#x5411;&#x7ED1;&#x5B9A;, &#x53EA;&#x652F;&#x6301;&#x5C06;state&#x4F20;&#x8F93;&#x5230;&#x9875;&#x9762;, &#x65E0;&#x6CD5;&#x4ECE;&#x9875;&#x9762;&#x81EA;&#x52A8;&#x7ED1;&#x5B9A;&#x6570;&#x636E;&#x5230;state&#x4E2D;,  &#x4E0D;&#x652F;&#x6301;&#x6570;&#x636E;&#x7684;&#x9006;&#x5411;&#x4F20;&#x8F93;.</p>
+<p>&#x5C06;&#x5C5E;&#x6027;&#x7ED1;&#x5B9A;&#x5230;&#x6587;&#x672C;&#x6846;  <code>value={this.state.xxx}</code></p>
+<p>&#x5C06;&#x6587;&#x672C;&#x6846;&#x7684;&#x503C;&#x540C;&#x6B65;&#x5230;&#x5C5E;&#x6027;: </p>
+<ul>
+<li>&#x7B2C;&#x4E00;&#x6B65;,&#x624B;&#x52A8;&#x76D1;&#x542C;&#x6587;&#x672C;&#x6846;&#x7684;onChange&#x4E8B;&#x4EF6;</li>
+<li>&#x7B2C;&#x4E8C;&#x90E8;: &#x83B7;&#x53D6;&#x6587;&#x672C;&#x6846;&#x7684;&#x503C;</li>
+<li>&#x7B2C;&#x4E09;&#x6B65;: &#x8C03;&#x7528;setState&#x65B9;&#x6CD5;&#x540C;&#x6B65;&#x6700;&#x65B0;&#x7684;&#x503C;</li>
+</ul>
+<pre><code class="lang-jsx">render(){
+    <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span> 
+        {/* &#x5728;React&#x6709;&#x4E00;&#x5957;&#x81EA;&#x5DF1;&#x7684;&#x4E8B;&#x4EF6;&#x7ED1;&#x5B9A;&#x673A;&#x5236;, &#x4E8B;&#x4EF6;&#x540D;&#x662F;&#x9A7C;&#x5CF0;&#x89C4;&#x5219;. */}
+        <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&apos;btn&apos;</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">{()</span> =&gt;</span> this.show(&apos;&#x54C8;&#x54C8;&apos;)}&gt; &#x6309;&#x94AE; <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>{this.state.msg}<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+        {/* &#x7B2C;&#x4E00;&#x6B65;,&#x624B;&#x52A8;&#x76D1;&#x542C;&#x6587;&#x672C;&#x6846;&#x7684;onChange&#x4E8B;&#x4EF6; */}
+        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&apos;text&apos;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">{this.state.msg}</span> <span class="hljs-attr">onChange</span>=<span class="hljs-string">{(e)</span> =&gt;</span> this.changeTxt(e)} ref=&apos;txt&apos; /&gt;
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+}
+
+changeTxt = (e) =&gt; {
+    // &#x7B2C;&#x4E8C;&#x90E8;: &#x83B7;&#x53D6;&#x6587;&#x672C;&#x6846;&#x7684;&#x503C;
+    //&#x65B9;&#x5F0F;&#x4E00;: &#x901A;&#x8FC7;&#x53C2;&#x6570; e &#x83B7;&#x53D6;
+    console.log(e.target.value)
+    //&#x65B9;&#x5F0F;&#x4E8C;: &#x901A;&#x8FC7;refs&#x5C5E;&#x6027;&#x83B7;&#x53D6;
+    console.log(this.refs.txt.value)
+
+    //&#x7B2C;&#x4E09;&#x6B65;: &#x8C03;&#x7528;setState&#x65B9;&#x6CD5;&#x540C;&#x6B65;&#x6700;&#x65B0;&#x7684;&#x503C;
+    this.setState({
+        msg: this.refs.txt.value
+    })
+}
+</span></code></pre>
+<h2 id="&#x7ED1;&#x5B9A;this&#x5E76;&#x4F20;&#x53C2;&#x7684;&#x51E0;&#x79CD;&#x65B9;&#x5F0F;">&#x7ED1;&#x5B9A;this&#x5E76;&#x4F20;&#x53C2;&#x7684;&#x51E0;&#x79CD;&#x65B9;&#x5F0F;</h2>
+<ul>
+<li>&#x4F7F;&#x7528;&#x7BAD;&#x5934;&#x51FD;&#x6570;</li>
+<li>bing&#x51FD;&#x6570;<code>this.xx.bind(this)</code> &#x4F20;&#x9012;&#x5F53;&#x524D;this. </li>
+<li>&#x548C;call/apply&#x7684;&#x533A;&#x522B;bind &#x53EA;&#x4F1A;&#x4FEE;&#x6539;&#x6307;&#x5411;&#x4E0D;&#x4F1A;&#x8C03;&#x7528;, </li>
+<li>bind&#x4E2D;&#x7684;&#x53C2;&#x6570;&#x4F20;&#x9012;, &#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x662F;this  <code>this.method.bind(this,args1,...)</code></li>
+<li>&#x53EF;&#x4EE5;&#x5728;&#x6784;&#x9020;&#x51FD;&#x6570;&#x4E2D;&#x6267;&#x884C;&#x8BE5;&#x65B9;&#x6CD5;&#x6216;&#x5728;&#x4E8B;&#x4EF6;&#x4E2D;&#x7ED1;&#x5B9A;</li>
+</ul>
+<p>&#x7B2C;&#x4E09;&#x79CD;: &#x4F7F;&#x7528;&#x7BAD;&#x5934;&#x51FD;&#x6570;this&#x7684;&#x8C03;&#x7528;&#x5373;&#x53EF;</p>
+
+                                
+                                </section>
+                            
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="webpack.html" class="navigation navigation-prev " aria-label="Previous page: webpack">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../OAuth/OAuth2.html" class="navigation navigation-next " aria-label="Next page: OAuth2">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"事件","level":"1.2.3","depth":2,"next":{"title":"OAuth2","level":"1.3","depth":1,"path":"OAuth/OAuth2.md","ref":"OAuth/OAuth2.md","articles":[]},"previous":{"title":"webpack","level":"1.2.2","depth":2,"path":"React/webpack.md","ref":"React/webpack.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","back-to-top-button","chapter-fold","-sharing","sharing-plus","donate","pageview-count"],"styles":{"website":"styles/website.css"},"pluginsConfig":{"chapter-fold":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"donate":{"alipay":"/Gitbook/alipay.png","alipayText":"支付宝打赏","button":"赏","title":"","wechat":"/Gitbook/wxpay.png","wechatText":"微信打赏"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"pageview-count":{},"sharing":{"douban":true,"weibo":true,"qzone":true,"qq":true,"all":["douban","facebook","google","linkedin","twitter","weibo","messenger","qq","qzone","weibo"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"杨斌","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"学习笔记","language":"zh-hans","gitbook":"*"},"file":{"path":"React/event.md","mtime":"2019-10-04T04:53:27.603Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-10-04T07:40:00.289Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-donate/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-pageview-count/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
