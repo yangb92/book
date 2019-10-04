@@ -1,4 +1,6 @@
-# Memory Consistency Properties
+# JVM 内存
+
+## 内存一致性原则 Memory Consistency Properties
 
 Java语言规范第17章([Chapter 17 of the Java Language Specification](https://docs.oracle.com/javase/specs/jls/se7/html/jls-17.html#jls-17.4.5))定义了内存操作上的happens-before关系，比如共享变量的读写
 
