@@ -253,7 +253,6 @@ ReactDOM.render(
     <CmtList>
     </CmtList>,
     document.getElementById("app"))
-    
 ```
 
 
@@ -262,7 +261,7 @@ ReactDOM.render(
 
 行内样式定义如下, 样式属性类型要按照json规范书写
 
-```jsx
+```html
 <div style=\{\{color:'red'\}\} ><div>
 ```
 

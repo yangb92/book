@@ -1,8 +1,6 @@
-# 常用指令
+# crontab 定时任务
 
-## crontab 定时任务
-
-### 1. 列出定时任务
+## 1. 列出定时任务
 
 ```shell
 crontal -l
@@ -14,13 +12,13 @@ crontal -l
 $ crontab -l > $HOME/mycron
 ```
 
-### 2. 编辑crontab文件
+## 2. 编辑crontab文件
 
 ```shell
 crontab -e
 ```
 
-### 3. 删除 
+## 3. 删除 
 
 ```shell
 crontab -r

@@ -1,6 +1,4 @@
-### Spring Data
-
-## Spring Data Jdbc
+# Spring Data Jdbc
 
 Spring Data 核心存储库的对象是`Respository`, 它使用 domain以及ID的类型作为domain类的参数来管理.这个接口主要作为一个标记接口来捕获要使用的类型，并帮助您发现扩展这个接口的接口, CrudRepository为正在管理的实体类提供了复杂的CRUD功能
 
@@ -69,7 +67,7 @@ interface UserRepository extends CrudRepository<User, Long> {
 }
 ```
 
-扩展Respository功能
+## 扩展Respository功能
 
 例子:
 
@@ -89,18 +87,18 @@ interface UserRepository extends MyBaseRepository<User, Long> {
 
 
 
-### 多数据源持久层
+## 多数据源持久层
 
 略, 详见官方文档
 
-### 定义查询方法
+## 定义查询方法
 
 repository代理有两种方法从方法名派生特定于仓库的查询:
 
 * 通过直接从方法名派生查询。
 * 通过使用手动定义的查询。
 
-#### 查询策略
+### 查询策略
 
 构建在Spring Data存储库基础设施中的查询生成器机制对于在存储库实体上构建约束查询非常有用。该机制剥离前缀find ... By，read ... By，query ... By，count ... By，and get ...来自该方法并开始解析其余部分,引入子句可以包含进一步的表达式，比如使用Distinct在要创建的查询上设置不同的标志,但是，第一个By用作分隔符以指示实际条件的开始。您可以在实体属性上定义条件，并用and和Or连接它们.
 
@@ -132,7 +130,7 @@ interface PersonRepository extends Repository<User, Long> {
 * 方法解析器支持为单个属性设置IgnoreCase标志,例如`findByLastnameIgnoreCase(…)`忽略大小写的类型的所有属性(通常是字符串实例，例如 findByLastnameAndFirstnameAllIgnoreCase(…))是否支持忽略案例可能因存储而异
 * 您可以通过将OrderBy子句附加到引用属性的查询方法并提供排序方向(Asc或Desc)来应用静态排序。
 
-### 属性表达式
+## 属性表达式
 
 属性表达式只能引用托管实体的直接属性，如上例所示。在查询创建时，您已经确保已解析的属性是托管域类的属性。不过，您也可以通过遍历嵌套属性来定义约束。考虑下面的方法:
 
@@ -150,7 +148,7 @@ List<Person> findByAddressZipCode(ZipCode zipCode);
 List<Person> findByAddress_ZipCode(ZipCode zipCode);
 ```
 
-### 特殊参数处理
+## 特殊参数处理
 
 分页和排序 需要传入特殊的参数: `Pageable` and `Sort`, 如下所示:
 
@@ -168,7 +166,7 @@ List<User> findByLastname(String lastname, Pageable pageable);
 
 排序选项也通过Pageable实例处理。 如果只需要排序，请在方法中添加org.springframework.data.domain.Sort参数。 如您所见，也可以返回List。 在这种情况下，不会创建构建实际页面实例所需的其他元数据（反过来，这意味着不会发出必要的附加计数查询）。 相反，它限制查询仅查找给定范围的实体。
 
-分段查询结构
+## 分段查询结构
 
 查询方法的结果可以通过使用first或top关键字来限制,可以互换使用。可以将可选数值追加到top或first，以指定要返回的最大结果大小。如果省略该数字，则假设结果大小为1。下面的示例显示如何限制查询大小
 
@@ -188,11 +186,11 @@ List<User> findTop10ByLastname(String lastname, Pageable pageable);
 
 限制表达式也支持Distinct关键字。 此外，对于将结果集限制为一个实例的查询，支持使用Optional关键字将结果包装
 
-### 返回集合或迭代的存储库方法
+## 返回集合或迭代的存储库方法
 
 略
 
-#### 空值处理
+## 空值处理
 
 从Spring Data 2.0开始，返回单个聚合实例的repository CRUD方法使用Java 8 s可选方法来表示可能没有值。除此之外，Spring Data支持在查询方法上返回以下包装器类型
 
@@ -202,5 +200,5 @@ List<User> findTop10ByLastname(String lastname, Pageable pageable);
 
 也可以通过null值判断返回结果,返回集合、集合替代方案、包装器和流的存储库方法保证永远不会返回null，而是相应的空表示。有关详细信息，请参阅存储库查询返回类型
 
-#### 空值注释
+### 空值注释
 

@@ -628,12 +628,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.18" data-path="../Gitbook/gitbook.html">
+        <li class="chapter " data-level="1.18" data-path="../git/gitbook.html">
             
-                <a href="../Gitbook/gitbook.html">
+                <a href="../git/gitbook.html">
             
                     
-                    gitbook
+                    git
             
                 </a>
             
@@ -683,8 +683,7 @@
                             
                                 <section class="normal markdown-section">
                                 
-                                <h3 id="spring-data">Spring Data</h3>
-<h2 id="spring-data-jdbc">Spring Data Jdbc</h2>
+                                <h1 id="spring-data-jdbc">Spring Data Jdbc</h1>
 <p>Spring Data &#x6838;&#x5FC3;&#x5B58;&#x50A8;&#x5E93;&#x7684;&#x5BF9;&#x8C61;&#x662F;<code>Respository</code>, &#x5B83;&#x4F7F;&#x7528; domain&#x4EE5;&#x53CA;ID&#x7684;&#x7C7B;&#x578B;&#x4F5C;&#x4E3A;domain&#x7C7B;&#x7684;&#x53C2;&#x6570;&#x6765;&#x7BA1;&#x7406;.&#x8FD9;&#x4E2A;&#x63A5;&#x53E3;&#x4E3B;&#x8981;&#x4F5C;&#x4E3A;&#x4E00;&#x4E2A;&#x6807;&#x8BB0;&#x63A5;&#x53E3;&#x6765;&#x6355;&#x83B7;&#x8981;&#x4F7F;&#x7528;&#x7684;&#x7C7B;&#x578B;&#xFF0C;&#x5E76;&#x5E2E;&#x52A9;&#x60A8;&#x53D1;&#x73B0;&#x6269;&#x5C55;&#x8FD9;&#x4E2A;&#x63A5;&#x53E3;&#x7684;&#x63A5;&#x53E3;, CrudRepository&#x4E3A;&#x6B63;&#x5728;&#x7BA1;&#x7406;&#x7684;&#x5B9E;&#x4F53;&#x7C7B;&#x63D0;&#x4F9B;&#x4E86;&#x590D;&#x6742;&#x7684;CRUD&#x529F;&#x80FD;</p>
 <p><code>CrudRepository</code>  &#x63A5;&#x53E3;:</p>
 <pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">CrudRepository</span>&lt;<span class="hljs-title">T</span>, <span class="hljs-title">ID</span>&gt; <span class="hljs-keyword">extends</span> <span class="hljs-title">Repository</span>&lt;<span class="hljs-title">T</span>, <span class="hljs-title">ID</span>&gt; </span>{
@@ -735,7 +734,7 @@ Page&lt;User&gt; users = repository.findAll(PageRequest.of(<span class="hljs-num
   <span class="hljs-function">List&lt;User&gt; <span class="hljs-title">removeByLastname</span><span class="hljs-params">(String lastname)</span></span>;
 }
 </code></pre>
-<p>&#x6269;&#x5C55;Respository&#x529F;&#x80FD;</p>
+<h2 id="&#x6269;&#x5C55;respository&#x529F;&#x80FD;">&#x6269;&#x5C55;Respository&#x529F;&#x80FD;</h2>
 <p>&#x4F8B;&#x5B50;:</p>
 <pre><code class="lang-java"><span class="hljs-meta">@NoRepositoryBean</span>
 <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">MyBaseRepository</span>&lt;<span class="hljs-title">T</span>, <span class="hljs-title">ID</span>&gt; <span class="hljs-keyword">extends</span> <span class="hljs-title">Repository</span>&lt;<span class="hljs-title">T</span>, <span class="hljs-title">ID</span>&gt; </span>{
@@ -749,15 +748,15 @@ Page&lt;User&gt; users = repository.findAll(PageRequest.of(<span class="hljs-num
   <span class="hljs-function">User <span class="hljs-title">findByEmailAddress</span><span class="hljs-params">(EmailAddress emailAddress)</span></span>;
 }
 </code></pre>
-<h3 id="&#x591A;&#x6570;&#x636E;&#x6E90;&#x6301;&#x4E45;&#x5C42;">&#x591A;&#x6570;&#x636E;&#x6E90;&#x6301;&#x4E45;&#x5C42;</h3>
+<h2 id="&#x591A;&#x6570;&#x636E;&#x6E90;&#x6301;&#x4E45;&#x5C42;">&#x591A;&#x6570;&#x636E;&#x6E90;&#x6301;&#x4E45;&#x5C42;</h2>
 <p>&#x7565;, &#x8BE6;&#x89C1;&#x5B98;&#x65B9;&#x6587;&#x6863;</p>
-<h3 id="&#x5B9A;&#x4E49;&#x67E5;&#x8BE2;&#x65B9;&#x6CD5;">&#x5B9A;&#x4E49;&#x67E5;&#x8BE2;&#x65B9;&#x6CD5;</h3>
+<h2 id="&#x5B9A;&#x4E49;&#x67E5;&#x8BE2;&#x65B9;&#x6CD5;">&#x5B9A;&#x4E49;&#x67E5;&#x8BE2;&#x65B9;&#x6CD5;</h2>
 <p>repository&#x4EE3;&#x7406;&#x6709;&#x4E24;&#x79CD;&#x65B9;&#x6CD5;&#x4ECE;&#x65B9;&#x6CD5;&#x540D;&#x6D3E;&#x751F;&#x7279;&#x5B9A;&#x4E8E;&#x4ED3;&#x5E93;&#x7684;&#x67E5;&#x8BE2;:</p>
 <ul>
 <li>&#x901A;&#x8FC7;&#x76F4;&#x63A5;&#x4ECE;&#x65B9;&#x6CD5;&#x540D;&#x6D3E;&#x751F;&#x67E5;&#x8BE2;&#x3002;</li>
 <li>&#x901A;&#x8FC7;&#x4F7F;&#x7528;&#x624B;&#x52A8;&#x5B9A;&#x4E49;&#x7684;&#x67E5;&#x8BE2;&#x3002;</li>
 </ul>
-<h4 id="&#x67E5;&#x8BE2;&#x7B56;&#x7565;">&#x67E5;&#x8BE2;&#x7B56;&#x7565;</h4>
+<h3 id="&#x67E5;&#x8BE2;&#x7B56;&#x7565;">&#x67E5;&#x8BE2;&#x7B56;&#x7565;</h3>
 <p>&#x6784;&#x5EFA;&#x5728;Spring Data&#x5B58;&#x50A8;&#x5E93;&#x57FA;&#x7840;&#x8BBE;&#x65BD;&#x4E2D;&#x7684;&#x67E5;&#x8BE2;&#x751F;&#x6210;&#x5668;&#x673A;&#x5236;&#x5BF9;&#x4E8E;&#x5728;&#x5B58;&#x50A8;&#x5E93;&#x5B9E;&#x4F53;&#x4E0A;&#x6784;&#x5EFA;&#x7EA6;&#x675F;&#x67E5;&#x8BE2;&#x975E;&#x5E38;&#x6709;&#x7528;&#x3002;&#x8BE5;&#x673A;&#x5236;&#x5265;&#x79BB;&#x524D;&#x7F00;find ... By&#xFF0C;read ... By&#xFF0C;query ... By&#xFF0C;count ... By&#xFF0C;and get ...&#x6765;&#x81EA;&#x8BE5;&#x65B9;&#x6CD5;&#x5E76;&#x5F00;&#x59CB;&#x89E3;&#x6790;&#x5176;&#x4F59;&#x90E8;&#x5206;,&#x5F15;&#x5165;&#x5B50;&#x53E5;&#x53EF;&#x4EE5;&#x5305;&#x542B;&#x8FDB;&#x4E00;&#x6B65;&#x7684;&#x8868;&#x8FBE;&#x5F0F;&#xFF0C;&#x6BD4;&#x5982;&#x4F7F;&#x7528;Distinct&#x5728;&#x8981;&#x521B;&#x5EFA;&#x7684;&#x67E5;&#x8BE2;&#x4E0A;&#x8BBE;&#x7F6E;&#x4E0D;&#x540C;&#x7684;&#x6807;&#x5FD7;,&#x4F46;&#x662F;&#xFF0C;&#x7B2C;&#x4E00;&#x4E2A;By&#x7528;&#x4F5C;&#x5206;&#x9694;&#x7B26;&#x4EE5;&#x6307;&#x793A;&#x5B9E;&#x9645;&#x6761;&#x4EF6;&#x7684;&#x5F00;&#x59CB;&#x3002;&#x60A8;&#x53EF;&#x4EE5;&#x5728;&#x5B9E;&#x4F53;&#x5C5E;&#x6027;&#x4E0A;&#x5B9A;&#x4E49;&#x6761;&#x4EF6;&#xFF0C;&#x5E76;&#x7528;and&#x548C;Or&#x8FDE;&#x63A5;&#x5B83;&#x4EEC;.</p>
 <p>&#x4EE5;&#x4E0B;&#x793A;&#x4F8B;&#x663E;&#x793A;&#x4E86;&#x5982;&#x4F55;&#x521B;&#x5EFA;&#x5927;&#x91CF;&#x67E5;&#x8BE2;</p>
 <pre><code class="lang-java"><span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">PersonRepository</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Repository</span>&lt;<span class="hljs-title">User</span>, <span class="hljs-title">Long</span>&gt; </span>{
@@ -784,7 +783,7 @@ Page&lt;User&gt; users = repository.findAll(PageRequest.of(<span class="hljs-num
 <li>&#x65B9;&#x6CD5;&#x89E3;&#x6790;&#x5668;&#x652F;&#x6301;&#x4E3A;&#x5355;&#x4E2A;&#x5C5E;&#x6027;&#x8BBE;&#x7F6E;IgnoreCase&#x6807;&#x5FD7;,&#x4F8B;&#x5982;<code>findByLastnameIgnoreCase(&#x2026;)</code>&#x5FFD;&#x7565;&#x5927;&#x5C0F;&#x5199;&#x7684;&#x7C7B;&#x578B;&#x7684;&#x6240;&#x6709;&#x5C5E;&#x6027;(&#x901A;&#x5E38;&#x662F;&#x5B57;&#x7B26;&#x4E32;&#x5B9E;&#x4F8B;&#xFF0C;&#x4F8B;&#x5982; findByLastnameAndFirstnameAllIgnoreCase(&#x2026;))&#x662F;&#x5426;&#x652F;&#x6301;&#x5FFD;&#x7565;&#x6848;&#x4F8B;&#x53EF;&#x80FD;&#x56E0;&#x5B58;&#x50A8;&#x800C;&#x5F02;</li>
 <li>&#x60A8;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x5C06;OrderBy&#x5B50;&#x53E5;&#x9644;&#x52A0;&#x5230;&#x5F15;&#x7528;&#x5C5E;&#x6027;&#x7684;&#x67E5;&#x8BE2;&#x65B9;&#x6CD5;&#x5E76;&#x63D0;&#x4F9B;&#x6392;&#x5E8F;&#x65B9;&#x5411;(Asc&#x6216;Desc)&#x6765;&#x5E94;&#x7528;&#x9759;&#x6001;&#x6392;&#x5E8F;&#x3002;</li>
 </ul>
-<h3 id="&#x5C5E;&#x6027;&#x8868;&#x8FBE;&#x5F0F;">&#x5C5E;&#x6027;&#x8868;&#x8FBE;&#x5F0F;</h3>
+<h2 id="&#x5C5E;&#x6027;&#x8868;&#x8FBE;&#x5F0F;">&#x5C5E;&#x6027;&#x8868;&#x8FBE;&#x5F0F;</h2>
 <p>&#x5C5E;&#x6027;&#x8868;&#x8FBE;&#x5F0F;&#x53EA;&#x80FD;&#x5F15;&#x7528;&#x6258;&#x7BA1;&#x5B9E;&#x4F53;&#x7684;&#x76F4;&#x63A5;&#x5C5E;&#x6027;&#xFF0C;&#x5982;&#x4E0A;&#x4F8B;&#x6240;&#x793A;&#x3002;&#x5728;&#x67E5;&#x8BE2;&#x521B;&#x5EFA;&#x65F6;&#xFF0C;&#x60A8;&#x5DF2;&#x7ECF;&#x786E;&#x4FDD;&#x5DF2;&#x89E3;&#x6790;&#x7684;&#x5C5E;&#x6027;&#x662F;&#x6258;&#x7BA1;&#x57DF;&#x7C7B;&#x7684;&#x5C5E;&#x6027;&#x3002;&#x4E0D;&#x8FC7;&#xFF0C;&#x60A8;&#x4E5F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x904D;&#x5386;&#x5D4C;&#x5957;&#x5C5E;&#x6027;&#x6765;&#x5B9A;&#x4E49;&#x7EA6;&#x675F;&#x3002;&#x8003;&#x8651;&#x4E0B;&#x9762;&#x7684;&#x65B9;&#x6CD5;:</p>
 <pre><code class="lang-java"><span class="hljs-function">List&lt;Person&gt; <span class="hljs-title">findByAddressZipCode</span><span class="hljs-params">(ZipCode zipCode)</span></span>;
 </code></pre>
@@ -793,7 +792,7 @@ Page&lt;User&gt; users = repository.findAll(PageRequest.of(<span class="hljs-num
 <p>&#x8981;&#x89E3;&#x51B3;&#x8FD9;&#x79CD;&#x6A21;&#x7CCA;&#x6027;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;&#x65B9;&#x6CD5;&#x540D;&#x79F0;&#x4E2D;&#x4F7F;&#x7528;&#x624B;&#x52A8;&#x5B9A;&#x4E49;&#x904D;&#x5386;&#x70B9;&#x3002;&#x6211;&#x4EEC;&#x7684;&#x65B9;&#x6CD5;&#x540D;&#x5982;&#x4E0B;</p>
 <pre><code class="lang-java"><span class="hljs-function">List&lt;Person&gt; <span class="hljs-title">findByAddress_ZipCode</span><span class="hljs-params">(ZipCode zipCode)</span></span>;
 </code></pre>
-<h3 id="&#x7279;&#x6B8A;&#x53C2;&#x6570;&#x5904;&#x7406;">&#x7279;&#x6B8A;&#x53C2;&#x6570;&#x5904;&#x7406;</h3>
+<h2 id="&#x7279;&#x6B8A;&#x53C2;&#x6570;&#x5904;&#x7406;">&#x7279;&#x6B8A;&#x53C2;&#x6570;&#x5904;&#x7406;</h2>
 <p>&#x5206;&#x9875;&#x548C;&#x6392;&#x5E8F; &#x9700;&#x8981;&#x4F20;&#x5165;&#x7279;&#x6B8A;&#x7684;&#x53C2;&#x6570;: <code>Pageable</code> and <code>Sort</code>, &#x5982;&#x4E0B;&#x6240;&#x793A;:</p>
 <pre><code class="lang-java"><span class="hljs-function">Page&lt;User&gt; <span class="hljs-title">findByLastname</span><span class="hljs-params">(String lastname, Pageable pageable)</span></span>;
 
@@ -805,7 +804,7 @@ Page&lt;User&gt; users = repository.findAll(PageRequest.of(<span class="hljs-num
 </code></pre>
 <p>&#x7B2C;&#x4E00;&#x4E2A;&#x65B9;&#x6CD5;&#x5141;&#x8BB8;&#x60A8;&#x4F20;&#x9012;org.springframework.data.domain&#x3002;&#x67E5;&#x8BE2;&#x65B9;&#x6CD5;&#x7684;&#x53EF;&#x5206;&#x9875;&#x5B9E;&#x4F8B;&#xFF0C;&#x4EE5;&#x4FBF;&#x52A8;&#x6001;&#x5730;&#x5C06;&#x5206;&#x9875;&#x6DFB;&#x52A0;&#x5230;&#x9759;&#x6001;&#x5B9A;&#x4E49;&#x7684;&#x67E5;&#x8BE2;&#x4E2D;&#x3002;&#x4E00;&#x4E2A;&#x9875;&#x9762;&#x77E5;&#x9053;&#x53EF;&#x7528;&#x5143;&#x7D20;&#x548C;&#x9875;&#x9762;&#x7684;&#x603B;&#x6570;&#x3002;&#x5B83;&#x901A;&#x8FC7;&#x57FA;&#x7840;&#x8BBE;&#x65BD;&#x89E6;&#x53D1;count&#x67E5;&#x8BE2;&#x6765;&#x8BA1;&#x7B97;&#x603B;&#x6570;&#x3002;&#x7531;&#x4E8E;&#x8FD9;&#x53EF;&#x80FD;&#x5F88;&#x6602;&#x8D35;(&#x53D6;&#x51B3;&#x4E8E;&#x6240;&#x4F7F;&#x7528;&#x7684;&#x5546;&#x5E97;)&#xFF0C;&#x60A8;&#x53EF;&#x4EE5;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x5207;&#x7247;&#x3002;&#x4E00;&#x4E2A;&#x5207;&#x7247;&#x53EA;&#x77E5;&#x9053;&#x4E0B;&#x4E00;&#x4E2A;&#x5207;&#x7247;&#x662F;&#x5426;&#x53EF;&#x7528;&#xFF0C;&#x8FD9;&#x5728;&#x904D;&#x5386;&#x8F83;&#x5927;&#x7684;&#x7ED3;&#x679C;&#x96C6;&#x65F6;&#x53EF;&#x80FD;&#x5C31;&#x8DB3;&#x591F;&#x4E86;&#x3002;</p>
 <p>&#x6392;&#x5E8F;&#x9009;&#x9879;&#x4E5F;&#x901A;&#x8FC7;Pageable&#x5B9E;&#x4F8B;&#x5904;&#x7406;&#x3002; &#x5982;&#x679C;&#x53EA;&#x9700;&#x8981;&#x6392;&#x5E8F;&#xFF0C;&#x8BF7;&#x5728;&#x65B9;&#x6CD5;&#x4E2D;&#x6DFB;&#x52A0;org.springframework.data.domain.Sort&#x53C2;&#x6570;&#x3002; &#x5982;&#x60A8;&#x6240;&#x89C1;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x8FD4;&#x56DE;List&#x3002; &#x5728;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x4E0D;&#x4F1A;&#x521B;&#x5EFA;&#x6784;&#x5EFA;&#x5B9E;&#x9645;&#x9875;&#x9762;&#x5B9E;&#x4F8B;&#x6240;&#x9700;&#x7684;&#x5176;&#x4ED6;&#x5143;&#x6570;&#x636E;&#xFF08;&#x53CD;&#x8FC7;&#x6765;&#xFF0C;&#x8FD9;&#x610F;&#x5473;&#x7740;&#x4E0D;&#x4F1A;&#x53D1;&#x51FA;&#x5FC5;&#x8981;&#x7684;&#x9644;&#x52A0;&#x8BA1;&#x6570;&#x67E5;&#x8BE2;&#xFF09;&#x3002; &#x76F8;&#x53CD;&#xFF0C;&#x5B83;&#x9650;&#x5236;&#x67E5;&#x8BE2;&#x4EC5;&#x67E5;&#x627E;&#x7ED9;&#x5B9A;&#x8303;&#x56F4;&#x7684;&#x5B9E;&#x4F53;&#x3002;</p>
-<p>&#x5206;&#x6BB5;&#x67E5;&#x8BE2;&#x7ED3;&#x6784;</p>
+<h2 id="&#x5206;&#x6BB5;&#x67E5;&#x8BE2;&#x7ED3;&#x6784;">&#x5206;&#x6BB5;&#x67E5;&#x8BE2;&#x7ED3;&#x6784;</h2>
 <p>&#x67E5;&#x8BE2;&#x65B9;&#x6CD5;&#x7684;&#x7ED3;&#x679C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x4F7F;&#x7528;first&#x6216;top&#x5173;&#x952E;&#x5B57;&#x6765;&#x9650;&#x5236;,&#x53EF;&#x4EE5;&#x4E92;&#x6362;&#x4F7F;&#x7528;&#x3002;&#x53EF;&#x4EE5;&#x5C06;&#x53EF;&#x9009;&#x6570;&#x503C;&#x8FFD;&#x52A0;&#x5230;top&#x6216;first&#xFF0C;&#x4EE5;&#x6307;&#x5B9A;&#x8981;&#x8FD4;&#x56DE;&#x7684;&#x6700;&#x5927;&#x7ED3;&#x679C;&#x5927;&#x5C0F;&#x3002;&#x5982;&#x679C;&#x7701;&#x7565;&#x8BE5;&#x6570;&#x5B57;&#xFF0C;&#x5219;&#x5047;&#x8BBE;&#x7ED3;&#x679C;&#x5927;&#x5C0F;&#x4E3A;1&#x3002;&#x4E0B;&#x9762;&#x7684;&#x793A;&#x4F8B;&#x663E;&#x793A;&#x5982;&#x4F55;&#x9650;&#x5236;&#x67E5;&#x8BE2;&#x5927;&#x5C0F;</p>
 <pre><code class="lang-java"><span class="hljs-function">User <span class="hljs-title">findFirstByOrderByLastnameAsc</span><span class="hljs-params">()</span></span>;
 
@@ -820,9 +819,9 @@ Page&lt;User&gt; users = repository.findAll(PageRequest.of(<span class="hljs-num
 <span class="hljs-function">List&lt;User&gt; <span class="hljs-title">findTop10ByLastname</span><span class="hljs-params">(String lastname, Pageable pageable)</span></span>;
 </code></pre>
 <p>&#x9650;&#x5236;&#x8868;&#x8FBE;&#x5F0F;&#x4E5F;&#x652F;&#x6301;Distinct&#x5173;&#x952E;&#x5B57;&#x3002; &#x6B64;&#x5916;&#xFF0C;&#x5BF9;&#x4E8E;&#x5C06;&#x7ED3;&#x679C;&#x96C6;&#x9650;&#x5236;&#x4E3A;&#x4E00;&#x4E2A;&#x5B9E;&#x4F8B;&#x7684;&#x67E5;&#x8BE2;&#xFF0C;&#x652F;&#x6301;&#x4F7F;&#x7528;Optional&#x5173;&#x952E;&#x5B57;&#x5C06;&#x7ED3;&#x679C;&#x5305;&#x88C5;</p>
-<h3 id="&#x8FD4;&#x56DE;&#x96C6;&#x5408;&#x6216;&#x8FED;&#x4EE3;&#x7684;&#x5B58;&#x50A8;&#x5E93;&#x65B9;&#x6CD5;">&#x8FD4;&#x56DE;&#x96C6;&#x5408;&#x6216;&#x8FED;&#x4EE3;&#x7684;&#x5B58;&#x50A8;&#x5E93;&#x65B9;&#x6CD5;</h3>
+<h2 id="&#x8FD4;&#x56DE;&#x96C6;&#x5408;&#x6216;&#x8FED;&#x4EE3;&#x7684;&#x5B58;&#x50A8;&#x5E93;&#x65B9;&#x6CD5;">&#x8FD4;&#x56DE;&#x96C6;&#x5408;&#x6216;&#x8FED;&#x4EE3;&#x7684;&#x5B58;&#x50A8;&#x5E93;&#x65B9;&#x6CD5;</h2>
 <p>&#x7565;</p>
-<h4 id="&#x7A7A;&#x503C;&#x5904;&#x7406;">&#x7A7A;&#x503C;&#x5904;&#x7406;</h4>
+<h2 id="&#x7A7A;&#x503C;&#x5904;&#x7406;">&#x7A7A;&#x503C;&#x5904;&#x7406;</h2>
 <p>&#x4ECE;Spring Data 2.0&#x5F00;&#x59CB;&#xFF0C;&#x8FD4;&#x56DE;&#x5355;&#x4E2A;&#x805A;&#x5408;&#x5B9E;&#x4F8B;&#x7684;repository CRUD&#x65B9;&#x6CD5;&#x4F7F;&#x7528;Java 8 s&#x53EF;&#x9009;&#x65B9;&#x6CD5;&#x6765;&#x8868;&#x793A;&#x53EF;&#x80FD;&#x6CA1;&#x6709;&#x503C;&#x3002;&#x9664;&#x6B64;&#x4E4B;&#x5916;&#xFF0C;Spring Data&#x652F;&#x6301;&#x5728;&#x67E5;&#x8BE2;&#x65B9;&#x6CD5;&#x4E0A;&#x8FD4;&#x56DE;&#x4EE5;&#x4E0B;&#x5305;&#x88C5;&#x5668;&#x7C7B;&#x578B;</p>
 <ul>
 <li><code>com.google.common.base.Optional</code></li>
@@ -830,7 +829,7 @@ Page&lt;User&gt; users = repository.findAll(PageRequest.of(<span class="hljs-num
 <li><code>io.vavr.control.Option</code></li>
 </ul>
 <p>&#x4E5F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;null&#x503C;&#x5224;&#x65AD;&#x8FD4;&#x56DE;&#x7ED3;&#x679C;,&#x8FD4;&#x56DE;&#x96C6;&#x5408;&#x3001;&#x96C6;&#x5408;&#x66FF;&#x4EE3;&#x65B9;&#x6848;&#x3001;&#x5305;&#x88C5;&#x5668;&#x548C;&#x6D41;&#x7684;&#x5B58;&#x50A8;&#x5E93;&#x65B9;&#x6CD5;&#x4FDD;&#x8BC1;&#x6C38;&#x8FDC;&#x4E0D;&#x4F1A;&#x8FD4;&#x56DE;null&#xFF0C;&#x800C;&#x662F;&#x76F8;&#x5E94;&#x7684;&#x7A7A;&#x8868;&#x793A;&#x3002;&#x6709;&#x5173;&#x8BE6;&#x7EC6;&#x4FE1;&#x606F;&#xFF0C;&#x8BF7;&#x53C2;&#x9605;&#x5B58;&#x50A8;&#x5E93;&#x67E5;&#x8BE2;&#x8FD4;&#x56DE;&#x7C7B;&#x578B;</p>
-<h4 id="&#x7A7A;&#x503C;&#x6CE8;&#x91CA;">&#x7A7A;&#x503C;&#x6CE8;&#x91CA;</h4>
+<h3 id="&#x7A7A;&#x503C;&#x6CE8;&#x91CA;">&#x7A7A;&#x503C;&#x6CE8;&#x91CA;</h3>
 
                                 
                                 </section>
@@ -858,7 +857,7 @@ Page&lt;User&gt; users = repository.findAll(PageRequest.of(<span class="hljs-num
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Spring Data","level":"1.10","depth":1,"next":{"title":"Spring-Data-JPA","level":"1.10.1","depth":2,"path":"SpringData/SpringDataJPA.md","ref":"SpringData/SpringDataJPA.md","articles":[]},"previous":{"title":"OAuth2-Security","level":"1.9.1","depth":2,"path":"SpringSecurity/OAuth2.md","ref":"SpringSecurity/OAuth2.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","back-to-top-button","chapter-fold","-sharing","sharing-plus","donate","pageview-count"],"styles":{"website":"styles/website.css"},"pluginsConfig":{"chapter-fold":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"donate":{"alipay":"https://github.com/yangb92/book/raw/gh-pages/gitbook/alipay.png","alipayText":"支付宝打赏","button":"赏","title":"","wechat":"https://github.com/yangb92/book/raw/gh-pages/gitbook/wxpay.png","wechatText":"微信打赏"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"pageview-count":{},"sharing":{"douban":true,"weibo":true,"qzone":true,"qq":true,"all":["douban","facebook","google","linkedin","twitter","weibo","messenger","qq","qzone","weibo"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"杨斌","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"学习笔记","language":"zh-hans","links":{"sidebar":{"学习笔记":"https://github.com/yangb92"}},"gitbook":"*"},"file":{"path":"SpringData/SpringDataJdbc.md","mtime":"2019-10-04T06:33:01.455Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-10-04T07:54:12.300Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Spring Data","level":"1.10","depth":1,"next":{"title":"Spring-Data-JPA","level":"1.10.1","depth":2,"path":"SpringData/SpringDataJPA.md","ref":"SpringData/SpringDataJPA.md","articles":[]},"previous":{"title":"OAuth2-Security","level":"1.9.1","depth":2,"path":"SpringSecurity/OAuth2.md","ref":"SpringSecurity/OAuth2.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","back-to-top-button","chapter-fold","-sharing","sharing-plus","donate","pageview-count"],"styles":{"website":"styles/website.css"},"pluginsConfig":{"chapter-fold":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"donate":{"alipay":"https://gitee.com/yangb92/book/raw/gh-pages/git/alipay.png","alipayText":"支付宝打赏","button":"赏","title":"","wechat":"https://gitee.com/yangb92/book/raw/gh-pages/git/wxpay.png","wechatText":"微信打赏"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"pageview-count":{},"sharing":{"douban":true,"weibo":true,"qzone":true,"qq":true,"all":["douban","facebook","google","linkedin","twitter","weibo","messenger","qq","qzone","weibo"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"杨斌","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"学习笔记","language":"zh-hans","links":{"sidebar":{"学习笔记":"https://github.com/yangb92"}},"gitbook":"*"},"file":{"path":"SpringData/SpringDataJdbc.md","mtime":"2019-10-08T09:58:06.713Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-10-08T10:14:32.171Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
