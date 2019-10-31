@@ -32,3 +32,10 @@
 ## Jetbrains系列产品
 
 Jetbrains系列产品2019.2.3最新激活方法[持续更新] <https://zhile.io/2018/08/25/jetbrains-license-server-crack.html?tdsourcetag=s_pctim_aiomsg>
+
+
+
+## 漂亮的 Markdown 编辑器 Typora
+
+<https://www.typora.io/>
+
