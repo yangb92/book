@@ -1,6 +1,6 @@
 # Git
 
-## Gitbook
+## 将GitBook文档托管到Github 
 
 ### 将打包的文档发布至公共 gitpage
 
@@ -21,30 +21,20 @@
         "-search",
         "back-to-top-button",
         "chapter-fold",
-        "-sharing", 
-        "sharing-plus",
+        "sharing", 
         "donate",
-        "pageview-count",
         "search-pro",
         "insert-logo",
         "theme-default",
-        "theme-comscore"
+        "theme-comscore",
+        "code",
+        "splitter",
+        "tbfed-pagefooter"
     ], 
     "styles": {
         "website": "styles/website.css"
     },
     "pluginsConfig": {
-        "sharing": {
-            "douban": true,
-            "weibo": true,
-            "qzone": true,
-            "qq":true,
-            "all": [
-                "douban", "facebook", "google",
-                "linkedin","twitter", "weibo", 
-                "messenger","qq", "qzone","weibo"
-            ]
-       },
        "donate": {
             "wechat": "https://gitee.com/yangb92/book/raw/gh-pages/git/wxpay.png",
             "alipay": "https://gitee.com/yangb92/book/raw/gh-pages/git/alipay.png",
@@ -59,6 +49,11 @@
         },
         "theme-default": {
             "showLevel": true
+        },
+        "tbfed-pagefooter": {
+            "copyright":"Copyright &copy yangb ",
+            "modify_label": "该文章修订时间：",
+            "modify_format": "YYYY-MM-DD HH:mm:ss"
         }
     }
 }
