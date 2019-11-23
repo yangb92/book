@@ -15,7 +15,9 @@
 
 免费访问: 谷歌搜索，Gmail邮箱，Chrome商店...
 
+**更好用的谷歌访问助手工具**
 
+pp访问助手 [www.ppgoogle.net](http://www.ppgoogle.net/)
 
 ### 沙拉查词
 
