@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>React · 学习笔记</title>
+        <title>screen分屏命令 · 学习笔记</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -91,10 +91,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="components.html" />
+    <link rel="next" href="crontab.html" />
     
     
-    <link rel="prev" href="../DesignPatterns/" />
+    <link rel="prev" href="./" />
     
 
     </head>
@@ -138,9 +138,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2" data-path="../Shell/">
+        <li class="chapter " data-level="1.2" data-path="./">
             
-                <a href="../Shell/">
+                <a href="./">
             
                     
                         <b>1.2.</b>
@@ -154,9 +154,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.2.1" data-path="../Shell/screen.html">
+        <li class="chapter active" data-level="1.2.1" data-path="screen.html">
             
-                <a href="../Shell/screen.html">
+                <a href="screen.html">
             
                     
                         <b>1.2.1.</b>
@@ -169,9 +169,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.2" data-path="../Shell/crontab.html">
+        <li class="chapter " data-level="1.2.2" data-path="crontab.html">
             
-                <a href="../Shell/crontab.html">
+                <a href="crontab.html">
             
                     
                         <b>1.2.2.</b>
@@ -184,9 +184,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.3" data-path="../Shell/tldr.html">
+        <li class="chapter " data-level="1.2.3" data-path="tldr.html">
             
-                <a href="../Shell/tldr.html">
+                <a href="tldr.html">
             
                     
                         <b>1.2.3.</b>
@@ -366,9 +366,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.8" data-path="React.html">
+        <li class="chapter " data-level="1.8" data-path="../React/React.html">
             
-                <a href="React.html">
+                <a href="../React/React.html">
             
                     
                         <b>1.8.</b>
@@ -382,9 +382,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.8.1" data-path="components.html">
+        <li class="chapter " data-level="1.8.1" data-path="../React/components.html">
             
-                <a href="components.html">
+                <a href="../React/components.html">
             
                     
                         <b>1.8.1.</b>
@@ -397,9 +397,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.8.2" data-path="webpack.html">
+        <li class="chapter " data-level="1.8.2" data-path="../React/webpack.html">
             
-                <a href="webpack.html">
+                <a href="../React/webpack.html">
             
                     
                         <b>1.8.2.</b>
@@ -412,9 +412,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.8.3" data-path="event.html">
+        <li class="chapter " data-level="1.8.3" data-path="../React/event.html">
             
-                <a href="event.html">
+                <a href="../React/event.html">
             
                     
                         <b>1.8.3.</b>
@@ -1050,7 +1050,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >React</a>
+        <a href=".." >screen分屏命令</a>
     </h1>
 </div>
 
@@ -1065,105 +1065,19 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="react">React</h1>
-<h2 id="&#x6838;&#x5FC3;&#x6982;&#x5FF5;">&#x6838;&#x5FC3;&#x6982;&#x5FF5;</h2>
-<h3 id="&#x865A;&#x62DF;dom-virtual-document-object-model">&#x865A;&#x62DF;DOM (Virtual Document Object Model)</h3>
+                                <h1 id="screen">screen</h1>
+<p>&#x5B89;&#x88C5; screen&#xFF0C;&#x4F7F;&#x7528;&#x547D;&#x4EE4; <code>apt-get install screen</code> &#x5373;&#x53EF;&#x5B8C;&#x6210;&#x3002;</p>
+<p>screen &#x5E38;&#x7528;&#x5FEB;&#x6377;&#x952E;&#x5982;&#x4E0B;&#xFF1A;</p>
 <ul>
-<li><p>&#x672C;&#x8D28;: &#x5728;&#x6846;&#x67B6;&#x7684;&#x6982;&#x5FF5;&#x4E2D;,&#x7A0B;&#x5E8F;&#x5458;&#x4F7F;&#x7528;js&#x5BF9;&#x8C61;&#x6A21;&#x62DF;&#x6D4F;&#x89C8;&#x5668;&#x4E0A;&#x7684;DOM&#x548C;DOM&#x5D4C;&#x5957;&#x5173;&#x7CFB;,</p>
-</li>
-<li><p>&#x76EE;&#x7684;: &#x4E3A;&#x4E86;&#x5B9E;&#x73B0;&#x9875;&#x9762;&#x4E2D;DOM&#x5143;&#x7D20;&#x7684;&#x9AD8;&#x6548;&#x66F4;&#x65B0;</p>
-</li>
-</ul>
-<h3 id="diff-&#x7B97;&#x6CD5;-different-&#x5DEE;&#x5F02;&#x7B97;&#x6CD5;">Diff &#x7B97;&#x6CD5; (Different &#x5DEE;&#x5F02;&#x7B97;&#x6CD5;)</h3>
-<ul>
-<li>Tree Diff : &#x65B0;&#x65E7;&#x4E24;&#x9897;DOM&#x6811;&#x9010;&#x5C42;&#x5BF9;&#x6BD4;.</li>
-<li>Domponent Diff:  &#x5728;&#x8FDB;&#x884C;tree diff&#x4E2D;,&#x6BCF;&#x4E00;&#x5C42;&#x4E2D;&#x7684;&#x7EC4;&#x4EF6;&#x5BF9;&#x6BD4;, &#x5982;&#x679C;&#x7C7B;&#x578B;&#x4E0D;&#x540C;&#x8FDB;&#x884C;&#x66F4;&#x65B0;</li>
-<li>Element Diff: &#x5728;&#x7EC4;&#x4EF6;&#x8FDB;&#x884C;&#x5BF9;&#x6BD4;&#x7684;&#x65F6;&#x5019;,&#x5982;&#x679C;&#x7EC4;&#x4EF6;&#x7EC4;&#x4EF6;&#x7C7B;&#x578B;&#x76F8;&#x540C;,&#x5219;&#x9700;&#x8981;&#x8FDB;&#x884C;&#x5143;&#x7D20;&#x5BF9;&#x6BD4;</li>
-</ul>
-<h3 id="&#x603B;&#x7ED3;">&#x603B;&#x7ED3;</h3>
-<p>&#x865A;&#x62DF;DOM&#x7528;JS&#x6A21;&#x62DF;&#x9875;&#x9762;&#x7684;DOM, Diff&#x7B97;&#x6CD5;&#x8D1F;&#x8D23;&#x5411;&#x9875;&#x9762;&#x66F4;&#x65B0;JS&#x6A21;&#x62DF;&#x7684;DOM</p>
-<h2 id="&#x9879;&#x76EE;&#x5B9E;&#x8DF5;">&#x9879;&#x76EE;&#x5B9E;&#x8DF5;</h2>
-<h3 id="&#x73AF;&#x5883;&#x5B89;&#x88C5;">&#x73AF;&#x5883;&#x5B89;&#x88C5;</h3>
-<ul>
-<li><p>webpack &#x5F00;&#x53D1;&#x73AF;&#x5883;&#x5B89;&#x88C5; <a href="webpack.html">&#x53C2;&#x8003;&#x8D44;&#x6599;</a></p>
-</li>
-<li><p>&#x5B89;&#x88C5;React&#x7EC4;&#x4EF6; <code>cnpm i react react-dom -S</code>  -S &#x4EE3;&#x8868;&#x8BE5;&#x6A21;&#x5757;&#x751F;&#x4EA7;&#x9700;&#x8981;&#x4F7F;&#x7528;, -D&#x4EE3;&#x8868;&#x5F00;&#x53D1;&#x4F7F;&#x7528;</p>
-</li>
-</ul>
-<h3 id="hello-react">Hello React</h3>
-<p>index.js &#x53EA;&#x9700;&#x8981;&#x4E09;&#x6B65;</p>
-<pre><code class="lang-javascript"><span class="hljs-comment">//1. &#x8FD9;&#x4E24;&#x4E2A;&#x5305;&#x5BFC;&#x5165;&#x683C;&#x5F0F;&#x56FA;&#x5B9A;</span>
-<span class="hljs-keyword">import</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react&apos;</span> <span class="hljs-comment">//&#x521B;&#x5EFA;&#x7EC4;&#x4EF6;, &#x865A;&#x62DF;DOM&#x5143;&#x7D20;,&#x751F;&#x547D;&#x5468;&#x671F;</span>
-<span class="hljs-keyword">import</span> ReactDOM <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react-dom&apos;</span> <span class="hljs-comment">// &#x628A;&#x521B;&#x5EFA;&#x597D;&#x7684;&#x7EC4;&#x4EF6; &#x548C; &#x865A;&#x62DF;DOM &#x653E;&#x5230;&#x9875;&#x9762;&#x5C55;&#x793A;</span>
-
-<span class="hljs-comment">//2. &#x521B;&#x5EFA;&#x865A;&#x62DF;DOM</span>
-<span class="hljs-comment">/*
-&#x53C2;&#x6570;1: &#x521B;&#x5EFA;&#x5143;&#x7D20;&#x7684;&#x7C7B;&#x578B; [&#x5B57;&#x7B26;&#x4E32;] &#x5143;&#x7D20;&#x7684;&#x540D;&#x79F0;
-&#x53C2;&#x6570;2: &#x662F;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x6216;null, &#x8868;&#x793A;&#x8FD9;&#x4E2A;DOM&#x5143;&#x7D20;&#x7684;&#x5C5E;&#x6027;.
-&#x53C2;&#x6570;3: &#x5B50;&#x8282;&#x70B9; (&#x5305;&#x62EC;&#x5176;&#x4ED6;&#x865A;&#x62DF;DOM)
-&#x53C2;&#x6570;n: &#x5176;&#x4ED6;&#x5B50;&#x8282;&#x70B9;
-
-    &#x4F8B;: &lt;h1 id=&quot;myh1&quot; title=&quot;&#x8FD9;&#x662F;h1&quot;&gt; Hello World! &lt;/h1&gt;
-*/</span>
-<span class="hljs-keyword">const</span> myh1 = React.createElement(<span class="hljs-string">&apos;h1&apos;</span>, {id:<span class="hljs-string">&apos;myh1&apos;</span>,title:<span class="hljs-string">&apos;&#x8FD9;&#x662F;h1&apos;</span>},<span class="hljs-string">&quot;Helo World!&quot;</span>)
-
-<span class="hljs-comment">//3. &#x4F7F;&#x7528;ReactDOM &#x628A;&#x865A;&#x62DF;DOM&#x6E32;&#x67D3;&#x5230;&#x9875;&#x9762;&#x4E0A;</span>
-<span class="hljs-comment">/*
-&#x53C2;&#x6570;1: &#x8981;&#x6E32;&#x67D3;&#x7684;&#x90A3;&#x4E2A;&#x865A;&#x62DF;DOM&#x5143;&#x7D20;
-&#x53C2;&#x6570;2: &#x6307;&#x5B9A;&#x9875;&#x9762;&#x4E0A;&#x7684;&#x4E00;&#x4E2A;&#x5BB9;&#x5668; DOM&#x5BF9;&#x8C61;
-*/</span>
-ReactDOM.render(myh1,<span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&quot;app&quot;</span>))
-</code></pre>
-<p>index.html &#x4E2D;&#x8981;&#x5B58;&#x5728;&#x4E00;&#x4E2A;id&#x4E3A;app&#x7684;&#x5BB9;&#x5668;</p>
-<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;app&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
-</code></pre>
-<p>&#x4E24;&#x4E2A;&#x5143;&#x7D20;&#x7684;&#x5D4C;&#x5957;</p>
-<pre><code class="lang-js"><span class="hljs-keyword">const</span> myh1 = React.createElement(<span class="hljs-string">&apos;h1&apos;</span>, {id:<span class="hljs-string">&apos;myh1&apos;</span>,title:<span class="hljs-string">&apos;&#x8FD9;&#x662F;h1&apos;</span>},<span class="hljs-string">&quot;Helo World!&quot;</span>)
-
-<span class="hljs-comment">// mydiv &#x5D4C;&#x5957; myh1</span>
-<span class="hljs-keyword">const</span> mydiv = React.createElement(<span class="hljs-string">&apos;div&apos;</span>,<span class="hljs-literal">null</span>,<span class="hljs-string">&apos;&#x8FD9;&#x662F;&#x4E00;&#x4E2A;div&apos;</span>,myh1)
-</code></pre>
-<h3 id="&#x542F;&#x7528;jsx&#x8BED;&#x6CD5;">&#x542F;&#x7528;JSX&#x8BED;&#x6CD5;</h3>
-<p>&#x901A;&#x8FC7;React.createElement&#x65B9;&#x5F0F;&#x521B;&#x5EFA;&#x865A;&#x62DF;DOM&#x7684;&#x65B9;&#x5F0F;&#x8FC7;&#x4E8E;&#x9EBB;&#x70E6;, JSX&#x662F;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x518D;JS&#x4E2D;&#x5199;HTML&#x7684;&#x8BED;&#x6CD5;</p>
-<p>&#x53EF;&#x4EE5;&#x4F7F;&#x7528;babel&#x6765;&#x5C06;JSX&#x8BED;&#x6CD5;&#x8F6C;&#x6362;&#x6210;React.create Element&#x7684;&#x5F62;&#x5F0F;&#x6765;&#x6267;&#x884C;.</p>
-<h4 id="babel-&#x63D2;&#x4EF6;&#x5B89;&#x88C5;">babel &#x63D2;&#x4EF6;&#x5B89;&#x88C5;</h4>
-<h5 id="&#x5B89;&#x88C5;babel&#x63D2;&#x4EF6;">&#x5B89;&#x88C5;babel&#x63D2;&#x4EF6;</h5>
-<ul>
-<li><code>cnpm i babel-core babel-loader babel-plugin-transform-runtime -D</code></li>
-<li><code>cnpm i babel-preset-env babel-preset-stage-0 -D</code></li>
-</ul>
-<h5 id="&#x5B89;&#x88C5;&#x80FD;&#x591F;&#x8BC6;&#x522B;&#x8F6C;&#x6362;jsx&#x8BED;&#x6CD5;&#x7684;&#x5305;">&#x5B89;&#x88C5;&#x80FD;&#x591F;&#x8BC6;&#x522B;&#x8F6C;&#x6362;jsx&#x8BED;&#x6CD5;&#x7684;&#x5305;</h5>
-<ul>
-<li><code>cnpm i babel-preset-react -D</code></li>
-</ul>
-<h5 id="&#x6DFB;&#x52A0;&#x81F3;webpack&#x7684;module">&#x6DFB;&#x52A0;&#x81F3;webpack&#x7684;module</h5>
-<p>webpack.config.js </p>
-<pre><code class="lang-js"><span class="hljs-built_in">module</span>: { <span class="hljs-comment">//&#x6240;&#x6709;&#x7B2C;&#x4E09;&#x65B9;&#x6A21;&#x5757;&#x7684;&#x914D;&#x7F6E;</span>
-        rules: [ <span class="hljs-comment">//&#x5339;&#x914D;&#x89C4;&#x5219;</span>
-            {test: <span class="hljs-regexp">/\.js|jsx$/</span>, use: <span class="hljs-string">&apos;babel-loader&apos;</span>, exclude: <span class="hljs-regexp">/node_modules/</span>}
-        ]
-    }
-</code></pre>
-<h5 id="&#x5728;&#x6839;&#x76EE;&#x5F55;&#x6DFB;&#x52A0;babelrc&#x914D;&#x7F6E;&#x6587;&#x4EF6;">&#x5728;&#x6839;&#x76EE;&#x5F55;&#x6DFB;&#x52A0;<code>.babelrc</code>&#x914D;&#x7F6E;&#x6587;&#x4EF6;</h5>
-<pre><code class="lang-json">{
-    <span class="hljs-string">&quot;presets&quot;</span>: [<span class="hljs-string">&quot;env&quot;</span>,<span class="hljs-string">&quot;stage-0&quot;</span>,<span class="hljs-string">&quot;react&quot;</span>],
-    <span class="hljs-string">&quot;plugins&quot;</span>: [<span class="hljs-string">&quot;transform-runtime&quot;</span>]
-}
-</code></pre>
-<h3 id="&#x8BED;&#x6CD5;&#x6CE8;&#x610F;&#x4E8B;&#x9879;">&#x8BED;&#x6CD5;&#x6CE8;&#x610F;&#x4E8B;&#x9879;</h3>
-<ul>
-<li><p>jsx &#x4E2D;&#x6CE8;&#x91CA;&#x4F7F;&#x7528;<code>{/*&#x8FD9;&#x662F;&#x6CE8;&#x91CA;*/}</code></p>
-</li>
-<li><p>&#x5143;&#x7D20;&#x7684;class&#x5C5E;&#x6027;&#x7528;<code>className</code>&#x4EE3;&#x66FF;</p>
-</li>
-<li>label &#x7684;for &#x5C5E;&#x6027;&#x7528; <code>hemlFor</code> &#x4EE3;&#x66FF;</li>
-<li>&#x6570;&#x7EC4;&#x7684;map&#x8FED;&#x4EE3; <code>{names.map(item =&gt; &lt;h1&gt;{item}&lt;/h1&gt;)}</code></li>
-<li>key&#x653E;&#x5728;&#x8FED;&#x4EE3;&#x5143;&#x7D20;&#x4E0A;&#x9762; </li>
+<li>Ctrl+a &#x518D;&#x6309;shift + s &#x6C34;&#x5E73;&#x5206;&#x5272;&#x5F53;&#x524D;&#x7A97;&#x53E3;</li>
+<li>Ctrl+a | &#x5782;&#x76F4;&#x5206;&#x5272;&#x5F53;&#x524D;&#x7A97;&#x53E3;</li>
+<li>Ctrl+a c &#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x8FD0;&#x884C; shell &#x7684;&#x7A97;&#x53E3;&#x5E76;&#x5207;&#x6362;&#x5230;&#x8BE5;&#x7A97;&#x53E3;</li>
+<li>Ctrl+a X &#x5173;&#x95ED;&#x5F53;&#x524D;&#x7A97;&#x53E3;</li>
+<li>Ctrl+a x &#x9501;&#x5B9A;&#x5F53;&#x524D;&#x7A97;&#x53E3;</li>
+<li>Ctrl+a k &#x6740;&#x6B7B;&#x5F53;&#x524D;&#x7A97;&#x53E3;</li>
 </ul>
 <footer class="page-footer"><span class="copyright">Copyright &#xA9; yangb  all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x7AE0;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
-2019-10-06 19:00:54
+2020-02-06 23:48:32
 </span></footer>
                                 
                                 </section>
@@ -1191,12 +1105,12 @@ ReactDOM.render(myh1,<span class="hljs-built_in">document</span>.getElementById(
 
             
                 
-                <a href="../DesignPatterns/" class="navigation navigation-prev " aria-label="Previous page: 设计模式">
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: Shell">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="components.html" class="navigation navigation-next " aria-label="Next page: 组件">
+                <a href="crontab.html" class="navigation navigation-next " aria-label="Next page: crontab定时任务">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -1207,7 +1121,7 @@ ReactDOM.render(myh1,<span class="hljs-built_in">document</span>.getElementById(
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"React","level":"1.8","depth":1,"next":{"title":"组件","level":"1.8.1","depth":2,"path":"React/components.md","ref":"React/components.md","articles":[]},"previous":{"title":"设计模式","level":"1.7","depth":1,"path":"DesignPatterns/index.md","ref":"DesignPatterns/index.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","back-to-top-button","chapter-fold","sharing","donate","search-pro","insert-logo","theme-default","theme-comscore","code","splitter","tbfed-pagefooter","github","hide-element"],"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy yangb ","modify_label":"该文章修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"github":{"url":"https://github.com/yangb92"},"splitter":{},"search-pro":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"donate":{"alipay":"https://gitee.com/yangb92/book/raw/gh-pages/git/alipay.png","alipayText":"支付宝打赏","button":"赏","title":"","wechat":"https://gitee.com/yangb92/book/raw/gh-pages/git/wxpay.png","wechatText":"微信打赏"},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"back-to-top-button":{},"sharing":{"all":["facebook","google","twitter","weibo","instapaper"],"facebook":true,"google":false,"instapaper":false,"twitter":true,"vk":false,"weibo":false},"theme-default":{"showLevel":true,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"insert-logo":{"style":"background: none; max-height: 80px; min-height: 10px","url":"https://gitee.com/yangb92/book/raw/gh-pages/favorite.png"}},"theme":"default","author":"杨斌","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"学习笔记","language":"zh-hans","gitbook":"*"},"file":{"path":"React/React.md","mtime":"2019-10-06T11:00:54.327Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-02-07T01:03:22.470Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"screen分屏命令","level":"1.2.1","depth":2,"next":{"title":"crontab定时任务","level":"1.2.2","depth":2,"path":"Shell/crontab.md","ref":"Shell/crontab.md","articles":[]},"previous":{"title":"Shell","level":"1.2","depth":1,"path":"Shell/index.md","ref":"Shell/index.md","articles":[{"title":"screen分屏命令","level":"1.2.1","depth":2,"path":"Shell/screen.md","ref":"Shell/screen.md","articles":[]},{"title":"crontab定时任务","level":"1.2.2","depth":2,"path":"Shell/crontab.md","ref":"Shell/crontab.md","articles":[]},{"title":"tldr命令手册","level":"1.2.3","depth":2,"path":"Shell/tldr.md","ref":"Shell/tldr.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-search","back-to-top-button","chapter-fold","sharing","donate","search-pro","insert-logo","theme-default","theme-comscore","code","splitter","tbfed-pagefooter","github","hide-element"],"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy yangb ","modify_label":"该文章修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"github":{"url":"https://github.com/yangb92"},"splitter":{},"search-pro":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"donate":{"alipay":"https://gitee.com/yangb92/book/raw/gh-pages/git/alipay.png","alipayText":"支付宝打赏","button":"赏","title":"","wechat":"https://gitee.com/yangb92/book/raw/gh-pages/git/wxpay.png","wechatText":"微信打赏"},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"back-to-top-button":{},"sharing":{"all":["facebook","google","twitter","weibo","instapaper"],"facebook":true,"google":false,"instapaper":false,"twitter":true,"vk":false,"weibo":false},"theme-default":{"showLevel":true,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"insert-logo":{"style":"background: none; max-height: 80px; min-height: 10px","url":"https://gitee.com/yangb92/book/raw/gh-pages/favorite.png"}},"theme":"default","author":"杨斌","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"学习笔记","language":"zh-hans","gitbook":"*"},"file":{"path":"Shell/screen.md","mtime":"2020-02-06T15:48:32.721Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-02-07T01:03:22.470Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
