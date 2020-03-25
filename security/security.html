@@ -1048,32 +1048,17 @@
             
 
             
-        </li>
-    
-        <li class="chapter " data-level="1.18" data-path="../高等数学/">
-            
-                <a href="../高等数学/">
-            
-                    
-                        <b>1.18.</b>
-                    
-                    高等数学
-            
-                </a>
-            
-
-            
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.18.1" data-path="../高等数学/函数与极限.html">
+        <li class="chapter " data-level="1.17.1" data-path="../股票/道氏理论.html">
             
-                <a href="../高等数学/函数与极限.html">
+                <a href="../股票/道氏理论.html">
             
                     
-                        <b>1.18.1.</b>
+                        <b>1.17.1.</b>
                     
-                    函数与极限
+                    道氏理论
             
                 </a>
             
@@ -1083,21 +1068,6 @@
     
 
             </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="1.19" data-path="../股票/道氏理论.html">
-            
-                <a href="../股票/道氏理论.html">
-            
-                    
-                        <b>1.19.</b>
-                    
-                    道氏理论
-            
-                </a>
-            
-
             
         </li>
     
@@ -1153,6 +1123,12 @@
 <p>dhcp &#x81EA;&#x52A8;&#x83B7;&#x53D6;ip&#x5730;&#x5740;</p>
 <pre><code>auto eth0
 iface eth0 dhcp
+</code></pre><p>&#x624B;&#x52A8;IP&#x8BBE;&#x7F6E;</p>
+<pre><code>auto eth0
+iface eth0 inet static
+address 192.168.10.188
+netmask 255.255.255.0
+gateway 192.168.10.1
 </code></pre><p>&#x91CD;&#x542F;&#x7F51;&#x7EDC;&#x670D;&#x52A1;</p>
 <pre><code class="lang-sh">/etc/init.d/networking restart
 </code></pre>
@@ -1172,8 +1148,33 @@ iface eth0 dhcp
 <p>&#x534A;&#x5F00;&#x626B;&#x63CF;(TCP SYN&#x626B;&#x63CF;) - &#x9690;&#x79D8;&#x4E14;&#x901F;&#x5EA6;&#x5FEB;&#xFF0C;&#x6BD4;&#x8F83;&#x5E38;&#x7528;</p>
 <pre><code class="lang-sh">nmap <span class="hljs-_">-s</span>S host
 </code></pre>
-<footer class="page-footer"><span class="copyright">Copyright &#xA9; yangb  all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x7AE0;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
-2020-02-26 11:17:39
+<h2 id="&#x7F51;&#x7EDC;&#x4E2D;&#x56FE;&#x7247;&#x55C5;&#x63A2;">&#x7F51;&#x7EDC;&#x4E2D;&#x56FE;&#x7247;&#x55C5;&#x63A2;</h2>
+<p>driftnet [options] [filter code]</p>
+<pre><code>&#x4E3B;&#x8981;&#x53C2;&#x6570;&#xFF1A;
+
+-b &#x6355;&#x83B7;&#x5230;&#x65B0;&#x7684;&#x56FE;&#x7247;&#x65F6;&#x53D1;&#x51FA;&#x561F;&#x561F;&#x58F0;
+
+-i interface &#x9009;&#x62E9;&#x76D1;&#x542C;&#x63A5;&#x53E3;
+
+-f file &#x8BFB;&#x53D6;&#x4E00;&#x4E2A;&#x6307;&#x5B9A;pcap&#x6570;&#x636E;&#x5305;&#x4E2D;&#x7684;&#x56FE;&#x7247;
+
+-p &#x4E0D;&#x8BA9;&#x6240;&#x76D1;&#x542C;&#x7684;&#x63A5;&#x53E3;&#x4F7F;&#x7528;&#x6DF7;&#x6742;&#x6A21;&#x5F0F;
+
+-a &#x540E;&#x53F0;&#x6A21;&#x5F0F;&#xFF1A;&#x5C06;&#x6355;&#x83B7;&#x7684;&#x56FE;&#x7247;&#x4FDD;&#x5B58;&#x5230;&#x76EE;&#x5F55;&#x4E2D;&#xFF08;&#x4E0D;&#x4F1A;&#x663E;&#x793A;&#x5728;&#x5C4F;&#x5E55;&#x4E0A;&#xFF09;
+
+-m number &#x6307;&#x5B9A;&#x4FDD;&#x5B58;&#x56FE;&#x7247;&#x6570;&#x7684;&#x6570;&#x76EE;
+
+-d directory &#x6307;&#x5B9A;&#x4FDD;&#x5B58;&#x56FE;&#x7247;&#x7684;&#x8DEF;&#x5F84;
+
+-x prefix &#x6307;&#x5B9A;&#x4FDD;&#x5B58;&#x56FE;&#x7247;&#x7684;&#x524D;&#x7F00;&#x540D;
+
+&#x4F7F;&#x7528;&#x4E3E;&#x4F8B;&#xFF1A;
+
+1.&#x5B9E;&#x65F6;&#x76D1;&#x542C;&#xFF1A; driftnet -i wlan0
+
+2.&#x8BFB;&#x53D6;&#x4E00;&#x4E2A;&#x6307;&#x5B9A;pcap&#x6570;&#x636E;&#x5305;&#x4E2D;&#x7684;&#x56FE;&#x7247;&#xFF1A; driftnet -f /home/linger/backup/ap.pcapng -a -d /root/drifnet/
+</code></pre><footer class="page-footer"><span class="copyright">Copyright &#xA9; yangb  all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x7AE0;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2020-03-25 09:40:34
 </span></footer>
                                 
                                 </section>
@@ -1217,7 +1218,7 @@ iface eth0 dhcp
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"网络安全","level":"1.3","depth":1,"next":{"title":"漏洞利用","level":"1.3.1","depth":2,"path":"security/demo.md","ref":"security/demo.md","articles":[]},"previous":{"title":"root权限用户","level":"1.2.4","depth":2,"path":"Shell/root.md","ref":"Shell/root.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","back-to-top-button","chapter-fold","sharing","donate","search-pro","insert-logo","theme-default","theme-comscore","code","splitter","tbfed-pagefooter","github","hide-element"],"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy yangb ","modify_label":"该文章修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"github":{"url":"https://github.com/yangb92"},"splitter":{},"search-pro":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"donate":{"alipay":"https://gitee.com/yangb92/book/raw/gh-pages/git/alipay.png","alipayText":"支付宝打赏","button":"赏","title":"","wechat":"https://gitee.com/yangb92/book/raw/gh-pages/git/wxpay.png","wechatText":"微信打赏"},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"back-to-top-button":{},"sharing":{"all":["facebook","google","twitter","weibo","instapaper"],"facebook":true,"google":false,"instapaper":false,"twitter":true,"vk":false,"weibo":false},"theme-default":{"showLevel":true,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"insert-logo":{"style":"background: none; max-height: 80px; min-height: 10px","url":"https://gitee.com/yangb92/book/raw/gh-pages/favorite.png"}},"theme":"default","author":"杨斌","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"学习笔记","language":"zh-hans","gitbook":"*"},"file":{"path":"security/security.md","mtime":"2020-02-26T03:17:39.550Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-03-07T23:37:24.085Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"网络安全","level":"1.3","depth":1,"next":{"title":"漏洞利用","level":"1.3.1","depth":2,"path":"security/demo.md","ref":"security/demo.md","articles":[]},"previous":{"title":"root权限用户","level":"1.2.4","depth":2,"path":"Shell/root.md","ref":"Shell/root.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","back-to-top-button","chapter-fold","sharing","donate","search-pro","insert-logo","theme-default","theme-comscore","code","splitter","tbfed-pagefooter","github","hide-element"],"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy yangb ","modify_label":"该文章修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"github":{"url":"https://github.com/yangb92"},"splitter":{},"search-pro":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"donate":{"alipay":"https://gitee.com/yangb92/book/raw/gh-pages/git/alipay.png","alipayText":"支付宝打赏","button":"赏","title":"","wechat":"https://gitee.com/yangb92/book/raw/gh-pages/git/wxpay.png","wechatText":"微信打赏"},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"back-to-top-button":{},"sharing":{"all":["facebook","google","twitter","weibo","instapaper"],"facebook":true,"google":false,"instapaper":false,"twitter":true,"vk":false,"weibo":false},"theme-default":{"showLevel":true,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"insert-logo":{"style":"background: none; max-height: 80px; min-height: 10px","url":"https://gitee.com/yangb92/book/raw/gh-pages/favorite.png"}},"theme":"default","author":"杨斌","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"学习笔记","language":"zh-hans","gitbook":"*"},"file":{"path":"security/security.md","mtime":"2020-03-25T01:40:34.750Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-03-25T01:42:03.296Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
