@@ -1,30 +1,50 @@
 # Security 网络安全
 
-## Kali 网络配置
+## 国外VPS服务器
 
-实用Kali虚拟机需要开启桥接模式。
-修改`/etc/network/interfaces`文件
+https://bwh88.net/  境外服务器不易受到监管
 
-dhcp 自动获取ip地址
+## 家用智能设备攻击思路
+
+破解家用路由器或者控制一台肉鸡, 在内网扫描支持UPnP协议的只能设备, 使用UPnP利用工具miranda进行扫描和利用
+
+### UPnP 协议
+
+UPnP为即插即用的缩写（Universal Plug and Play）是一套网络协议。适用于家庭网络，用于设备间的发现和连接。希望实现任何设备只要一接入网络就能被网络中的所有其它设备发现，做到完全的即插即用。
+
+### miranda 
+Miranda是Kali提供的一款基于Python语言的UPNP客户端工具。它可以用来发现、查询和操作UPNP设备，尤其是网关设置。
+
+* pcap：被动发现设备通过嗅探设备接入网络时发送的NOTIFY消息获取设备信息。
+* msearch:通过主动发送M-serach消息来发现设备。（一般使用msearch比较快）
+
+发现设备后可用host命令来查看详细信息。
 ```
-auto eth0
-iface eth0 dhcp
+host list：查看发现的设备列表
+host get <n>：获取信息（查询summary之前需执行）
+host info <n>：显示查询到的信息
+host summary 0 ：显示xml文件的摘要信息
+（n为设备在列表中的编号）
 ```
 
-手动IP设置
+获取设备列表
 ```
-auto eth0
-iface eth0 inet static
-address 192.168.10.188
-netmask 255.255.255.0
-gateway 192.168.10.1
+host info 0 deviceList
+```
+获取设备支持的命令/服务信息（命令很长使用Tab键补齐很方便 ）
+```
+host info 0 deviceList WANConnectionDevice services WANIPConnection actions
 ```
 
-重启网络服务
 
-```sh
-/etc/init.d/networking restart
-```
+## TCP 三次握手
+
+* SYN: synchronous 同步
+* ACK: acknowledgement 确认
+
+1. client --SYN--> server
+2. server --ACK+SYN--> client
+3. client --ACK--> server
 
 ## Nmap 常用指令
 
@@ -51,34 +71,4 @@ nmap -A -T4 192.168.10.1
 半开扫描(TCP SYN扫描) - 隐秘且速度快，比较常用
 ```sh
 nmap -sS host
-```
-
-## 网络中图片嗅探
-driftnet [options] [filter code]
-
-```
-主要参数：
-
--b 捕获到新的图片时发出嘟嘟声
-
--i interface 选择监听接口
-
--f file 读取一个指定pcap数据包中的图片
-
--p 不让所监听的接口使用混杂模式
-
--a 后台模式：将捕获的图片保存到目录中（不会显示在屏幕上）
-
--m number 指定保存图片数的数目
-
--d directory 指定保存图片的路径
-
--x prefix 指定保存图片的前缀名
-
-使用举例：
-
-1.实时监听： driftnet -i wlan0
-
-2.读取一个指定pcap数据包中的图片： driftnet -f /home/linger/backup/ap.pcapng -a -d /root/drifnet/
-
 ```

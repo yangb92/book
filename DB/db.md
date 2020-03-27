@@ -1,5 +1,15 @@
 # 数据库
 
+## PostgresSql 数据库
+
+管理员登陆
+```
+su postgres
+psql
+```
+
+`\l` 查看数据库
+
 ## Oracle 数据库表数据闪回
 
 找回删除的数据或者表
