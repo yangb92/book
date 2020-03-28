@@ -5,6 +5,28 @@
 * [tldr命令手册](tldr.md)
 * [root权限用户](root.md)
 
+## omyzsh 安装
+
+### 安装zsh
+
+```
+apt install zsh
+```
+### 安装git
+```
+apt install zsh
+```
+### 安装ohmyzsh
+```
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
+
+### 配置主题
+```
+vi ~/.zshrc
+```
+修改 ZSH_THEME="agnoster" # 这是最花哨的一个
+
 ## java 环境变量配置
 
 编辑profile文件
@@ -27,20 +49,4 @@ source /etc/profile
 测试一下
 ```
 java -version 
-```
-
-## Installing the Metasploit Framework on Linux
-
-```
-curl https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb > msfinstall && chmod 755 msfinstall && ./msfinstall
-```
-
-如果安装失败
-```
-apt-get update
-```
-
-如果update出现key错误,先添加key
-```
-apt-key adv --recv-keys --keyserver keyserver.ubuntu.com CDFB5FA52007B954
 ```

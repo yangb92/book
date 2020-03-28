@@ -1,5 +1,13 @@
 # Security 网络安全
 
+## 科学上网服务建设
+
+使用V2Ray 
+
+https://github.com/233boy/v2ray/wiki/V2Ray%E4%B8%80%E9%94%AE%E5%AE%89%E8%A3%85%E8%84%9A%E6%9C%AC
+
+v2ray url 可生成 vmess URL 链接
+
 ## 国外VPS服务器
 
 https://bwh88.net/  境外服务器不易受到监管

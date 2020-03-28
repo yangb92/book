@@ -146,3 +146,19 @@ driftnet [options] [filter code]
 2.读取一个指定pcap数据包中的图片： driftnet -f /home/linger/backup/ap.pcapng -a -d /root/drifnet/
 
 ```
+
+## Installing the Metasploit Framework on Linux
+
+```
+curl https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb > msfinstall && chmod 755 msfinstall && ./msfinstall
+```
+
+如果安装失败
+```
+apt-get update
+```
+
+如果update出现key错误,先添加key
+```
+apt-key adv --recv-keys --keyserver keyserver.ubuntu.com CDFB5FA52007B954
+```
