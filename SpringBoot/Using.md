@@ -2,10 +2,6 @@
 
 ## 项目结构
 
-### 使用“default” Package
-
-如果一个类不声明package， 它就被认为在 default package 中。
-
 ### 定位程序主类
 
 默认推荐将启动类放在根目录中，高于其他的类。 @SpringBootApplication 注解放在主类上面，它还隐式的定义基础的所要扫描的包。

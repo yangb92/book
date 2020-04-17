@@ -1,113 +1,70 @@
 # Docker
 
-## 理解Docker:
+Docker 文档: <https://www.funtl.com/zh/docs-docker/>
 
-Docker是一个供开发人员和系统管理员使用容器开发、部署和运行应用程序的平台。
+## 基本概念
 
-### 特点:
+Docker 包括三个基本概念
 
-我们使用Docker是因为它具有这些特点:
-
-* 灵活性: 即使是最复杂的应用也可以集装箱化。
-* 轻量级: 容器共享主机内核。
-* 可插拔: 您可以热更新或升级(比如我们常说的灰度发布,蓝绿和金丝雀发布)
-* 便携性: 您可以在本地构建、部署到云，并在任何地方运行。
-* 伸缩性: 您可以方便的扩展或收缩容器集群
-* 可堆叠: 您可以垂直地、动态地堆叠服务。
-
-![Containers are portable](https://docs.docker.com/get-started/images/laurel-docker-containers.png)
-
-
-
-### 理解 镜像(images)和容器(containers)
-
-容器通过镜像启动, **镜像(images)**是一个包含了应用程序的所有内容(程序的代码, 运行时,库,环境变量和配置文件)的可执行包.
-
-**容器(containers)** 是 images 运行时的实例, 根据镜像启动一个或多个实例,这个实例称为容器(containers)  
+* 镜像（Image）
+  * Docker 镜像是一个特殊的文件系统，除了提供容器运行时所需的程序、库、资源、配置等文件外，还包含了一些为运行时准备的一些配置参数（如匿名卷、环境变量、用户等）。镜像不包含任何动态数据，其内容在构建之后也不会被改变。
+  * 分层存储:镜像构建时，会一层层构建，前一层是后一层的基础。每一层构建完就不会再发生改变，后一层上的任何改变只发生在自己这一层。
+* 容器（Container）
+  * 镜像（`Image`）和容器（`Container`）的关系，就像是面向对象程序设计中的 `类` 和 `实例` 一样，镜像是静态的定义，容器是镜像运行时的实体。容器可以被创建、启动、停止、删除、暂停等。
+  * 容器存储层的生存周期和容器一样，容器消亡时，容器存储层也随之消亡。因此，任何保存于容器存储层的信息都会随容器删除而丢失。
+  * 按照 Docker 最佳实践的要求，容器不应该向其存储层内写入任何数据，容器存储层要保持无状态化。所有的文件写入操作，都应该使用 `数据卷（Volume）`、或者绑定宿主目录，在这些位置的读写会跳过容器存储层，直接对宿主（或网络存储）发生读写，其性能和稳定性更高。
+  * 数据卷的生存周期独立于容器，容器消亡，数据卷不会消亡。因此，使用数据卷后，容器删除或者重新运行之后，数据却不会丢失。
+* 仓库（Repository）
+  * 公有仓库
+  * 私有仓库
 
 
 
-#### 容器和虚拟机区别
+| 标题            | 说明                                                         |
+| :-------------- | :----------------------------------------------------------- |
+| 镜像(Images)    | Docker 镜像是用于创建 Docker 容器的模板。                    |
+| 容器(Container) | 容器是独立运行的一个或一组应用。                             |
+| 客户端(Client)  | Docker 客户端通过命令行或者其他工具使用 Docker API (https://docs.docker.com/reference/api/docker_remote_api) 与 Docker 的守护进程通信。 |
+| 主机(Host)      | 一个物理或者虚拟的机器用于执行 Docker 守护进程和容器。       |
+| 仓库(Registry)  | Docker 仓库用来保存镜像，可以理解为代码控制中的代码仓库。Docker Hub([https://hub.docker.com](https://hub.docker.com/)) 提供了庞大的镜像集合供使用。 |
+| Docker Machine  | Docker Machine是一个简化Docker安装的命令行工具，通过一个简单的命令行即可在相应的平台上安装Docker，比如VirtualBox、 Digital Ocean、Microsoft Azure。 |
 
-容器在Linux上本机运行，并与其他容器共享主机的内核。它运行一个独立的进程，不占用任何其他可执行文件的内存，使其轻量级。
+## Docker安装
 
-相比之下，虚拟机（VM）运行一个完整的“客户”操作系统，通过虚拟机管理程序对主机资源进行虚拟访问。 通常，VM提供的环境比大多数应用程序需要的资源更多。
+### Ubuntu 安装
 
+脚本自动安装:
 
-
-## 安装Docker
-
-<https://hub.docker.com/search/?type=edition&offering=community> 选择你需要的版本.
-
-### Windows 下安装:
-
-版本要求: Win 10 64位专业版操作系统
-
-硬件要求: 64位硬件, 4G 内存 ,BIOS设置中必须启用BIOS级硬件虚拟化支持。
-
-选择windows版本docker版本下载, 按照提示安装即可.
-
-后续再补
-
-
-
-设置存储库:
-
-```bash
-$ sudo yum install -y yum-utils \
-  device-mapper-persistent-data \
-  lvm2
-$ sudo yum-config-manager \
-    --add-repo \
-    https://download.docker.com/linux/centos/docker-ce.repo
+```sh
+ curl -fsSL get.docker.com -o get-docker.sh
+ sh get-docker.sh --mirror Aliyun
 ```
 
-安装:
+检测Docker是否安装成功
 
-```bash
-sudo yum install docker-ce docker-ce-cli containerd.io
+```sh
+docker version
+```
+
+配置阿里云Docker镜像加速器
+
+下载镜像
+
+```
+docker pull 镜像名称
+```
+
+启动镜像
+
+```
+ docker run -p 80:8080 tomcat
 ```
 
 
 
-## 使用 Docker
+## Docker 仓库
 
-### 创建镜像(Images)
-
-后续再补
-
-### 运行容器Container
-
-后续再补
-
-### 服务 
-
-在分布式环境中, 生产中的容器一个服务只需要一个Images, 它规范了服务的端口, 副本的数量, 服务的容量等等,.使用Docker平台很容易定义、运行和扩展服务——只需编写一个docker-composition.yml文件。
-
-`docker-compose.yml` 文件
-
-```yaml
-version: "3"
-services:
-  web:
-    # replace username/repo:tag with your name and image details
-    image: username/repo:tag
-    deploy:
-      replicas: 5
-      resources:
-        limits:
-          cpus: "0.1"
-          memory: 50M
-      restart_policy:
-        condition: on-failure
-    ports:
-      - "4000:80"
-    networks:
-      - webnet
-networks:
-  webnet:
-```
+公共仓库: https://hub.docker.com
 
 
 
-集群
