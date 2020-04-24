@@ -1,6 +1,6 @@
 # 负载均衡
 
-## Netflix Ribbon
+## Ribbon
 
 (目前已进入维护模式) 未来替换方案Spring Cloud load-balance
 
@@ -11,7 +11,7 @@
 
 默认规则为轮询
 
-## Ribbon自带的负载规则
+## 负载规则
 
 * `RoundRobinRule` 轮询
 * `RandomRule`随机
@@ -37,3 +37,6 @@ public class CustomLoadbalanceRule {
 @RibbonClient(name="PAYMENT-SERVICE" ,configuration = CustomRule.class )
 ```
 
+## 自定义规则
+
+略

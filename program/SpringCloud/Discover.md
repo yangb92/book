@@ -1,9 +1,5 @@
 # 服务注册与发现
 
-## Discovery
-
-DiscoverClient 类
-
 ## Eureka
 
 #### 服务端
@@ -211,5 +207,22 @@ eureka:
   instance:
     lease-renewal-interval-in-seconds: 30 # Eureka 客户端向服务端发送心跳的时间间隔
     lease-expiration-duration-in-seconds: 90 # Eureka服务端在收到最后一次心跳后等待的时间上限, 超时将剔除服务
+```
+
+
+
+
+
+**DiscoverClient** 
+
+```java
+@Autowired
+private DiscoveryClient discoveryClient;
+String clients = discoveryClient.getServices().stream()
+    .map(item -> discoveryClient.getInstances(item).stream()
+         .map(instance ->
+              instance.getHost() +  instance.getPort() + instance.getUri() + 			instance.getScheme()
+             ).collect(Collectors.joining("|")))
+    .collect(Collectors.joining("/"));
 ```
 
