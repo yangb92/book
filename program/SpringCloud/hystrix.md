@@ -56,12 +56,8 @@ public class PaymentServer {
 
 ```java
 @Override
-@HystrixCommand(
-        fallbackMethod = "timeoutHandler",
-        commandProperties = {
-        @HystrixProperty(name = "execution.isolation.thread.timeoutInMilliseconds", value = "3000") //设置服务调用超时时间
-        }
-)
+@HystrixCommand(fallbackMethod = "timeoutHandler",commandProperties = {
+    @HystrixProperty(name = "execution.isolation.thread.timeoutInMilliseconds", value = "5000")})
 public String errrMethod(Integer id){
     try {
         TimeUnit.SECONDS.sleep(5);
@@ -76,7 +72,65 @@ public String timeoutHandler(Integer id){
 }
 ```
 
+### 全局服务降级
 
+添加全局`@DefaultProperties`服务降级属性
+
+```java
+@Service
+@DefaultProperties(defaultFallback = "globalFallbackMethod")
+public class PaymentServiceImpl implements PaymentService {
+    
+    @HystrixCommand
+    public String errrMethod(Integer id){
+        int x = 1/0;
+        try {
+            TimeUnit.SECONDS.sleep(8);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return "服务演示!";
+    }
+    
+    public String globalFallbackMethod(){
+        return "调用异常,这是全局降级方案!";
+    }
+}
+```
+
+### 哪些情况会导致降级
+
+1. 程序运行异常
+2. 超时
+3. 服务熔断处罚降级
+4. 线程池/信号量 打满也会导致服务降级
+
+### 熔断机制
+
+当扇出链路的某个微服务出错不可用或者响应时间太长时, 进而熔断该节点的微服务调用,快速返回错误信息. **当检测到该节点微服务调用响应正常后,恢复调用链路.**
+
+熔断注解`@HystrixCommand`
+
+![image-20200426144229377](image-20200426144229377.png)
+
+半开效果, 断路器打开时,会尝试调用远程服务,如果远程服务可用, 断路器会自动关闭.
+
+`HystrixCommandProperties.class` 包含了熔断的默认配置属性.
+
+**隔离策略**
+
+THREAD 线程池隔离, SEMAPHORE 信号池隔离, 如果采用线程池隔离,令牌中继的时候获取登录的Authorization为空, 所以无法进行令牌传递.
+
+```yml
+hystrix:
+  command:
+    default: #default全局有效，service id指定应用有效
+      execution:
+        isolation:
+          strategy: SEMAPHORE # 隔离策略: THREAD 线程池隔离, SEMAPHORE 信号池隔离, 如果采用线程池隔离,令牌中继的时候无法获取Authorization
+          thread:
+            timeoutInMilliseconds: 3000 #断路器超时时间，默认1000ms
+```
 
 
 

@@ -1458,9 +1458,35 @@
 <span class="hljs-attr">  level:</span>
     com.yangb.business.order.service.PaymentFeignService: debug <span class="hljs-comment"># feign&#x65E5;&#x5FD7;&#x4EE5;&#x4EC0;&#x4E48;&#x7EA7;&#x522B;&#x76D1;&#x63A7;&#x54EA;&#x4E2A;&#x63A5;&#x53E3;</span>
 </code></pre>
+<h3 id="&#x65AD;&#x8DEF;&#x5668;">&#x65AD;&#x8DEF;&#x5668;</h3>
+<blockquote>
+<p>&#x542F;&#x7528;feign&#x65AD;&#x8DEF;&#x5668;,&#x4F1A;&#x5BFC;&#x81F4;&#x4EE4;&#x724C;&#x4E2D;&#x7EE7;&#x5931;&#x8D25; SecurityContextHolder.getContext().getAuthentication() &#x4E3A;null</p>
+</blockquote>
+<p>&#x542F;&#x7528;&#x65AD;&#x8DEF;&#x5668;</p>
+<pre><code class="lang-yml"><span class="hljs-comment"># &#x542F;&#x7528;feign&#x7194;&#x65AD;&#x5668;</span>
+<span class="hljs-attr">feign:</span>
+<span class="hljs-attr">  hystrix:</span>
+<span class="hljs-attr">    enabled:</span> <span class="hljs-literal">true</span>
+</code></pre>
+<p>&#x521B;&#x5EFA;FeignClient&#x63A5;&#x53E3;&#x7684;&#x5B9E;&#x73B0;&#x7C7B;,&#x7528;&#x4E8E;&#x5904;&#x7406;&#x5F02;&#x5E38;&#x60C5;&#x51B5;</p>
+<pre><code class="lang-java"><span class="hljs-meta">@Service</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">PaymentFeignServiceFallbackImpl</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">PaymentFeignService</span> </span>{
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> ResultVo <span class="hljs-title">error</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">return</span> ResultVo.makeFailed(<span class="hljs-string">&quot;&#x670D;&#x52A1;&#x54CD;&#x5E94;&#x5931;&#x8D25;&quot;</span>);
+    }
+}
+</code></pre>
+<p>&#x914D;&#x7F6E;&#x5728;fallback&#x5C5E;&#x6027;</p>
+<pre><code class="lang-java"><span class="hljs-meta">@FeignClient</span>(value = <span class="hljs-string">&quot;PAYMENT-SERVICE&quot;</span>,fallback = PaymentFeignServiceFallbackImpl.class)
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">PaymentFeignService</span> </span>{
+    <span class="hljs-meta">@GetMapping</span>(<span class="hljs-string">&quot;/payment/timeout&quot;</span>)
+    <span class="hljs-function">ResultVo <span class="hljs-title">error</span><span class="hljs-params">()</span></span>;
+}
+</code></pre>
 <h2 id="ribbon--httptemplate">Ribbon + HttpTemplate</h2>
 <footer class="page-footer"><span class="copyright">Copyright &#xA9; yangb  all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x7AE0;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
-2020-04-23 15:36:08
+2020-04-26 15:54:48
 </span></footer>
                                 
                                 </section>
@@ -1504,7 +1530,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"服务调用","level":"1.2.2.5","depth":3,"next":{"title":"服务网关","level":"1.2.2.6","depth":3,"path":"program/SpringCloud/gateway.md","ref":"program/SpringCloud/gateway.md","articles":[]},"previous":{"title":"服务发现","level":"1.2.2.4","depth":3,"path":"program/SpringCloud/Discover.md","ref":"program/SpringCloud/Discover.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","back-to-top-button","chapter-fold","sharing","donate","search-pro","insert-logo","theme-default","theme-comscore","code","splitter","tbfed-pagefooter","github","hide-element","katex"],"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy yangb ","modify_label":"该文章修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"github":{"url":"https://github.com/yangb92"},"splitter":{},"search-pro":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"donate":{"alipay":"https://gitee.com/yangb92/book/raw/gh-pages/git/alipay.png","alipayText":"支付宝打赏","button":"赏","title":"","wechat":"https://gitee.com/yangb92/book/raw/gh-pages/git/wxpay.png","wechatText":"微信打赏"},"hide-element":{"elements":[".gitbook-link"]},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"back-to-top-button":{},"sharing":{"all":["facebook","google","twitter","weibo","instapaper"],"facebook":true,"google":false,"instapaper":false,"twitter":true,"vk":false,"weibo":false},"theme-default":{"showLevel":true,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"insert-logo":{"style":"background: none; max-height: 80px; min-height: 10px","url":"https://gitee.com/yangb92/book/raw/gh-pages/favorite.png"}},"theme":"default","author":"杨斌","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"学习笔记","language":"zh-hans","gitbook":"*"},"file":{"path":"program/SpringCloud/ServiceCall.md","mtime":"2020-04-23T07:36:08.884Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-26T05:24:39.651Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"服务调用","level":"1.2.2.5","depth":3,"next":{"title":"服务网关","level":"1.2.2.6","depth":3,"path":"program/SpringCloud/gateway.md","ref":"program/SpringCloud/gateway.md","articles":[]},"previous":{"title":"服务发现","level":"1.2.2.4","depth":3,"path":"program/SpringCloud/Discover.md","ref":"program/SpringCloud/Discover.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","back-to-top-button","chapter-fold","sharing","donate","search-pro","insert-logo","theme-default","theme-comscore","code","splitter","tbfed-pagefooter","github","hide-element","katex"],"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy yangb ","modify_label":"该文章修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"github":{"url":"https://github.com/yangb92"},"splitter":{},"search-pro":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"donate":{"alipay":"https://gitee.com/yangb92/book/raw/gh-pages/git/alipay.png","alipayText":"支付宝打赏","button":"赏","title":"","wechat":"https://gitee.com/yangb92/book/raw/gh-pages/git/wxpay.png","wechatText":"微信打赏"},"hide-element":{"elements":[".gitbook-link"]},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"back-to-top-button":{},"sharing":{"all":["facebook","google","twitter","weibo","instapaper"],"facebook":true,"google":false,"instapaper":false,"twitter":true,"vk":false,"weibo":false},"theme-default":{"showLevel":true,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"insert-logo":{"style":"background: none; max-height: 80px; min-height: 10px","url":"https://gitee.com/yangb92/book/raw/gh-pages/favorite.png"}},"theme":"default","author":"杨斌","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"学习笔记","language":"zh-hans","gitbook":"*"},"file":{"path":"program/SpringCloud/ServiceCall.md","mtime":"2020-04-26T07:54:48.540Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-26T08:23:23.480Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

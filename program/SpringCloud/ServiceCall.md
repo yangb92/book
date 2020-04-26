@@ -88,7 +88,40 @@ logging:
     com.yangb.business.order.service.PaymentFeignService: debug # feign日志以什么级别监控哪个接口
 ```
 
+### 断路器
 
+> 启用feign断路器,会导致令牌中继失败 SecurityContextHolder.getContext().getAuthentication() 为null
+
+启用断路器
+
+```yml
+# 启用feign熔断器
+feign:
+  hystrix:
+    enabled: true
+```
+
+创建FeignClient接口的实现类,用于处理异常情况
+
+```java
+@Service
+public class PaymentFeignServiceFallbackImpl implements PaymentFeignService {
+    @Override
+    public ResultVo error() {
+        return ResultVo.makeFailed("服务响应失败");
+    }
+}
+```
+
+配置在fallback属性
+
+```java
+@FeignClient(value = "PAYMENT-SERVICE",fallback = PaymentFeignServiceFallbackImpl.class)
+public interface PaymentFeignService {
+    @GetMapping("/payment/timeout")
+    ResultVo error();
+}
+```
 
 
 
