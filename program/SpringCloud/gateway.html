@@ -95,10 +95,10 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="../SpringSecurity/" />
+    <link rel="next" href="hystrix.html" />
     
     
-    <link rel="prev" href="Breaker.html" />
+    <link rel="prev" href="ServiceCall.html" />
     
 
     </head>
@@ -390,14 +390,14 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.2.6" data-path="Breaker.html">
+        <li class="chapter active" data-level="1.2.2.6" data-path="gateway.html">
             
-                <a href="Breaker.html">
+                <a href="gateway.html">
             
                     
                         <b>1.2.2.6.</b>
                     
-                    断路器
+                    服务网关
             
                 </a>
             
@@ -405,14 +405,14 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.2.2.7" data-path="gateway.html">
+        <li class="chapter " data-level="1.2.2.7" data-path="hystrix.html">
             
-                <a href="gateway.html">
+                <a href="hystrix.html">
             
                     
                         <b>1.2.2.7.</b>
                     
-                    服务网关
+                    服务降级/熔断/限流
             
                 </a>
             
@@ -1490,69 +1490,47 @@
 <p><strong>(5) &#x65AD;&#x8A00; Predicate </strong></p>
 <p><a href="https://cloud.spring.io/spring-cloud-static/spring-cloud-gateway/2.2.2.RELEASE/reference/html/#gateway-request-predicates-factories" target="_blank">&#x5B98;&#x65B9;&#x6587;&#x6863;</a></p>
 <p>&#x65AD;&#x8A00;&#x5217;&#x8868;: </p>
-<ol>
-<li>After Route Predicate  &#x5728;&#x6307;&#x5B9A;&#x65E5;&#x671F;&#x65F6;&#x95F4;&#x4E4B;&#x540E;&#x8BF7;&#x6C42;</li>
-</ol>
+<p>After Route Predicate  &#x5728;&#x6307;&#x5B9A;&#x65E5;&#x671F;&#x65F6;&#x95F4;&#x4E4B;&#x540E;&#x8BF7;&#x6C42;</p>
 <pre><code class="lang-yml"><span class="hljs-attr">predicates:</span>
 <span class="hljs-bullet">  -</span> After=<span class="hljs-number">2017</span><span class="hljs-bullet">-01</span><span class="hljs-bullet">-20</span>T17:<span class="hljs-number">42</span>:<span class="hljs-number">47.789</span><span class="hljs-bullet">-07</span>:<span class="hljs-number">00</span>[America/Denver]
 </code></pre>
-<ol>
-<li>Before Route Predicate &#x5728;&#x6307;&#x5B9A;&#x65E5;&#x671F;&#x65F6;&#x95F4;&#x4E4B;&#x524D;&#x8BF7;&#x6C42;</li>
-</ol>
+<p>Before Route Predicate &#x5728;&#x6307;&#x5B9A;&#x65E5;&#x671F;&#x65F6;&#x95F4;&#x4E4B;&#x524D;&#x8BF7;&#x6C42;</p>
 <pre><code class="lang-yml"><span class="hljs-attr">predicates:</span>
 <span class="hljs-bullet">  -</span> Before=<span class="hljs-number">2017</span><span class="hljs-bullet">-01</span><span class="hljs-bullet">-20</span>T17:<span class="hljs-number">42</span>:<span class="hljs-number">47.789</span><span class="hljs-bullet">-07</span>:<span class="hljs-number">00</span>[America/Denver]
 </code></pre>
-<ol>
-<li>Between Route Predicate &#x5728;&#x6307;&#x5B9A;&#x65E5;&#x671F;&#x65F6;&#x95F4;&#x4E4B;&#x95F4;&#x8BF7;&#x6C42;</li>
-</ol>
+<p>Between Route Predicate &#x5728;&#x6307;&#x5B9A;&#x65E5;&#x671F;&#x65F6;&#x95F4;&#x4E4B;&#x95F4;&#x8BF7;&#x6C42;</p>
 <pre><code class="lang-yml"><span class="hljs-attr">predicates:</span>
 <span class="hljs-bullet">  -</span> Between=<span class="hljs-number">2017</span><span class="hljs-bullet">-01</span><span class="hljs-bullet">-20</span>T17:<span class="hljs-number">42</span>:<span class="hljs-number">47.789</span><span class="hljs-bullet">-07</span>:<span class="hljs-number">00</span>[America/Denver], <span class="hljs-number">2017</span><span class="hljs-bullet">-01</span><span class="hljs-bullet">-21</span>T17:<span class="hljs-number">42</span>:<span class="hljs-number">47.789</span><span class="hljs-bullet">-07</span>:<span class="hljs-number">00</span>[America/Denver]
 </code></pre>
-<ol>
-<li>Cookie Route Predicate &#x5339;&#x914D;&#x5177;&#x6709;&#x7ED9;&#x5B9A;&#x540D;&#x79F0;&#x4E14;&#x5176;&#x503C;&#x4E0E;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x5339;&#x914D;&#x7684; cookie</li>
-</ol>
+<p>Cookie Route Predicate &#x5339;&#x914D;&#x5177;&#x6709;&#x7ED9;&#x5B9A;&#x540D;&#x79F0;&#x4E14;&#x5176;&#x503C;&#x4E0E;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x5339;&#x914D;&#x7684; cookie</p>
 <pre><code class="lang-yml"><span class="hljs-attr">predicates:</span>
 <span class="hljs-bullet">  -</span> Cookie=chocolate, ch.p
 </code></pre>
-<ol>
-<li>Header Cookie Route Predicate &#x540D;&#x79F0;&#x4E14;&#x5176;&#x503C;&#x4E0E;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x5339;&#x914D;&#x7684; head &#x5339;&#x914D;</li>
-</ol>
+<p>Header Cookie Route Predicate &#x540D;&#x79F0;&#x4E14;&#x5176;&#x503C;&#x4E0E;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x5339;&#x914D;&#x7684; head &#x5339;&#x914D;</p>
 <pre><code class="lang-yml"><span class="hljs-attr">predicates:</span>
 <span class="hljs-bullet">  -</span> Header=X-Request-Id, \d+
 </code></pre>
-<ol>
-<li>Host Route Predicate &#x4E3B;&#x673A;&#x540D;&#x5339;&#x914D;</li>
-</ol>
+<p>Host Route Predicate &#x4E3B;&#x673A;&#x540D;&#x5339;&#x914D;</p>
 <pre><code class="lang-yml"><span class="hljs-attr">predicates:</span>
 <span class="hljs-bullet">  -</span> Host=**.somehost.org,**.anotherhost.org
 </code></pre>
-<ol>
-<li>Method Route Predicate &#x65B9;&#x6CD5;&#x5339;&#x914D;</li>
-</ol>
+<p>Method Route Predicate &#x65B9;&#x6CD5;&#x5339;&#x914D;</p>
 <pre><code class="lang-yml"><span class="hljs-attr">predicates:</span>
 <span class="hljs-bullet">  -</span> Method=GET,POST
 </code></pre>
-<ol>
-<li>Path Route Predicate &#x8DEF;&#x5F84;&#x5339;&#x914D;</li>
-</ol>
+<p>Path Route Predicate &#x8DEF;&#x5F84;&#x5339;&#x914D;</p>
 <pre><code class="lang-yml"><span class="hljs-attr">predicates:</span>
 <span class="hljs-bullet">  -</span> Path=/red/{segment},/blue/{segment}
 </code></pre>
-<ol>
-<li>Query Route Predicate &#x53C2;&#x6570;&#x5339;&#x914D;, &#x53C2;&#x6570;&#x540D;&#x79F0;&#x548C;&#x53C2;&#x6570;&#x503C;&#x5F97;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;</li>
-</ol>
+<p>Query Route Predicate &#x53C2;&#x6570;&#x5339;&#x914D;, &#x53C2;&#x6570;&#x540D;&#x79F0;&#x548C;&#x53C2;&#x6570;&#x503C;&#x5F97;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;</p>
 <pre><code class="lang-yml"><span class="hljs-attr">predicates:</span>
 <span class="hljs-bullet">  -</span> Query=red, gree.
 </code></pre>
-<ol>
-<li>RemoteAddr Route Predicate IP&#x5730;&#x5740;&#x5339;&#x914D;  ip&#x5730;&#x5740;/&#x5B50;&#x7F51;&#x63A9;&#x7801;</li>
-</ol>
+<p>RemoteAddr Route Predicate IP&#x5730;&#x5740;&#x5339;&#x914D;  ip&#x5730;&#x5740;/&#x5B50;&#x7F51;&#x63A9;&#x7801;</p>
 <pre><code class="lang-yml"><span class="hljs-attr">predicates:</span>
 <span class="hljs-bullet">  -</span> RemoteAddr=<span class="hljs-number">192.168</span><span class="hljs-number">.1</span><span class="hljs-number">.1</span>/<span class="hljs-number">24</span>
 </code></pre>
-<ol>
-<li>Weight Route Predicate &#x914D;&#x7F6E;&#x6743;&#x91CD;,  &#x7EC4;&#x540D;&#x79F0;&#x548C;&#x6743;&#x91CD;&#x503C;,&#x6743;&#x91CD;&#x662F;&#x6309;&#x7EC4;&#x8BA1;&#x7B97;&#x7684;,&#x5C06;20%&#x7684;&#x6D41;&#x91CF;&#x8F6C;&#x53D1;&#x5230;&#x8FD9;&#x4E2A;&#x8DEF;&#x7531;</li>
-</ol>
+<p>Weight Route Predicate &#x914D;&#x7F6E;&#x6743;&#x91CD;,  &#x7EC4;&#x540D;&#x79F0;&#x548C;&#x6743;&#x91CD;&#x503C;,&#x6743;&#x91CD;&#x662F;&#x6309;&#x7EC4;&#x8BA1;&#x7B97;&#x7684;,&#x5C06;20%&#x7684;&#x6D41;&#x91CF;&#x8F6C;&#x53D1;&#x5230;&#x8FD9;&#x4E2A;&#x8DEF;&#x7531;</p>
 <pre><code class="lang-yml"><span class="hljs-attr">predicates:</span>
 <span class="hljs-bullet">  -</span> Weight=group1, <span class="hljs-number">2</span>
 </code></pre>
@@ -1586,7 +1564,7 @@
 <h2 id="spring-cloud-netflix-zuul---&#x5DF2;&#x505C;&#x7528;-">Spring Cloud Netflix Zuul  ( &#x5DF2;&#x505C;&#x7528; )</h2>
 <p><a href="https://github.com/Netflix/zuul/wiki" target="_blank">Zuul 1.x</a> &#x7248;&#x672C;&#x5DF2;&#x505C;&#x7528;,  <a href="https://github.com/Netflix/zuul/wiki/Getting-Started-2.0" target="_blank">Zuul2.0</a> &#x8FD8;&#x5728;&#x5F00;&#x53D1;&#x4E2D;.</p>
 <footer class="page-footer"><span class="copyright">Copyright &#xA9; yangb  all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x7AE0;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
-2020-04-24 11:26:17
+2020-04-24 11:31:28
 </span></footer>
                                 
                                 </section>
@@ -1614,12 +1592,12 @@
 
             
                 
-                <a href="Breaker.html" class="navigation navigation-prev " aria-label="Previous page: 断路器">
+                <a href="ServiceCall.html" class="navigation navigation-prev " aria-label="Previous page: 服务调用">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="../SpringSecurity/" class="navigation navigation-next " aria-label="Next page: SpringSecurity">
+                <a href="hystrix.html" class="navigation navigation-next " aria-label="Next page: 服务降级/熔断/限流">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -1630,7 +1608,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"服务网关","level":"1.2.2.7","depth":3,"next":{"title":"SpringSecurity","level":"1.2.3","depth":2,"path":"program/SpringSecurity/index.md","ref":"program/SpringSecurity/index.md","articles":[{"title":"自定义认证对象","level":"1.2.3.1","depth":3,"path":"program/SpringSecurity/AuthenticationProvider.md","ref":"program/SpringSecurity/AuthenticationProvider.md","articles":[]},{"title":"SpringSecurity单体应用","level":"1.2.3.2","depth":3,"path":"program/SpringSecurity/SpringSecurity.md","ref":"program/SpringSecurity/SpringSecurity.md","articles":[]},{"title":"SpringSecurityOAuth2.0认证中心","level":"1.2.3.3","depth":3,"path":"program/SpringSecurity/SpringSecurityOAuth2.md","ref":"program/SpringSecurity/SpringSecurityOAuth2.md","articles":[]},{"title":"Redis会话共享","level":"1.2.3.4","depth":3,"path":"program/SpringSecurity/ContextRepository.md","ref":"program/SpringSecurity/ContextRepository.md","articles":[]}]},"previous":{"title":"断路器","level":"1.2.2.6","depth":3,"path":"program/SpringCloud/Breaker.md","ref":"program/SpringCloud/Breaker.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","back-to-top-button","chapter-fold","sharing","donate","search-pro","insert-logo","theme-default","theme-comscore","code","splitter","tbfed-pagefooter","github","hide-element","katex"],"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy yangb ","modify_label":"该文章修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"github":{"url":"https://github.com/yangb92"},"splitter":{},"search-pro":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"donate":{"alipay":"https://gitee.com/yangb92/book/raw/gh-pages/git/alipay.png","alipayText":"支付宝打赏","button":"赏","title":"","wechat":"https://gitee.com/yangb92/book/raw/gh-pages/git/wxpay.png","wechatText":"微信打赏"},"hide-element":{"elements":[".gitbook-link"]},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"back-to-top-button":{},"sharing":{"all":["facebook","google","twitter","weibo","instapaper"],"facebook":true,"google":false,"instapaper":false,"twitter":true,"vk":false,"weibo":false},"theme-default":{"showLevel":true,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"insert-logo":{"style":"background: none; max-height: 80px; min-height: 10px","url":"https://gitee.com/yangb92/book/raw/gh-pages/favorite.png"}},"theme":"default","author":"杨斌","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"学习笔记","language":"zh-hans","gitbook":"*"},"file":{"path":"program/SpringCloud/gateway.md","mtime":"2020-04-24T03:26:17.143Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-24T03:28:06.432Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"服务网关","level":"1.2.2.6","depth":3,"next":{"title":"服务降级/熔断/限流","level":"1.2.2.7","depth":3,"path":"program/SpringCloud/hystrix.md","ref":"program/SpringCloud/hystrix.md","articles":[]},"previous":{"title":"服务调用","level":"1.2.2.5","depth":3,"path":"program/SpringCloud/ServiceCall.md","ref":"program/SpringCloud/ServiceCall.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","back-to-top-button","chapter-fold","sharing","donate","search-pro","insert-logo","theme-default","theme-comscore","code","splitter","tbfed-pagefooter","github","hide-element","katex"],"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy yangb ","modify_label":"该文章修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"github":{"url":"https://github.com/yangb92"},"splitter":{},"search-pro":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"donate":{"alipay":"https://gitee.com/yangb92/book/raw/gh-pages/git/alipay.png","alipayText":"支付宝打赏","button":"赏","title":"","wechat":"https://gitee.com/yangb92/book/raw/gh-pages/git/wxpay.png","wechatText":"微信打赏"},"hide-element":{"elements":[".gitbook-link"]},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"back-to-top-button":{},"sharing":{"all":["facebook","google","twitter","weibo","instapaper"],"facebook":true,"google":false,"instapaper":false,"twitter":true,"vk":false,"weibo":false},"theme-default":{"showLevel":true,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"insert-logo":{"style":"background: none; max-height: 80px; min-height: 10px","url":"https://gitee.com/yangb92/book/raw/gh-pages/favorite.png"}},"theme":"default","author":"杨斌","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"学习笔记","language":"zh-hans","gitbook":"*"},"file":{"path":"program/SpringCloud/gateway.md","mtime":"2020-04-24T03:31:28.267Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-26T05:24:39.651Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

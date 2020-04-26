@@ -117,77 +117,77 @@ spring:
 
 断言列表: 
 
-1. After Route Predicate  在指定日期时间之后请求
+After Route Predicate  在指定日期时间之后请求
 
 ```yml
 predicates:
   - After=2017-01-20T17:42:47.789-07:00[America/Denver]
 ```
 
-2. Before Route Predicate 在指定日期时间之前请求
+Before Route Predicate 在指定日期时间之前请求
 
 ```yml
 predicates:
   - Before=2017-01-20T17:42:47.789-07:00[America/Denver]
 ```
 
-3. Between Route Predicate 在指定日期时间之间请求
+Between Route Predicate 在指定日期时间之间请求
 
 ```yml
 predicates:
   - Between=2017-01-20T17:42:47.789-07:00[America/Denver], 2017-01-21T17:42:47.789-07:00[America/Denver]
 ```
 
-4. Cookie Route Predicate 匹配具有给定名称且其值与正则表达式匹配的 cookie
+Cookie Route Predicate 匹配具有给定名称且其值与正则表达式匹配的 cookie
 
 ```yml
 predicates:
   - Cookie=chocolate, ch.p
 ```
 
-5. Header Cookie Route Predicate 名称且其值与正则表达式匹配的 head 匹配
+Header Cookie Route Predicate 名称且其值与正则表达式匹配的 head 匹配
 
 ```yml
 predicates:
   - Header=X-Request-Id, \d+
 ```
 
-6. Host Route Predicate 主机名匹配
+Host Route Predicate 主机名匹配
 
 ```yml
 predicates:
   - Host=**.somehost.org,**.anotherhost.org
 ```
 
-7. Method Route Predicate 方法匹配
+Method Route Predicate 方法匹配
 
 ```yml
 predicates:
   - Method=GET,POST
 ```
 
-8. Path Route Predicate 路径匹配
+Path Route Predicate 路径匹配
 
 ```yml
 predicates:
   - Path=/red/{segment},/blue/{segment}
 ```
 
-9. Query Route Predicate 参数匹配, 参数名称和参数值得正则表达式
+Query Route Predicate 参数匹配, 参数名称和参数值得正则表达式
 
 ```yml
 predicates:
   - Query=red, gree.
 ```
 
-10. RemoteAddr Route Predicate IP地址匹配  ip地址/子网掩码
+RemoteAddr Route Predicate IP地址匹配  ip地址/子网掩码
 
 ```yml
 predicates:
   - RemoteAddr=192.168.1.1/24
 ```
 
-11. Weight Route Predicate 配置权重,  组名称和权重值,权重是按组计算的,将20%的流量转发到这个路由
+Weight Route Predicate 配置权重,  组名称和权重值,权重是按组计算的,将20%的流量转发到这个路由
 
 ```yml
 predicates:

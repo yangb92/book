@@ -1,5 +1,7 @@
 # Spring Cloud 工程搭建
 
+源码: https://github.com/yangb92/spring-cloud-yoyo
+
 ## 环境准备
 
 > 约定 > 配置 > 编码
@@ -160,7 +162,7 @@ settings - Editor - File Types 添加不需要显示的文件
 
 
 
-## 业务子模块
+## 业务模块
 
 微服务模块步骤:
 
@@ -292,8 +294,6 @@ public class PaymentServer {
 | PageHelper | 分页插件                            |
 | generator  | 自动生成Entity,Mapper和Dao          |
 
-
-
 ## 注册中心
 
 见文档 [服务发现](Discover.md)
@@ -309,3 +309,7 @@ public class PaymentServer {
 ## 服务降级
 
 参考文档[Hystrix](Hystrix.md)
+
+## 服务网关
+
+参考文档[服务网关](gateway.md)

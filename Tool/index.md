@@ -1,4 +1,12 @@
-## 工具插件
+# 工具插件
+
+## 小技巧
+
+**b站看视频,右侧视屏选集栏显示完整名称**
+
+```js
+document.getElementById('multi_page').style="width:500px"
+```
 
 ## Chrome 插件
 
