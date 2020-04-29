@@ -74,9 +74,63 @@ services:
       - 80:8080
 ```
 
-运行compose项目
+### 运行compose项目
 
 ```sh
-docker-compose up
+docker-compose up [--build] [-d]
+```
+
+--build: 重新构建Dockerfile
+-d: 后台运行
+
+
+### 关闭docker项目
+```sh
+docker-compose down [--rmi all]
+```
+关闭并移除构建的镜像
+
+### 环境变量
+
+compose file 中为容器设置环境变量：
+ ```yml
+web:
+  environment:
+    DEBUG: 1
+ ```
+
+shell 写法
+```bash
+docker run -e DEBUG=1
+```
+
+使用文件设置环境变量
+```yml
+web:
+  env_file:
+    - web-variables.env
+```
+
+shell写法:
+```bash
+docker run --env-file=web-variables.env
+```
+
+.env 文件为 docker-compose.yml 文件引用的所有环境变量设置默认值！
+
+```properties
+# define env var default value.
+IMAGETAG=defaultwebimage
+APPNAME=default app name
+AUTHOR=default author name
+VERSION=default version is 1.0
+```
+
+使用.env中的环境变量
+```yml
+version: '3'
+services:
+  web:
+    image: ${IMAGETAG}   
 ```
 
