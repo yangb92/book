@@ -100,3 +100,151 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 }
 
 ```
+
+# 验证码校验
+
+前端提交验证码
+
+```java
+public class CustomWebAuthenticationDetails extends WebAuthenticationDetails {
+    @Getter // 设置getter方法，以便拿到验证码
+    private final String validateCode;
+    public CustomWebAuthenticationDetails(HttpServletRequest request) {
+        super(request);
+        // 拿页面传来的验证码
+        validateCode = request.getParameter("validateCode");
+    }
+}
+```
+
+配置认证对象
+```java
+@Component
+public class CustomAuthenticationDetailsSource implements AuthenticationDetailsSource<HttpServletRequest, WebAuthenticationDetails> {
+    @Override
+    public WebAuthenticationDetails buildDetails(HttpServletRequest httpRequest) {
+        return new CustomWebAuthenticationDetails(httpRequest);
+    }
+}
+
+```
+
+spring security 配置
+
+```java
+@EnableWebSecurity
+public class WebSecurityConfig extends WebSecurityConfigurerAdapter { 
+    
+    // 省略其他
+    
+    @Autowired
+    private AuthenticationDetailsSource authenticationDetailsSource;
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
+        http
+                .authorizeRequests()
+                .antMatchers("/get-validate-code").permitAll()
+                .anyRequest().authenticated()
+              .and()
+                .formLogin()
+                .loginPage("/user-login").permitAll()
+                .loginProcessingUrl("/my-login")
+                .authenticationDetailsSource(authenticationDetailsSource);
+        http.csrf().disable();
+    }
+}
+```
+
+自定义认证提供者
+
+```java
+@Component
+public class CustomAuthenticationProvider extends AbstractUserDetailsAuthenticationProvider {
+    @Autowired
+    private CustomUserDetailsService userDetailsService;
+    @Autowired
+    private PasswordEncoder passwordEncoder;
+
+    @Override
+    protected void additionalAuthenticationChecks(UserDetails userDetails, UsernamePasswordAuthenticationToken authentication) throws AuthenticationException {
+        // 获取登录提交的用户名和密码
+        String inputPassword = (String) authentication.getCredentials();
+
+        // 获取登录提交的验证码
+        CustomWebAuthenticationDetails details = (CustomWebAuthenticationDetails) authentication.getDetails();
+        String validateCode = details.getValidateCode();
+
+        //校验验证码, 如果错误抛出自定义异常ValidateCodeException
+
+        // 验证用户名
+        if (!passwordEncoder.matches(inputPassword, userDetails.getPassword())) {
+            throw new BadCredentialsException("密码错误");
+        }
+    }
+    
+    @Override
+    protected UserDetails retrieveUser(String username, UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken) throws AuthenticationException {
+        return userDetailsService.loadUserByUsername(username);
+    }
+}
+
+```
+
+自定义异常
+```java
+class ValidateCodeException extends AuthenticationException {
+    ValidateCodeException(String message) {
+        super(message);
+    }
+}
+```
+
+方法二: 增加过滤器, 判断验证码
+
+```java
+@Component
+public class SmsCodeFilter extends OncePerRequestFilter {
+
+    @Autowired
+    private AuthenticationFailureHandler authenticationFailureHandler;
+
+    private SessionStrategy sessionStrategy = new HttpSessionSessionStrategy();
+
+    @Override
+    protected void doFilterInternal(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, 
+    	FilterChain filterChain) throws ServletException, IOException {
+        if (StringUtils.equalsIgnoreCase("/login/mobile", httpServletRequest.getRequestURI())
+                && StringUtils.equalsIgnoreCase(httpServletRequest.getMethod(), "post")) {
+            try {
+                // 判断验证码的正确性
+                validateCode(new ServletWebRequest(httpServletRequest));
+            } catch (ValidateCodeException e) {
+                authenticationFailureHandler.onAuthenticationFailure(httpServletRequest, httpServletResponse, e);
+                return;
+            }
+        }
+        filterChain.doFilter(httpServletRequest, httpServletResponse);
+    }
+
+}
+```
+
+配置过滤器
+```java
+@Configuration
+public class BrowserSecurityConfig extends WebSecurityConfigurerAdapter {
+
+    @Bean
+    public PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
+    }
+
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
+        http.
+            .addFilterBefore(smsCodeFilter, UsernamePasswordAuthenticationFilter.class) // 添加短信验证码校验过滤器
+    }
+}
+
+```
+
