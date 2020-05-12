@@ -1,0 +1,1982 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>NIO · 学习笔记</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="杨斌">
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-donate/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-insert-logo/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-katex/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-theme-comscore/test.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../../website.css">
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../mcu/MicroControllerUnit.html" />
+    
+    
+    <link rel="prev" href="bio.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                        <b>1.1.</b>
+                    
+                    介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../">
+            
+                <a href="../">
+            
+                    
+                        <b>1.2.</b>
+                    
+                    软件编程
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../springboot/">
+            
+                <a href="../springboot/">
+            
+                    
+                        <b>1.2.1.</b>
+                    
+                    SpringBoot
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1" data-path="../springboot/SpringBootDruid.html">
+            
+                <a href="../springboot/SpringBootDruid.html">
+            
+                    
+                        <b>1.2.1.1.</b>
+                    
+                    SpringBoot整合Druid
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.2" data-path="../springboot/SpringBootTkMybaits.html">
+            
+                <a href="../springboot/SpringBootTkMybaits.html">
+            
+                    
+                        <b>1.2.1.2.</b>
+                    
+                    SpringBoot整合tk.mybatis
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.3" data-path="../springboot/SpringBootPageHelper.html">
+            
+                <a href="../springboot/SpringBootPageHelper.html">
+            
+                    
+                        <b>1.2.1.3.</b>
+                    
+                    SpringBoot整合PageHelper
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.4" data-path="../springboot/generator.html">
+            
+                <a href="../springboot/generator.html">
+            
+                    
+                        <b>1.2.1.4.</b>
+                    
+                    Mybatis Maven插件生成代码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.5" data-path="../../SpringBoot/thymeleaf.md">
+            
+                <span>
+            
+                    
+                        <b>1.2.1.5.</b>
+                    
+                    thymeleaf 模板引擎
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.6" data-path="../SpringBoot/SpringDataJPA.html">
+            
+                <a href="../SpringBoot/SpringDataJPA.html">
+            
+                    
+                        <b>1.2.1.6.</b>
+                    
+                    SpringDataJPA
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.7" data-path="../SpringBoot/SpringDataJdbc.html">
+            
+                <a href="../SpringBoot/SpringDataJdbc.html">
+            
+                    
+                        <b>1.2.1.7.</b>
+                    
+                    SpringDataJDBC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.8" data-path="../SpringBoot/LinuxService.html">
+            
+                <a href="../SpringBoot/LinuxService.html">
+            
+                    
+                        <b>1.2.1.8.</b>
+                    
+                    部署为linux服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../springcloud/">
+            
+                <a href="../springcloud/">
+            
+                    
+                        <b>1.2.2.</b>
+                    
+                    Spring Cloud
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.1" data-path="../springcloud/stopdesc.html">
+            
+                <a href="../springcloud/stopdesc.html">
+            
+                    
+                        <b>1.2.2.1.</b>
+                    
+                    SpringCloud组件状态
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.2" data-path="../springcloud/version..html">
+            
+                <a href="../springcloud/version..html">
+            
+                    
+                        <b>1.2.2.2.</b>
+                    
+                    版本选型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.3" data-path="../springcloud/project.html">
+            
+                <a href="../springcloud/project.html">
+            
+                    
+                        <b>1.2.2.3.</b>
+                    
+                    微服务框架
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.4" data-path="../springcloud/Discover.html">
+            
+                <a href="../springcloud/Discover.html">
+            
+                    
+                        <b>1.2.2.4.</b>
+                    
+                    服务发现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.5" data-path="../springcloud/ServiceCall.html">
+            
+                <a href="../springcloud/ServiceCall.html">
+            
+                    
+                        <b>1.2.2.5.</b>
+                    
+                    服务调用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.6" data-path="../springcloud/gateway.html">
+            
+                <a href="../springcloud/gateway.html">
+            
+                    
+                        <b>1.2.2.6.</b>
+                    
+                    服务网关
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.7" data-path="../springcloud/hystrix.html">
+            
+                <a href="../springcloud/hystrix.html">
+            
+                    
+                        <b>1.2.2.7.</b>
+                    
+                    服务降级/熔断/限流
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.8" data-path="../springcloud/config.html">
+            
+                <a href="../springcloud/config.html">
+            
+                    
+                        <b>1.2.2.8.</b>
+                    
+                    配置服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../springsecurity/">
+            
+                <a href="../springsecurity/">
+            
+                    
+                        <b>1.2.3.</b>
+                    
+                    SpringSecurity
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.3.1" data-path="../springsecurity/AuthenticationProvider.html">
+            
+                <a href="../springsecurity/AuthenticationProvider.html">
+            
+                    
+                        <b>1.2.3.1.</b>
+                    
+                    自定义认证对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.2" data-path="../springsecurity/SpringSecurity.html">
+            
+                <a href="../springsecurity/SpringSecurity.html">
+            
+                    
+                        <b>1.2.3.2.</b>
+                    
+                    SpringSecurity单体应用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.3" data-path="../springsecurity/SpringSecurityOAuth2.html">
+            
+                <a href="../springsecurity/SpringSecurityOAuth2.html">
+            
+                    
+                        <b>1.2.3.3.</b>
+                    
+                    SpringSecurityOAuth2.0认证中心
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.4" data-path="../springsecurity/ContextRepository.html">
+            
+                <a href="../springsecurity/ContextRepository.html">
+            
+                    
+                        <b>1.2.3.4.</b>
+                    
+                    Redis会话共享
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../springmvc/">
+            
+                <a href="../springmvc/">
+            
+                    
+                        <b>1.2.4.</b>
+                    
+                    SpringMVC
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.4.1" data-path="../springmvc/HandlerMethodArgumentResolver.html">
+            
+                <a href="../springmvc/HandlerMethodArgumentResolver.html">
+            
+                    
+                        <b>1.2.4.1.</b>
+                    
+                    自定义参数解析器
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../docker/">
+            
+                <a href="../docker/">
+            
+                    
+                        <b>1.2.5.</b>
+                    
+                    Docker
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.5.1" data-path="../docker/install.html">
+            
+                <a href="../docker/install.html">
+            
+                    
+                        <b>1.2.5.1.</b>
+                    
+                    Docker 安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.2" data-path="../docker/Compose.html">
+            
+                <a href="../docker/Compose.html">
+            
+                    
+                        <b>1.2.5.2.</b>
+                    
+                    Docker-Compose安装卸载
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.3" data-path="../docker/ComposeCommand.html">
+            
+                <a href="../docker/ComposeCommand.html">
+            
+                    
+                        <b>1.2.5.3.</b>
+                    
+                    Docker-Compose命令说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.4" data-path="../docker/ComposeTemplate.html">
+            
+                <a href="../docker/ComposeTemplate.html">
+            
+                    
+                        <b>1.2.5.4.</b>
+                    
+                    Docker-Compose模板文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.5" data-path="../docker/demo.html">
+            
+                <a href="../docker/demo.html">
+            
+                    
+                        <b>1.2.5.5.</b>
+                    
+                    Docker-Compose常用配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../ci/">
+            
+                <a href="../ci/">
+            
+                    
+                        <b>1.2.6.</b>
+                    
+                    持续集成
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.6.1" data-path="../ci/GitLabOnDocker.html">
+            
+                <a href="../ci/GitLabOnDocker.html">
+            
+                    
+                        <b>1.2.6.1.</b>
+                    
+                    Gitlab On Docker
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6.2" data-path="../ci/GitLabRunnerDocker.html">
+            
+                <a href="../ci/GitLabRunnerDocker.html">
+            
+                    
+                        <b>1.2.6.2.</b>
+                    
+                    GilabRunner
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../linux/">
+            
+                <a href="../linux/">
+            
+                    
+                        <b>1.2.7.</b>
+                    
+                    Linux
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.7.1" data-path="../linux/screen.html">
+            
+                <a href="../linux/screen.html">
+            
+                    
+                        <b>1.2.7.1.</b>
+                    
+                    screen分屏命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7.2" data-path="../linux/crontab.html">
+            
+                <a href="../linux/crontab.html">
+            
+                    
+                        <b>1.2.7.2.</b>
+                    
+                    crontab定时任务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7.3" data-path="../linux/tldr.html">
+            
+                <a href="../linux/tldr.html">
+            
+                    
+                        <b>1.2.7.3.</b>
+                    
+                    tldr命令手册
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7.4" data-path="../linux/root.html">
+            
+                <a href="../linux/root.html">
+            
+                    
+                        <b>1.2.7.4.</b>
+                    
+                    root权限用户
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7.5" data-path="../linux/ufw.html">
+            
+                <a href="../linux/ufw.html">
+            
+                    
+                        <b>1.2.7.5.</b>
+                    
+                    UFW 防护墙
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7.6" data-path="../linux/ssh.html">
+            
+                <a href="../linux/ssh.html">
+            
+                    
+                        <b>1.2.7.6.</b>
+                    
+                    ssh 命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7.7" data-path="../linux/ohmyzsh.html">
+            
+                <a href="../linux/ohmyzsh.html">
+            
+                    
+                        <b>1.2.7.7.</b>
+                    
+                    ohmyzsh 主题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7.8" data-path="../linux/java.html">
+            
+                <a href="../linux/java.html">
+            
+                    
+                        <b>1.2.7.8.</b>
+                    
+                    Java 环境变量配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../java/">
+            
+                <a href="../java/">
+            
+                    
+                        <b>1.2.8.</b>
+                    
+                    Java
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.8.1" data-path="../java/codeinnote.html">
+            
+                <a href="../java/codeinnote.html">
+            
+                    
+                        <b>1.2.8.1.</b>
+                    
+                    注释中执行代码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8.2" data-path="../java/GuavaCache.html">
+            
+                <a href="../java/GuavaCache.html">
+            
+                    
+                        <b>1.2.8.2.</b>
+                    
+                    GuavaCache定时缓存
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8.3" data-path="../java/functioncode.html">
+            
+                <a href="../java/functioncode.html">
+            
+                    
+                        <b>1.2.8.3.</b>
+                    
+                    函数式编程(未完成)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8.4" data-path="../java/flowcode.html">
+            
+                <a href="../java/flowcode.html">
+            
+                    
+                        <b>1.2.8.4.</b>
+                    
+                    流式编程(未完成)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8.5" data-path="../java/hutool.html">
+            
+                <a href="../java/hutool.html">
+            
+                    
+                        <b>1.2.8.5.</b>
+                    
+                    糊涂工具包
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8.6" data-path="../java/design-patterns.html">
+            
+                <a href="../java/design-patterns.html">
+            
+                    
+                        <b>1.2.8.6.</b>
+                    
+                    设计模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8.7" data-path="../java/guava-cache.html">
+            
+                <a href="../java/guava-cache.html">
+            
+                    
+                        <b>1.2.8.7.</b>
+                    
+                    Guava Cache
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="../python/">
+            
+                <a href="../python/">
+            
+                    
+                        <b>1.2.9.</b>
+                    
+                    Python
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.9.1" data-path="../python/compileall.html">
+            
+                <a href="../python/compileall.html">
+            
+                    
+                        <b>1.2.9.1.</b>
+                    
+                    代码加密
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9.2" data-path="../python/mirrors.html">
+            
+                <a href="../python/mirrors.html">
+            
+                    
+                        <b>1.2.9.2.</b>
+                    
+                    镜像源配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9.3" data-path="../python/requirement.html">
+            
+                <a href="../python/requirement.html">
+            
+                    
+                        <b>1.2.9.3.</b>
+                    
+                    依赖管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10" data-path="../react/React.html">
+            
+                <a href="../react/React.html">
+            
+                    
+                        <b>1.2.10.</b>
+                    
+                    React
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.10.1" data-path="../react/components.html">
+            
+                <a href="../react/components.html">
+            
+                    
+                        <b>1.2.10.1.</b>
+                    
+                    组件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10.2" data-path="../react/webpack.html">
+            
+                <a href="../react/webpack.html">
+            
+                    
+                        <b>1.2.10.2.</b>
+                    
+                    Webpack简单使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10.3" data-path="../react/event.html">
+            
+                <a href="../react/event.html">
+            
+                    
+                        <b>1.2.10.3.</b>
+                    
+                    事件
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.11" data-path="./">
+            
+                <a href="./">
+            
+                    
+                        <b>1.2.11.</b>
+                    
+                    Netty
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.11.1" data-path="bio.html">
+            
+                <a href="bio.html">
+            
+                    
+                        <b>1.2.11.1.</b>
+                    
+                    BIO
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.11.2" data-path="nio.html">
+            
+                <a href="nio.html">
+            
+                    
+                        <b>1.2.11.2.</b>
+                    
+                    NIO
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.12" data-path="../mcu/MicroControllerUnit.html">
+            
+                <a href="../mcu/MicroControllerUnit.html">
+            
+                    
+                        <b>1.2.12.</b>
+                    
+                    单片机
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.12.1" data-path="../mcu/chip.html">
+            
+                <a href="../mcu/chip.html">
+            
+                    
+                        <b>1.2.12.1.</b>
+                    
+                    芯片
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.13" data-path="../android/adb.html">
+            
+                <a href="../android/adb.html">
+            
+                    
+                        <b>1.2.13.</b>
+                    
+                    Andorid-常用adb命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.14" data-path="../database/db.html">
+            
+                <a href="../database/db.html">
+            
+                    
+                        <b>1.2.14.</b>
+                    
+                    数据库
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.15" data-path="../maven/maven.html">
+            
+                <a href="../maven/maven.html">
+            
+                    
+                        <b>1.2.15.</b>
+                    
+                    maven-导包到本地仓库
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.16" data-path="../nginx/backups.html">
+            
+                <a href="../nginx/backups.html">
+            
+                    
+                        <b>1.2.16.</b>
+                    
+                    Nginx-主从热备
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../security/security.html">
+            
+                <a href="../../security/security.html">
+            
+                    
+                        <b>1.3.</b>
+                    
+                    网络安全
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../../security/demo.html">
+            
+                <a href="../../security/demo.html">
+            
+                    
+                        <b>1.3.1.</b>
+                    
+                    漏洞利用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../../security/kali.html">
+            
+                <a href="../../security/kali.html">
+            
+                    
+                        <b>1.3.2.</b>
+                    
+                    Kali
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../../security/google.html">
+            
+                <a href="../../security/google.html">
+            
+                    
+                        <b>1.3.3.</b>
+                    
+                    谷歌黑客语法
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../../tool/">
+            
+                <a href="../../tool/">
+            
+                    
+                        <b>1.4.</b>
+                    
+                    工具插件
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../../tool/PowerShell.html">
+            
+                <a href="../../tool/PowerShell.html">
+            
+                    
+                        <b>1.4.1.</b>
+                    
+                    PowerShell 美化主题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../../tool/hexo.html">
+            
+                <a href="../../tool/hexo.html">
+            
+                    
+                        <b>1.4.2.</b>
+                    
+                    Hexo 博客框架
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../../tool/chrome/">
+            
+                <a href="../../tool/chrome/">
+            
+                    
+                        <b>1.4.3.</b>
+                    
+                    chrome
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.3.1" data-path="../../tool/chrome/event.html">
+            
+                <a href="../../tool/chrome/event.html">
+            
+                    
+                        <b>1.4.3.1.</b>
+                    
+                    插件-事件监听
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../../tool/git/git.html">
+            
+                <a href="../../tool/git/git.html">
+            
+                    
+                        <b>1.4.4.</b>
+                    
+                    git
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.4.1" data-path="../../tool/git/gituse.html">
+            
+                <a href="../../tool/git/gituse.html">
+            
+                    
+                        <b>1.4.4.1.</b>
+                    
+                    在项目开发中使用git
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../../tool/gitbook.html">
+            
+                <a href="../../tool/gitbook.html">
+            
+                    
+                        <b>1.4.5.</b>
+                    
+                    Gitbook 电子书
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../../tool/jmeter.html">
+            
+                <a href="../../tool/jmeter.html">
+            
+                    
+                        <b>1.4.6.</b>
+                    
+                    JMeter 压力测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >NIO</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="nio">NIO</h1>
+<h2 id="&#x7B80;&#x4ECB;">&#x7B80;&#x4ECB;</h2>
+<ul>
+<li>&#x5168;&#x79F0; Non-blocking I/O, jdk1.4 &#x5F00;&#x59CB;&#x63D0;&#x4F9B;, <strong>&#x540C;&#x6B65;&#x975E;&#x963B;&#x585E;</strong></li>
+<li>NIO &#x76F8;&#x5173;&#x7C7B; <code>java.nio</code> &#x5305;&#x4E0B;.</li>
+<li>&#x4E09;&#x5927;&#x6838;&#x5FC3;: Channel(&#x901A;&#x9053;), Buffer(&#x7F13;&#x51B2;&#x533A;), Selector(&#x9009;&#x62E9;&#x5668;)</li>
+</ul>
+<p><strong>NIO &#x4E09;&#x5927;&#x6838;&#x5FC3;&#x539F;&#x7406;&#x793A;&#x610F;&#x56FE;</strong></p>
+<p><img src="image-20200508161908606.png" alt="image-20200508161908606" style="zoom:90%;"></p>
+<ol>
+<li>&#x6BCF;&#x4E2A; Channel &#x90FD;&#x4F1A;&#x5BF9;&#x5E94;&#x4E00;&#x4E2A; Buffer</li>
+<li>Selector &#x5BF9;&#x5E94;&#x4E00;&#x4E2A;&#x7EBF;&#x7A0B;,&#x4E00;&#x4E2A;&#x7EBF;&#x7A0B;&#x5BF9;&#x5E94;&#x591A;&#x4E2A; Channel</li>
+<li>&#x8BE5;&#x56FE;&#x53CD;&#x5E94;&#x4E86;&#x6709;&#x4E09;&#x4E2A; Channel &#x6CE8;&#x518C;&#x5230;&#x8BE5; Selector</li>
+<li>&#x7A0B;&#x5E8F;&#x5207;&#x6362;&#x5230;Channel&#x662F;&#x7531;&#x4E8B;&#x4EF6;( Event )&#x51B3;&#x5B9A;&#x7684;</li>
+<li>Selector &#x8DDF;&#x8FDB;&#x4E0D;&#x540C;&#x7684;&#x4E8B;&#x4EF6;, &#x5728;&#x5404;&#x4E2A;&#x901A;&#x9053;&#x5207;&#x6362;</li>
+<li>Buffer &#x662F;&#x4E00;&#x4E2A;&#x5185;&#x5B58;&#x5757;, &#x5E95;&#x5C42;&#x662F;&#x6570;&#x7EC4;</li>
+<li>&#x6570;&#x636E;&#x901A;&#x8FC7; Buffer &#x8BFB;&#x53D6;&#x548C;&#x5199;&#x5165;. (&#x548C;BIO&#x533A;&#x522B;: BIO&#x7684;&#x6D41;&#x662F;&#x5355;&#x5411;&#x7684;, NIO&#x4E2D;&#x7684;Buffer&#x662F;&#x53EF;&#x8BFB;&#x53EF;&#x5199;&#x7684;, &#x4F7F;&#x7528;flip&#x5207;&#x6362;)</li>
+<li>Channel &#x662F;&#x53CC;&#x5411;&#x7684;, &#x53EF;&#x4EE5;&#x8FD4;&#x56DE;&#x5E95;&#x5C42;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x7684;&#x60C5;&#x51B5;.</li>
+</ol>
+<p><strong>Buffer &#x7684;&#x4F7F;&#x7528;&#x6848;&#x4F8B;</strong></p>
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
+    <span class="hljs-comment">// &#x521B;&#x5EFA;buffer</span>
+    IntBuffer buffer = IntBuffer.allocate(<span class="hljs-number">5</span>);
+    <span class="hljs-comment">// &#x5B58;&#x653E;&#x6570;&#x636E;</span>
+    range(<span class="hljs-number">0</span>,buffer.capacity()).forEach(i -&gt; buffer.put(i*<span class="hljs-number">2</span>));
+    <span class="hljs-comment">// &#x53D6;&#x6570;&#x636E;</span>
+    buffer.flip(); <span class="hljs-comment">// &#x5C06;buffer&#x8F6C;&#x6362;, &#x8BFB;&#x5199;&#x5207;&#x6362;!</span>
+    <span class="hljs-keyword">while</span> (buffer.hasRemaining()) {
+        System.out.println(buffer.get());
+    }
+}
+</code></pre>
+<h2 id="&#x7F13;&#x51B2;&#x533A;buffer">&#x7F13;&#x51B2;&#x533A;(Buffer)</h2>
+<p>&#x672C;&#x8D28;&#x662F;&#x4E00;&#x4E2A;&#x53EF;&#x4EE5;&#x8BFB;&#x5199;&#x6570;&#x636E;&#x7684;&#x5185;&#x5B58;&#x5757;, &#x53EF;&#x4EE5;&#x7406;&#x89E3;&#x6210;&#x4E00;&#x4E2A;&#x542B;&#x6570;&#x7EC4;&#x7684;&#x5BB9;&#x5668;&#x5BF9;&#x8C61;.</p>
+<p><strong>&#x5E38;&#x7528;&#x5B50;&#x7C7B;</strong></p>
+<ul>
+<li><strong>ByteBuffer</strong></li>
+<li>ShortBuffer</li>
+<li>CharBuffer</li>
+<li>IntBuffer</li>
+<li>LongBuffer</li>
+<li>DoubleBuffer</li>
+<li>FloatBuffer</li>
+</ul>
+<p><strong>&#x7F13;&#x51B2;&#x533A;&#x7684;&#x5C5E;&#x6027;</strong></p>
+<table>
+<thead>
+<tr>
+<th>&#x5C5E;&#x6027;</th>
+<th>&#x63CF;&#x8FF0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>capacity</td>
+<td>&#x5BB9;&#x91CF;</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>&#x7F13;&#x51B2;&#x533A;&#x8BBE;&#x7F6E;&#x7684;&#x8BFB;&#x5199;&#x6781;&#x9650;&#x4F4D;&#x7F6E;, &#x6700;&#x5927;&#x4E0D;&#x80FD;&#x5927;&#x4E8E; capacity</td>
+</tr>
+<tr>
+<td>position</td>
+<td>&#x4F4D;&#x7F6E;,  &#x4E0B;&#x4E00;&#x6B21;&#x64CD;&#x4F5C;&#x4F4D;&#x7F6E;</td>
+</tr>
+<tr>
+<td>mark</td>
+<td>&#x6807;&#x8BB0;</td>
+</tr>
+</tbody>
+</table>
+<p><strong>&#x5E38;&#x7528;&#x65B9;&#x6CD5;</strong></p>
+<p>... </p>
+<h2 id="&#x901A;&#x9053;channel">&#x901A;&#x9053;(Channel)</h2>
+<ul>
+<li>BIO &#x4E2D; stream &#x662F;&#x5355;&#x5411;&#x7684;, Channel &#x662F;&#x53CC;&#x5411;&#x7684;.</li>
+<li>Channel &#x5728; NIO &#x4E2D;&#x662F;&#x4E00;&#x4E2A;&#x63A5;&#x53E3; <code>public interface Channel extends Closeable</code></li>
+<li>&#x5E38;&#x7528;&#x7684; Channel &#x7C7B;&#x6709;: <ul>
+<li><code>FileChannel</code> &#x6587;&#x4EF6;&#x6570;&#x636E;&#x8BFB;&#x5199;</li>
+<li><code>DatagramChannel</code> UDP &#x6570;&#x636E;&#x8BFB;&#x5199;</li>
+<li><code>ServerSocketChannel</code> &#x548C; <code>SocketChannel</code> TCP &#x6570;&#x636E;&#x8BFB;&#x5199;</li>
+</ul>
+</li>
+</ul>
+<p><strong>&#x6848;&#x4F8B;1</strong></p>
+<p>&#x901A;&#x8FC7;Channel &#x5C06;&#x6570;&#x636E;&#x5199;&#x5165;&#x6587;&#x4EF6;</p>
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> <span class="hljs-keyword">throws</span> IOException </span>{
+    String str = <span class="hljs-string">&quot;Hello, &#x6768;&#x658C;&quot;</span>;
+    <span class="hljs-comment">// &#x521B;&#x5EFA;&#x8F93;&#x51FA;&#x6D41;</span>
+    FileOutputStream fileOutputStream = <span class="hljs-keyword">new</span> 
+        FileOutputStream(<span class="hljs-string">&quot;C:/Users/DELL/Documents/mydoc/netty/bio/test.txt&quot;</span>);
+    <span class="hljs-comment">// &#x83B7;&#x53D6; Channel</span>
+    FileChannel fileChannel = fileOutputStream.getChannel();
+    <span class="hljs-comment">// &#x521B;&#x5EFA;&#x7F13;&#x51B2;&#x533A;</span>
+    ByteBuffer byteBuffer = ByteBuffer.allocate(<span class="hljs-number">1024</span>);
+    <span class="hljs-comment">// &#x5C06; str &#x653E;&#x5165;&#x5230; byteBuffer</span>
+    byteBuffer.put(str.getBytes());
+    <span class="hljs-comment">// &#x7FFB;&#x8F6C; byteBuffer</span>
+    byteBuffer.flip();
+    <span class="hljs-comment">// &#x628A; buffer &#x6570;&#x636E;&#x5199;&#x5165;&#x5230;&#x901A;&#x9053; fileChannel</span>
+    fileChannel.write(byteBuffer);
+
+    fileOutputStream.close();
+}
+</code></pre>
+<p><strong>&#x6848;&#x5217;2</strong></p>
+<p>&#x8BFB;&#x53D6;&#x6587;&#x4EF6;&#x5185;&#x5BB9;</p>
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> <span class="hljs-keyword">throws</span> IOException </span>{
+    <span class="hljs-comment">// &#x521B;&#x5EFA;&#x8F93;&#x51FA;&#x6D41;</span>
+    FileInputStream fileIn = <span class="hljs-keyword">new</span> 
+        FileInputStream(<span class="hljs-string">&quot;C:/Users/DELL/Documents/mydoc/netty/bio/test.txt&quot;</span>);
+    <span class="hljs-comment">// &#x83B7;&#x53D6; Channel</span>
+    FileChannel fileChannel = fileIn.getChannel();
+    <span class="hljs-comment">// &#x521B;&#x5EFA;&#x5B57;&#x8282;&#x7F13;&#x51B2;&#x5668;</span>
+    ByteBuffer buffer = ByteBuffer.allocate(<span class="hljs-number">1024</span>);
+    <span class="hljs-comment">// &#x5C06;&#x901A;&#x9053;&#x6570;&#x636E;&#x8BFB;&#x5165;&#x5230; buffer &#x4E2D;</span>
+    fileChannel.read(buffer);
+    <span class="hljs-comment">// &#x7FFB;&#x8F6C; buffer</span>
+    buffer.flip();
+    <span class="hljs-comment">// &#x83B7;&#x53D6;&#x5B57;&#x8282;&#x6570;&#x7EC4;</span>
+    <span class="hljs-keyword">byte</span>[] array = buffer.array();
+
+    System.out.println(<span class="hljs-keyword">new</span> String(array,<span class="hljs-number">0</span>,buffer.limit()));
+
+    fileIn.close();
+}
+</code></pre>
+<ul>
+<li><code>transferFrom</code> &#x4ECE;&#x76EE;&#x6807;&#x901A;&#x9053;&#x590D;&#x5236;&#x6570;&#x636E;&#x5230;&#x5F53;&#x524D;&#x901A;&#x9053;</li>
+<li><code>transferTo</code> &#x628A;&#x6570;&#x636E;&#x4ECE;&#x5F53;&#x524D;&#x901A;&#x9053;&#x590D;&#x5236;&#x5230;&#x76EE;&#x6807;&#x901A;&#x9053; </li>
+</ul>
+<p><strong>FileChannel &#x6587;&#x4EF6;&#x62F7;&#x8D1D;</strong></p>
+<pre><code class="lang-java">FileInputStream inputStream = <span class="hljs-keyword">new</span> FileInputStream(<span class="hljs-string">&quot;/Users/mxj/xj.jpg&quot;</span>);
+FileOutputStream outputStream = <span class="hljs-keyword">new</span> FileOutputStream(<span class="hljs-string">&quot;/Users/mxj/xj_copy.jpg&quot;</span>);
+
+FileChannel inputChannel = inputStream.getChannel();
+FileChannel outputChannel = outputStream.getChannel();
+outputChannel.transferFrom(inputChannel,<span class="hljs-number">0</span>, inputChannel.size());
+
+<span class="hljs-comment">// &#x5173;&#x95ED;&#x6D41;</span>
+</code></pre>
+<p><strong>Buffer &#x6570;&#x636E;&#x7C7B;&#x578B;&#x5316;</strong></p>
+<p>&#x653E;&#x4EC0;&#x4E48;&#x7C7B;&#x578B;,&#x53D6;&#x4EC0;&#x4E48;&#x7C7B;&#x578B;, &#x5426;&#x5219;&#x6709;&#x53EF;&#x80FD;&#x6570;&#x636E;&#x9519;&#x8BEF;&#x6216;&#x8005; BufferUnderflowException</p>
+<pre><code class="lang-java">ByteBuffer buffer = ByteBuffer.allocate(<span class="hljs-number">64</span>);
+<span class="hljs-comment">// &#x7C7B;&#x578B;&#x5316;&#x653E;&#x5165;&#x6570;&#x636E;</span>
+buffer.putInt(<span class="hljs-number">1</span>);
+buffer.putChar(<span class="hljs-string">&apos;a&apos;</span>);
+buffer.putDouble(<span class="hljs-number">1.1</span>);
+<span class="hljs-comment">// &#x7C7B;&#x578B;&#x5316;&#x53D6;&#x51FA;&#x6570;&#x636E;</span>
+buffer.getInt();
+</code></pre>
+<p><strong>&#x53EA;&#x8BFB; Buffer</strong></p>
+<p>&#x83B7;&#x53D6;&#x53EA;&#x8BFB; Buffer, &#x5982;&#x679C;&#x5BF9;&#x6B64; Buffer &#x8FDB;&#x884C; put &#x64CD;&#x4F5C;,&#x629B;&#x51FA; ReadOnlyBufferException &#x5F02;&#x5E38;</p>
+<pre><code class="lang-java">ByteBuffer byteBuffer = buffer.asReadOnlyBuffer();
+</code></pre>
+<p><strong>MappedByteBuffer</strong></p>
+<p>&#x53EF;&#x4EE5;&#x8BA9;&#x6587;&#x4EF6;&#x76F4;&#x63A5;&#x5728;&#x5185;&#x5B58;(&#x5806;&#x5916;&#x5185;&#x5B58;)&#x4E2D;&#x4FEE;&#x6539;, &#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x4E0D;&#x9700;&#x8981;&#x62F7;&#x8D1D;&#x4E00;&#x6B21;.</p>
+<pre><code class="lang-java">RandomAccessFile raf = <span class="hljs-keyword">new</span> RandomAccessFile(<span class="hljs-string">&quot;/Users/mxj/Documents/soft/study/netty/a.txt&quot;</span>, <span class="hljs-string">&quot;rw&quot;</span>);
+FileChannel channel = raf.getChannel();
+<span class="hljs-comment">// &#x53C2;&#x6570;&#x4E00;: &#x8BFB;&#x5199;&#x6A21;&#x5F0F; &#x53C2;&#x6570;&#x4E8C;: &#x64CD;&#x4F5C;&#x7684;&#x5F00;&#x59CB;&#x4F4D;&#x7F6E; &#x53C2;&#x6570;&#x4E09;: &#x7ED3;&#x675F;&#x4F4D;&#x7F6E;</span>
+MappedByteBuffer mappedByteBuffer = channel.map(FileChannel.MapMode.READ_WRITE, <span class="hljs-number">0</span>, <span class="hljs-number">4</span>);
+mappedByteBuffer.put(<span class="hljs-number">1</span>, (<span class="hljs-keyword">byte</span>) <span class="hljs-string">&apos;N&apos;</span>);
+channel.close();
+raf.close();
+</code></pre>
+<p><strong>Scattering &#x548C; Gathering</strong></p>
+<p>Buffer &#x7684;&#x805A;&#x5408;&#x548C;&#x5206;&#x6563;</p>
+<ul>
+<li>Scattering: &#x5C06;&#x6570;&#x636E;&#x5199;&#x5165;&#x5230;Buffer&#x65F6;, &#x53EF;&#x4EE5;&#x91C7;&#x7528; Buffer &#x6570;&#x7EC4;, &#x4F9D;&#x6B21;&#x5199;&#x5165;.</li>
+<li>Gathering: &#x4ECE;Buffer&#x8BFB;&#x53D6;&#x6570;&#x636E;&#x65F6;, &#x53EF;&#x4EE5;&#x91C7;&#x7528; Buffer &#x6570;&#x7EC4;,&#x4F9D;&#x6B21;&#x8BFB;&#x53D6;.</li>
+</ul>
+<h2 id="&#x9009;&#x62E9;&#x5668;-selector">&#x9009;&#x62E9;&#x5668; (Selector)</h2>
+<ul>
+<li>NIO &#x7528;&#x4E00;&#x4E2A;&#x7EBF;&#x7A0B;&#x5904;&#x7406;&#x591A;&#x4E2A;&#x5BA2;&#x6237;&#x7AEF;&#x8FDE;&#x63A5;, &#x5C31;&#x4F1A;&#x4F7F;&#x7528;&#x5230; Selector &#x9009;&#x62E9;&#x5668;</li>
+<li>Selector &#x80FD;&#x591F;&#x68C0;&#x6D4B;&#x5230;&#x591A;&#x4E2A;&#x6CE8;&#x518C;&#x901A;&#x9053;&#x4E0A;&#x662F;&#x5426;&#x6709;&#x4E8B;&#x4EF6;&#x53D1;&#x751F;, &#x5982;&#x679C;&#x6709;&#x4E8B;&#x4EF6;&#x53D1;&#x751F;, &#x4FBF;&#x9488;&#x5BF9;&#x4E8B;&#x4EF6;&#x8FDB;&#x884C;&#x76F8;&#x5E94;&#x5904;&#x7406;. &#x8FD9;&#x6837;&#x5C31;&#x53EF;&#x4EE5;&#x7BA1;&#x7406;&#x591A;&#x4E2A;&#x901A;&#x9053;,&#x610F;&#x5473;&#x7740;&#x5904;&#x7406;&#x591A;&#x4E2A;&#x8FDE;&#x63A5;.</li>
+<li>&#x4E0D;&#x7528;&#x7EF4;&#x62A4;&#x591A;&#x4E2A;&#x7EBF;&#x7A0B;, &#x907F;&#x514D;&#x4E86;&#x591A;&#x7EBF;&#x7A0B;&#x4E0A;&#x4E0B;&#x6587;&#x5207;&#x6362;&#x5BFC;&#x81F4;&#x7684;&#x5F00;&#x9500;.</li>
+</ul>
+<p><strong>&#x5E38;&#x7528;&#x65B9;&#x6CD5;&#x8BF4;&#x660E;</strong></p>
+<ul>
+<li>Selector open( ):  &#x5F97;&#x5230;&#x4E00;&#x4E2A;&#x9009;&#x62E9;&#x5668;&#x5BF9;&#x8C61;</li>
+<li>int select(): &#x963B;&#x585E;&#x65B9;&#x6CD5;, &#x5982;&#x679C;Selector&#x4E2D;&#x6240;&#x6709;&#x7684;&#x901A;&#x9053;&#x90FD;&#x6CA1;&#x6709;&#x53D1;&#x751F;&#x4E8B;&#x4EF6;, &#x4F1A;&#x963B;&#x585E;.</li>
+<li>int select(long timeout): &#x5982;&#x679C;&#x5728;&#x6307;&#x5B9A;&#x65F6;&#x95F4;&#x6CA1;&#x6709;&#x4E8B;&#x4EF6;&#x53D1;&#x751F;, &#x5219;&#x8FD4;&#x56DE;</li>
+<li>int selectNow(): &#x7ACB;&#x5373;&#x8FD4;&#x56DE; </li>
+<li>Set\<selectedkey> selectedKeys(): &#x4ECE;&#x5185;&#x90E8;&#x96C6;&#x5408;&#x4E2D;&#x5F97;&#x5230;&#x6240;&#x6709;&#x7684;selectedKey</selectedkey></li>
+<li>wakeup(): &#x5524;&#x9192; selector</li>
+</ul>
+<p><strong>SelectionKey</strong></p>
+<ul>
+<li>&#x548C; Channel &#x5173;&#x8054;</li>
+<li>&#x5BF9;&#x5E94;&#x4E8B;&#x4EF6;&#x7C7B;&#x578B;</li>
+</ul>
+<blockquote>
+<p>ServerSockerChannel &#x7C7B;&#x4F3C;&#x4E8E; ServerSocket</p>
+<p>SocketChannel &#x7C7B;&#x4F3C;&#x4E8E; Socket</p>
+</blockquote>
+<p><strong>&#x539F;&#x7406;&#x56FE;</strong></p>
+<p><img src="image-20200510172423803.png" alt="image-20200510172423803" style="zoom:50%;"></p>
+<ol>
+<li>&#x5F53;&#x5BA2;&#x6237;&#x7AEF;&#x8FDE;&#x63A5;&#x65F6;&#x4F1A;&#x901A;&#x8FC7; ServerSocketChannel &#x5F97;&#x5230; SocketChannel</li>
+<li>&#x5C06; SocketChannel &#x6CE8;&#x518C;&#x5230; Selector &#x4E0A; <code>register(Selector sel, int ops)</code>.&#x4E00;&#x4E2A;Selector&#x53EF;&#x4EE5;&#x6CE8;&#x518C;&#x591A;&#x4E2A;Channel </li>
+<li>&#x6CE8;&#x518C;&#x540E;&#x4F1A;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A; SelectiongKey &#x5173;&#x8054;&#x5230;&#x8BE5; Selector [&#x96C6;&#x5408;] </li>
+<li>Selector &#x8FDB;&#x884C;&#x76D1;&#x542C;(<code>select()</code> &#x65B9;&#x6CD5;), &#x8FD4;&#x56DE;&#x6709;&#x4E8B;&#x4EF6;&#x53D1;&#x751F;&#x7684; Channel &#x6570;&#x91CF;</li>
+<li>&#x5F97;&#x5230;&#x6709;&#x4E8B;&#x4EF6;&#x53D1;&#x751F;&#x7684;&#x5404;&#x4E2A;SelectionKey</li>
+<li>&#x901A;&#x8FC7;selectionKey&#x83B7;&#x53D6;SocketChannel(<code>Channel()</code>&#x65B9;&#x6CD5;)</li>
+<li>&#x4F7F;&#x7528;Channel&#x5B8C;&#x6210;&#x4E1A;&#x52A1;.</li>
+</ol>
+<h2 id="nio-&#x975E;&#x963B;&#x585E;&#x7F51;&#x7EDC;&#x7F16;&#x7A0B;">NIO &#x975E;&#x963B;&#x585E;&#x7F51;&#x7EDC;&#x7F16;&#x7A0B;</h2>
+<p>&#x670D;&#x52A1;&#x7AEF;</p>
+<pre><code class="lang-java">
+<span class="hljs-keyword">import</span> java.io.IOException;
+<span class="hljs-keyword">import</span> java.net.InetSocketAddress;
+<span class="hljs-keyword">import</span> java.nio.ByteBuffer;
+<span class="hljs-keyword">import</span> java.nio.channels.SelectionKey;
+<span class="hljs-keyword">import</span> java.nio.channels.Selector;
+<span class="hljs-keyword">import</span> java.nio.channels.ServerSocketChannel;
+<span class="hljs-keyword">import</span> java.nio.channels.SocketChannel;
+<span class="hljs-keyword">import</span> java.util.Iterator;
+<span class="hljs-keyword">import</span> java.util.Set;
+
+<span class="hljs-comment">/**
+ * NIO &#x7F51;&#x7EDC;&#x7F16;&#x7A0B; - &#x670D;&#x52A1;&#x7AEF;
+ * Created by YangBin on 2020/5/11
+ * Copyright (c) 2020 &#x6768;&#x658C; All rights reserved.
+ */</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">NioServer</span> </span>{
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> <span class="hljs-keyword">throws</span> IOException </span>{
+        <span class="hljs-comment">// 1. &#x521B;&#x5EFA; ServerSocketChannel</span>
+        ServerSocketChannel serverSocketChannel = ServerSocketChannel.open();
+
+        <span class="hljs-comment">// 2. &#x5F97;&#x5230; Selector &#x5BF9;&#x8C61;</span>
+        Selector selector = Selector.open();
+
+        <span class="hljs-comment">// 3. &#x7ED1;&#x5B9A;&#x7AEF;&#x53E3; 6666</span>
+        serverSocketChannel.socket().bind(<span class="hljs-keyword">new</span> InetSocketAddress(<span class="hljs-number">6666</span>));
+
+        <span class="hljs-comment">// 4. &#x8BBE;&#x7F6E;&#x4E3A;&#x975E;&#x963B;&#x585E;&#x6A21;&#x5F0F;</span>
+        serverSocketChannel.configureBlocking(<span class="hljs-keyword">false</span>);
+
+        <span class="hljs-comment">// 5. &#x628A; ServerSocketChannel &#x6CE8;&#x518C;&#x5230; Selector, &#x5173;&#x5FC3; OP_ACCEPT(&#x8FDE;&#x63A5;) &#x4E8B;&#x4EF6;</span>
+        serverSocketChannel.register(selector, SelectionKey.OP_ACCEPT);
+
+        <span class="hljs-comment">// 6. &#x5904;&#x7406;&#x5BA2;&#x6237;&#x7AEF;&#x8FDE;&#x63A5;</span>
+        <span class="hljs-keyword">while</span> (<span class="hljs-keyword">true</span>) {
+            <span class="hljs-comment">// 6.1 &#x7B49;&#x5F85;1&#x79D2;, &#x6CA1;&#x6709;&#x4E8B;&#x4EF6;&#x53D1;&#x751F;, &#x8FD4;&#x56DE;</span>
+            <span class="hljs-keyword">if</span> (selector.select(<span class="hljs-number">1000</span>) == <span class="hljs-number">0</span>) {
+                System.out.println(<span class="hljs-string">&quot;[&#x670D;&#x52A1;&#x5668;&#x7B49;&#x5F85;&#x4E86;1&#x79D2;&#x949F;, &#x65E0;&#x8FDE;&#x63A5;]&quot;</span>);
+                <span class="hljs-keyword">continue</span>;
+            }
+
+            <span class="hljs-comment">// 6.2 &#x5982;&#x679C;&#x4E8B;&#x4EF6;&#x7684;&#x6570;&#x91CF;&#x5927;&#x4E8E;0, &#x8868;&#x793A;&#x5DF2;&#x53D1;&#x751F;&#x5173;&#x6CE8;&#x7684;&#x4E8B;&#x4EF6;, &#x83B7;&#x53D6;&#x76F8;&#x5173;&#x4E8B;&#x4EF6;&#x7684; selectionKey &#x96C6;&#x5408;</span>
+            Set&lt;SelectionKey&gt; selectionKeys = selector.selectedKeys();
+
+            <span class="hljs-comment">// 6.3 &#x83B7;&#x53D6;&#x4E8B;&#x4EF6;&#x8FED;&#x4EE3;&#x5668;</span>
+            Iterator&lt;SelectionKey&gt; keyIterator = selectionKeys.iterator();
+
+            <span class="hljs-keyword">while</span> (keyIterator.hasNext()) {
+                <span class="hljs-comment">// 6.4 &#x83B7;&#x53D6; selectionKey</span>
+                SelectionKey selectionKey = keyIterator.next();
+
+                <span class="hljs-comment">// 6.5&#x6839;&#x636E; key &#x7684;&#x4E8B;&#x4EF6;,&#x505A;&#x51FA;&#x76F8;&#x5E94;&#x7684;&#x5904;&#x7406;</span>
+
+                <span class="hljs-comment">// 6.5.1 &#x5224;&#x65AD;&#x4E8B;&#x4EF6;&#x4E3A; OP_ACCEPT(&#x8FDE;&#x63A5;&#x4E8B;&#x4EF6;), &#x8868;&#x793A;&#x6709;&#x5BA2;&#x6237;&#x7AEF;&#x8FDE;&#x63A5;</span>
+                <span class="hljs-keyword">if</span> (selectionKey.isAcceptable()) {
+                    <span class="hljs-comment">// 6.5.1.1 &#x4E0E;&#x5BA2;&#x6237;&#x7AEF;&#x5EFA;&#x7ACB;&#x8FDE;&#x63A5;,&#x5F97;&#x5230; SocketChannel</span>
+                    SocketChannel socketChannel = serverSocketChannel.accept();
+                    System.out.println(<span class="hljs-string">&quot;[&#x5BA2;&#x6237;&#x7AEF;&#x8FDE;&#x63A5;&#x6210;&#x529F;] &quot;</span> + socketChannel.hashCode());
+
+                    <span class="hljs-comment">// 6,5.1.2 &#x8BBE;&#x7F6E; socketChannel &#x4E3A;&#x975E;&#x963B;&#x585E;&#x6A21;&#x5F0F;</span>
+                    socketChannel.configureBlocking(<span class="hljs-keyword">false</span>);
+
+                    <span class="hljs-comment">// 6.5.1.3 &#x5C06; SocketChannel &#x6CE8;&#x518C;&#x5230; Selector, &#x5173;&#x6CE8; OP_READ(&#x8BFB;&#x53D6;) &#x4E8B;&#x4EF6;, &#x540C;&#x65F6;&#x5173;&#x8054;&#x4E00;&#x4E2A; Buffer</span>
+                    socketChannel.register(selector, SelectionKey.OP_READ, ByteBuffer.allocate(<span class="hljs-number">1024</span>));
+                }
+
+                <span class="hljs-comment">// 6.5.2 &#x5224;&#x65AD;&#x4E8B;&#x4EF6;&#x5982;&#x679C;&#x4E3A;&#x8BFB;&#x53D6;&#x4E8B;&#x4EF6; OP_READ</span>
+                <span class="hljs-keyword">if</span> (selectionKey.isReadable()) {
+                    <span class="hljs-comment">// 6.5.2.1 &#x83B7;&#x53D6;&#x5BF9;&#x5E94; Channel</span>
+                    SocketChannel channel = (SocketChannel) selectionKey.channel();
+                    <span class="hljs-comment">// 6.5.2.2 &#x83B7;&#x53D6;&#x8BE5; Channel &#x5173;&#x8054;&#x7684; Buffer</span>
+                    ByteBuffer buffer = (ByteBuffer) selectionKey.attachment();
+                    <span class="hljs-comment">// 6.5.2.3 &#x5C06; Channel &#x6570;&#x636E;&#x8BFB;&#x53D6;&#x5230; Buffer</span>
+                    channel.read(buffer);
+                    buffer.flip();
+                    <span class="hljs-comment">// 6.5.2.4 &#x8F93;&#x51FA;&#x83B7;&#x53D6;&#x5230;&#x7684;&#x7ED3;&#x679C;</span>
+                    System.out.println(<span class="hljs-string">&quot;[&#x5BA2;&#x6237;&#x7AEF;&#x6D88;&#x606F;] &quot;</span> + <span class="hljs-keyword">new</span> String(buffer.array(),<span class="hljs-number">0</span>, buffer.limit()));
+                    <span class="hljs-comment">// 6.5.2.5 &#x91CD;&#x7F6E; Buffer</span>
+                    buffer.clear();
+                }
+
+                <span class="hljs-comment">// 6.6 &#x624B;&#x52A8;&#x79FB;&#x9664;&#x5DF2;&#x64CD;&#x4F5C;&#x7684;selectorKey, &#x9632;&#x6B62;&#x91CD;&#x590D;&#x64CD;&#x4F5C;</span>
+                keyIterator.remove();
+            }
+        }
+    }
+}
+</code></pre>
+<p>&#x5BA2;&#x6237;&#x7AEF;:</p>
+<pre><code class="lang-java"><span class="hljs-keyword">import</span> java.io.IOException;
+<span class="hljs-keyword">import</span> java.net.InetSocketAddress;
+<span class="hljs-keyword">import</span> java.nio.ByteBuffer;
+<span class="hljs-keyword">import</span> java.nio.channels.SocketChannel;
+
+<span class="hljs-comment">/**
+ * NIO &#x7F51;&#x7EDC;&#x7F16;&#x7A0B; - &#x5BA2;&#x6237;&#x7AEF;
+ * Created by YangBin on 2020/5/11
+ * Copyright (c) 2020 &#x6768;&#x658C; All rights reserved.
+ */</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">NioClient</span> </span>{
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> <span class="hljs-keyword">throws</span> IOException </span>{
+
+        <span class="hljs-comment">// 1. &#x5F97;&#x5230;&#x4E00;&#x4E2A;&#x7F51;&#x7EDC;&#x901A;&#x9053;</span>
+        SocketChannel socketChannel = SocketChannel.open();
+
+        <span class="hljs-comment">// 2. &#x8BBE;&#x7F6E;&#x975E;&#x963B;&#x585E;</span>
+        socketChannel.configureBlocking(<span class="hljs-keyword">false</span>);
+
+        <span class="hljs-comment">// 3. &#x63D0;&#x4F9B;&#x670D;&#x52A1;&#x7AEF; ip &#x548C;&#x7AEF;&#x53E3;</span>
+        InetSocketAddress inetSocketAddress = <span class="hljs-keyword">new</span> InetSocketAddress(<span class="hljs-string">&quot;127.0.0.1&quot;</span>, <span class="hljs-number">6666</span>);
+
+        <span class="hljs-comment">// 4. &#x8FDE;&#x63A5;&#x670D;&#x52A1;&#x5668;</span>
+        <span class="hljs-keyword">if</span> (!socketChannel.connect(inetSocketAddress)) {
+            <span class="hljs-comment">// 4.1 &#x5982;&#x679C;&#x8FDE;&#x63A5;&#x672A;&#x5B8C;&#x6210;, &#x5148;&#x505A;&#x5176;&#x4ED6;&#x7684;&#x4E8B;&#x60C5;</span>
+            <span class="hljs-keyword">while</span> (!socketChannel.finishConnect()) {
+                System.out.println(<span class="hljs-string">&quot;[&#x56E0;&#x4E3A;&#x8FDE;&#x63A5;&#x9700;&#x8981;&#x65F6;&#x95F4;, &#x5BA2;&#x6237;&#x7AEF;&#x4E0D;&#x4F1A;&#x963B;&#x585E;, &#x505A;&#x5176;&#x4ED6;&#x7684;&#x4E8B;&#x60C5;!]&quot;</span>);
+            }
+
+            <span class="hljs-comment">//4.2 &#x8FDE;&#x63A5;&#x6210;&#x529F;, &#x53D1;&#x9001;&#x6570;&#x636E;</span>
+            String msg = <span class="hljs-string">&quot;&#x5728;&#x5417;?&quot;</span>;
+            ByteBuffer buffer = ByteBuffer.wrap(msg.getBytes());
+            socketChannel.write(buffer);
+
+            System.in.read();
+        }
+    }
+}
+</code></pre>
+<h2 id="selectionkey">SelectionKey</h2>
+<p><strong>API</strong></p>
+<ul>
+<li>selectedKeys() &#x6709;&#x4E8B;&#x4EF6;&#x53D1;&#x751F;&#x7684; selectedKey</li>
+<li>keys() &#x6240;&#x6709;&#x7684;selectedKey</li>
+<li>channel() &#x5F97;&#x5230;&#x4E0E;&#x4E4B;&#x76F8;&#x5173;&#x7684;&#x901A;&#x9053;</li>
+<li>attachment() &#x5F97;&#x5230;&#x4E0E;&#x4E4B;&#x5173;&#x8054;&#x7684;&#x5171;&#x4EAB;&#x6570;&#x636E;</li>
+<li>interestOps(int ops) &#x8BBE;&#x7F6E;&#x6216;&#x6539;&#x53D8;&#x76D1;&#x542C;&#x7684;&#x4E8B;&#x4EF6;</li>
+<li>isAcceptable() //&#x662F;&#x5426;&#x53EF;&#x4EE5; ACCEPT</li>
+<li>isReadable() // &#x662F;&#x5426;&#x53EF;&#x8BFB;</li>
+<li>isWritable() // &#x662F;&#x5426;&#x53EF;&#x5199;</li>
+</ul>
+<h2 id="serversocketchannel">ServerSocketChannel</h2>
+<p><strong>API</strong></p>
+<p>open()  </p>
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; yangb  all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x7AE0;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2020-05-11 14:28:47
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="bio.html" class="navigation navigation-prev " aria-label="Previous page: BIO">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../mcu/MicroControllerUnit.html" class="navigation navigation-next " aria-label="Next page: 单片机">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"NIO","level":"1.2.11.2","depth":3,"next":{"title":"单片机","level":"1.2.12","depth":2,"path":"program/mcu/MicroControllerUnit.md","ref":"program/mcu/MicroControllerUnit.md","articles":[{"title":"芯片","level":"1.2.12.1","depth":3,"path":"program/mcu/chip.md","ref":"program/mcu/chip.md","articles":[]}]},"previous":{"title":"BIO","level":"1.2.11.1","depth":3,"path":"program/netty/bio.md","ref":"program/netty/bio.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","back-to-top-button","chapter-fold","sharing","donate","search-pro","insert-logo","theme-default","theme-comscore","code","splitter","tbfed-pagefooter","github","hide-element","katex"],"styles":{"website":"website.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy yangb ","modify_label":"该文章修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"github":{"url":"https://github.com/yangb92"},"splitter":{},"search-pro":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"donate":{"alipay":"https://gitee.com/yangb92/book/raw/gh-pages/alipay.png","alipayText":"支付宝打赏","button":"赏","title":"","wechat":"https://gitee.com/yangb92/book/raw/gh-pages/wxpay.png","wechatText":"微信打赏"},"hide-element":{"elements":[".gitbook-link"]},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"back-to-top-button":{},"sharing":{"all":["facebook","google","twitter","weibo","instapaper"],"facebook":true,"google":false,"instapaper":false,"twitter":true,"vk":false,"weibo":false},"theme-default":{"showLevel":true,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"insert-logo":{"style":"background: none; max-height: 80px; min-height: 10px","url":"https://gitee.com/yangb92/book/raw/gh-pages/favorite.png"}},"theme":"default","author":"杨斌","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"学习笔记","language":"zh-hans","gitbook":"*"},"file":{"path":"program/netty/nio.md","mtime":"2020-05-11T06:28:47.854Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-12T02:53:39.462Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-donate/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-insert-logo/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-hide-element/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
+        
+    
+
+    </body>
+</html>
+

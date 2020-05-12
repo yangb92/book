@@ -1,5 +1,49 @@
 # 数据库
 
+## Mysql 使用root创建用户和数据库
+
+```sh
+# 从服务器登陆数据库
+mysql -u root -p
+use mysql;
+# 创建新用户,允许外网访问
+create user 'yangb'@'%' identified by '123456';
+# 刷新授权
+flush privileges;
+# 创建数据库
+create database devlop default charset utf-8mb4 collate utf8mb4_general_ci;
+# 授予用户通过外网IP对于该数据库的全部权限
+grant all privileges on `devlop`.* to 'yangb'@'%' identified by '123456';
+# 授予用户在本地服务器对该数据库的全部权限
+grant all privileges on `devlop`.* to 'yangb'@'localhost' identified by '123456';
+# 刷新权限
+flush privileges;
+# 退书
+exit
+```
+
+## Mysql 忘记root密码
+
+```sh
+# 在[mysqld]下添加skip-grant-tables，然后保存并退出
+$ vi /etc/my.cnf
+[mysqld]
+skip-grant-tables
+# 重启mysql
+$ service mysqld restart
+# 进入mysql
+$ mysql -u root
+MySQL> UPDATE mysql.user SET Password=PASSWORD('新密码') where USER='root';
+MySQL> flush privileges;
+MySQL> exit
+# 最后把/etc/my.cnf中的skip-grant-tables注释掉，然后重启mysql
+$ vi /etc/my.cnf
+[mysqld]
+# skip-grant-tables
+$ service mysqld restart
+
+```
+
 ## PostgresSql 数据库
 
 管理员登陆
