@@ -382,3 +382,102 @@ public class NioClient {
 **API**
 
 open() 
+
+## NIO 零拷贝原理
+
+零拷是从操作系统角度, 没有CPU拷贝
+
+DMA copy: direct memory access 直接内存拷贝, 没有cpu参与
+
+**传统的IO读写**  
+
+4次拷贝, 3次状态切换
+
+```mermaid
+graph LR
+    Hard-Drive --DMA copy--> Kernel-Buffer --CPU copy--> User-Buffer --CPU copy--> Socket-Buffer --DMA copy--> Protocol-engine
+```
+
+**mmap优化**
+
+
+
+```mermaid
+graph LR
+    A[Hard-Drive] --> |DMA copy| B(Kernel-Buffer) 
+    B --CPU copy--> Socket-Buffer --DMA copy--> Protocol-engine
+    B --Share--> UserBuffer
+```
+
+
+
+3次拷贝,3次状态切换
+
+通过内存映射, 将文件映射到内核缓冲区, 同时用户空间可以**共享内核空间的数据**. 这样,在进行网络传输时可以减少内核空间到用户空间的拷贝次数.
+
+**sendFile优化**
+
+Linux2.1 提供了sendFile函数, 原理如下: 数据根本不用经过用户态, 直接从内核缓冲区进入到SocketBuffer, 同时由于和用户态完全无关, 就减少了一次上下文切换.
+
+linux2.4 避免了从内核缓冲区拷贝到SocketBuffer. 
+
+
+
+```mermaid
+graph LR
+Hard-Drive --DMA copy--> Kernel-Buffer --DMA copy--> Protocol-engine
+```
+
+
+
+**代码实现**
+
+```java
+/**
+ * Created by YangBin on 2020/5/15
+ * Copyright (c) 2020 杨斌 All rights reserved.
+ */
+public class NewIoClient {
+
+    public static void main(String[] args) throws IOException {
+        SocketChannel socketChannel = SocketChannel.open();
+        socketChannel.connect(new InetSocketAddress("localhost", 7001));
+        String filename = "";
+        FileChannel fileChannel = new FileInputStream(filename).getChannel();
+
+        //记录发送时间
+        long startTime = System.currentTimeMillis();
+
+        // linux 调用transferTo方法就可以完成传输
+        // windows 调用transferTo 一次只能传输8M, 因此需要分段传输
+        long transferCount = fileChannel.transferTo(0, fileChannel.size(), socketChannel);
+
+        System.out.println("发送的字节数 = " + transferCount + "耗时:" + (System.currentTimeMillis() - startTime));
+
+    }
+}
+```
+
+transferTo 方法
+
+```java
+/* <p> This method is potentially much more efficient than a simple loop
+* that reads from this channel and writes to the target channel.  Many
+* operating systems can transfer bytes directly from the filesystem cache
+* to the target channel without actually copying them.  </p>
+*/
+public abstract long transferTo(long position, long count,
+                                    WritableByteChannel target)
+        throws IOException;
+```
+
+
+
+## AIO
+
+JDK7 引入, I/O 编程常用的两种模式: Reactor 和 Proactor(主动器) NIO属于Reactor, 事件触发, 服务端得到通知,进行响应.
+
+API 也称为 NIO2.0, 叫做异步不阻塞IO, AIO引入异步通道的概念, 采用Proactor模式, 简化程序编写, 有效的请求才会去启动线程. 特点是先由操作系统完成后才通知服务端程序启动线程处理, 一般适用于连接数多且连接时间长的应用.
+
+目前AIO没有被广泛应用.
+

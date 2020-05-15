@@ -224,27 +224,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.1.5" data-path="../../SpringBoot/thymeleaf.md">
+        <li class="chapter " data-level="1.2.1.5" data-path="../springboot/SpringDataJPA.html">
             
-                <span>
+                <a href="../springboot/SpringDataJPA.html">
             
                     
                         <b>1.2.1.5.</b>
-                    
-                    thymeleaf 模板引擎
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.2.1.6" data-path="../SpringBoot/SpringDataJPA.html">
-            
-                <a href="../SpringBoot/SpringDataJPA.html">
-            
-                    
-                        <b>1.2.1.6.</b>
                     
                     SpringDataJPA
             
@@ -254,12 +239,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.1.7" data-path="../SpringBoot/SpringDataJdbc.html">
+        <li class="chapter " data-level="1.2.1.6" data-path="../springboot/SpringDataJdbc.html">
             
-                <a href="../SpringBoot/SpringDataJdbc.html">
+                <a href="../springboot/SpringDataJdbc.html">
             
                     
-                        <b>1.2.1.7.</b>
+                        <b>1.2.1.6.</b>
                     
                     SpringDataJDBC
             
@@ -269,14 +254,29 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.1.8" data-path="../SpringBoot/LinuxService.html">
+        <li class="chapter " data-level="1.2.1.7" data-path="../springboot/LinuxService.html">
             
-                <a href="../SpringBoot/LinuxService.html">
+                <a href="../springboot/LinuxService.html">
+            
+                    
+                        <b>1.2.1.7.</b>
+                    
+                    部署为linux服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.8" data-path="../springboot/to-war.html">
+            
+                <a href="../springboot/to-war.html">
             
                     
                         <b>1.2.1.8.</b>
                     
-                    部署为linux服务
+                    打成war包
             
                 </a>
             
@@ -578,12 +578,27 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.5.2" data-path="../docker/Compose.html">
+        <li class="chapter " data-level="1.2.5.2" data-path="../docker/docker-sever.html">
+            
+                <a href="../docker/docker-sever.html">
+            
+                    
+                        <b>1.2.5.2.</b>
+                    
+                    Docker 伺服
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.3" data-path="../docker/Compose.html">
             
                 <a href="../docker/Compose.html">
             
                     
-                        <b>1.2.5.2.</b>
+                        <b>1.2.5.3.</b>
                     
                     Docker-Compose安装卸载
             
@@ -593,12 +608,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.5.3" data-path="../docker/ComposeCommand.html">
+        <li class="chapter " data-level="1.2.5.4" data-path="../docker/ComposeCommand.html">
             
                 <a href="../docker/ComposeCommand.html">
             
                     
-                        <b>1.2.5.3.</b>
+                        <b>1.2.5.4.</b>
                     
                     Docker-Compose命令说明
             
@@ -608,12 +623,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.5.4" data-path="../docker/ComposeTemplate.html">
+        <li class="chapter " data-level="1.2.5.5" data-path="../docker/ComposeTemplate.html">
             
                 <a href="../docker/ComposeTemplate.html">
             
                     
-                        <b>1.2.5.4.</b>
+                        <b>1.2.5.5.</b>
                     
                     Docker-Compose模板文件
             
@@ -623,12 +638,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.5.5" data-path="../docker/demo.html">
+        <li class="chapter " data-level="1.2.5.6" data-path="../docker/demo.html">
             
                 <a href="../docker/demo.html">
             
                     
-                        <b>1.2.5.5.</b>
+                        <b>1.2.5.6.</b>
                     
                     Docker-Compose常用配置
             
@@ -1861,9 +1876,70 @@ raf.close();
 </ul>
 <h2 id="serversocketchannel">ServerSocketChannel</h2>
 <p><strong>API</strong></p>
-<p>open()  </p>
+<p>open() </p>
+<h2 id="nio-&#x96F6;&#x62F7;&#x8D1D;&#x539F;&#x7406;">NIO &#x96F6;&#x62F7;&#x8D1D;&#x539F;&#x7406;</h2>
+<p>&#x96F6;&#x62F7;&#x662F;&#x4ECE;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x89D2;&#x5EA6;, &#x6CA1;&#x6709;CPU&#x62F7;&#x8D1D;</p>
+<p>DMA copy: direct memory access &#x76F4;&#x63A5;&#x5185;&#x5B58;&#x62F7;&#x8D1D;, &#x6CA1;&#x6709;cpu&#x53C2;&#x4E0E;</p>
+<p><strong>&#x4F20;&#x7EDF;&#x7684;IO&#x8BFB;&#x5199;</strong>  </p>
+<p>4&#x6B21;&#x62F7;&#x8D1D;, 3&#x6B21;&#x72B6;&#x6001;&#x5207;&#x6362;</p>
+<pre><code class="lang-mermaid">graph LR
+    Hard-Drive --DMA copy--&gt; Kernel-Buffer --CPU copy--&gt; User-Buffer --CPU copy--&gt; Socket-Buffer --DMA copy--&gt; Protocol-engine
+</code></pre>
+<p><strong>mmap&#x4F18;&#x5316;</strong></p>
+<pre><code class="lang-mermaid">graph LR
+    A[Hard-Drive] --&gt; |DMA copy| B(Kernel-Buffer) 
+    B --CPU copy--&gt; Socket-Buffer --DMA copy--&gt; Protocol-engine
+    B --Share--&gt; UserBuffer
+</code></pre>
+<p>3&#x6B21;&#x62F7;&#x8D1D;,3&#x6B21;&#x72B6;&#x6001;&#x5207;&#x6362;</p>
+<p>&#x901A;&#x8FC7;&#x5185;&#x5B58;&#x6620;&#x5C04;, &#x5C06;&#x6587;&#x4EF6;&#x6620;&#x5C04;&#x5230;&#x5185;&#x6838;&#x7F13;&#x51B2;&#x533A;, &#x540C;&#x65F6;&#x7528;&#x6237;&#x7A7A;&#x95F4;&#x53EF;&#x4EE5;<strong>&#x5171;&#x4EAB;&#x5185;&#x6838;&#x7A7A;&#x95F4;&#x7684;&#x6570;&#x636E;</strong>. &#x8FD9;&#x6837;,&#x5728;&#x8FDB;&#x884C;&#x7F51;&#x7EDC;&#x4F20;&#x8F93;&#x65F6;&#x53EF;&#x4EE5;&#x51CF;&#x5C11;&#x5185;&#x6838;&#x7A7A;&#x95F4;&#x5230;&#x7528;&#x6237;&#x7A7A;&#x95F4;&#x7684;&#x62F7;&#x8D1D;&#x6B21;&#x6570;.</p>
+<p><strong>sendFile&#x4F18;&#x5316;</strong></p>
+<p>Linux2.1 &#x63D0;&#x4F9B;&#x4E86;sendFile&#x51FD;&#x6570;, &#x539F;&#x7406;&#x5982;&#x4E0B;: &#x6570;&#x636E;&#x6839;&#x672C;&#x4E0D;&#x7528;&#x7ECF;&#x8FC7;&#x7528;&#x6237;&#x6001;, &#x76F4;&#x63A5;&#x4ECE;&#x5185;&#x6838;&#x7F13;&#x51B2;&#x533A;&#x8FDB;&#x5165;&#x5230;SocketBuffer, &#x540C;&#x65F6;&#x7531;&#x4E8E;&#x548C;&#x7528;&#x6237;&#x6001;&#x5B8C;&#x5168;&#x65E0;&#x5173;, &#x5C31;&#x51CF;&#x5C11;&#x4E86;&#x4E00;&#x6B21;&#x4E0A;&#x4E0B;&#x6587;&#x5207;&#x6362;.</p>
+<p>linux2.4 &#x907F;&#x514D;&#x4E86;&#x4ECE;&#x5185;&#x6838;&#x7F13;&#x51B2;&#x533A;&#x62F7;&#x8D1D;&#x5230;SocketBuffer. </p>
+<pre><code class="lang-mermaid">graph LR
+Hard-Drive --DMA copy--&gt; Kernel-Buffer --DMA copy--&gt; Protocol-engine
+</code></pre>
+<p><strong>&#x4EE3;&#x7801;&#x5B9E;&#x73B0;</strong></p>
+<pre><code class="lang-java"><span class="hljs-comment">/**
+ * Created by YangBin on 2020/5/15
+ * Copyright (c) 2020 &#x6768;&#x658C; All rights reserved.
+ */</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">NewIoClient</span> </span>{
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> <span class="hljs-keyword">throws</span> IOException </span>{
+        SocketChannel socketChannel = SocketChannel.open();
+        socketChannel.connect(<span class="hljs-keyword">new</span> InetSocketAddress(<span class="hljs-string">&quot;localhost&quot;</span>, <span class="hljs-number">7001</span>));
+        String filename = <span class="hljs-string">&quot;&quot;</span>;
+        FileChannel fileChannel = <span class="hljs-keyword">new</span> FileInputStream(filename).getChannel();
+
+        <span class="hljs-comment">//&#x8BB0;&#x5F55;&#x53D1;&#x9001;&#x65F6;&#x95F4;</span>
+        <span class="hljs-keyword">long</span> startTime = System.currentTimeMillis();
+
+        <span class="hljs-comment">// linux &#x8C03;&#x7528;transferTo&#x65B9;&#x6CD5;&#x5C31;&#x53EF;&#x4EE5;&#x5B8C;&#x6210;&#x4F20;&#x8F93;</span>
+        <span class="hljs-comment">// windows &#x8C03;&#x7528;transferTo &#x4E00;&#x6B21;&#x53EA;&#x80FD;&#x4F20;&#x8F93;8M, &#x56E0;&#x6B64;&#x9700;&#x8981;&#x5206;&#x6BB5;&#x4F20;&#x8F93;</span>
+        <span class="hljs-keyword">long</span> transferCount = fileChannel.transferTo(<span class="hljs-number">0</span>, fileChannel.size(), socketChannel);
+
+        System.out.println(<span class="hljs-string">&quot;&#x53D1;&#x9001;&#x7684;&#x5B57;&#x8282;&#x6570; = &quot;</span> + transferCount + <span class="hljs-string">&quot;&#x8017;&#x65F6;:&quot;</span> + (System.currentTimeMillis() - startTime));
+
+    }
+}
+</code></pre>
+<p>transferTo &#x65B9;&#x6CD5;</p>
+<pre><code class="lang-java"><span class="hljs-comment">/* &lt;p&gt; This method is potentially much more efficient than a simple loop
+* that reads from this channel and writes to the target channel.  Many
+* operating systems can transfer bytes directly from the filesystem cache
+* to the target channel without actually copying them.  &lt;/p&gt;
+*/</span>
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> <span class="hljs-keyword">long</span> <span class="hljs-title">transferTo</span><span class="hljs-params">(<span class="hljs-keyword">long</span> position, <span class="hljs-keyword">long</span> count,
+                                    WritableByteChannel target)</span>
+        <span class="hljs-keyword">throws</span> IOException</span>;
+</code></pre>
+<h2 id="aio">AIO</h2>
+<p>JDK7 &#x5F15;&#x5165;, I/O &#x7F16;&#x7A0B;&#x5E38;&#x7528;&#x7684;&#x4E24;&#x79CD;&#x6A21;&#x5F0F;: Reactor &#x548C; Proactor(&#x4E3B;&#x52A8;&#x5668;) NIO&#x5C5E;&#x4E8E;Reactor, &#x4E8B;&#x4EF6;&#x89E6;&#x53D1;, &#x670D;&#x52A1;&#x7AEF;&#x5F97;&#x5230;&#x901A;&#x77E5;,&#x8FDB;&#x884C;&#x54CD;&#x5E94;.</p>
+<p>API &#x4E5F;&#x79F0;&#x4E3A; NIO2.0, &#x53EB;&#x505A;&#x5F02;&#x6B65;&#x4E0D;&#x963B;&#x585E;IO, AIO&#x5F15;&#x5165;&#x5F02;&#x6B65;&#x901A;&#x9053;&#x7684;&#x6982;&#x5FF5;, &#x91C7;&#x7528;Proactor&#x6A21;&#x5F0F;, &#x7B80;&#x5316;&#x7A0B;&#x5E8F;&#x7F16;&#x5199;, &#x6709;&#x6548;&#x7684;&#x8BF7;&#x6C42;&#x624D;&#x4F1A;&#x53BB;&#x542F;&#x52A8;&#x7EBF;&#x7A0B;. &#x7279;&#x70B9;&#x662F;&#x5148;&#x7531;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x5B8C;&#x6210;&#x540E;&#x624D;&#x901A;&#x77E5;&#x670D;&#x52A1;&#x7AEF;&#x7A0B;&#x5E8F;&#x542F;&#x52A8;&#x7EBF;&#x7A0B;&#x5904;&#x7406;, &#x4E00;&#x822C;&#x9002;&#x7528;&#x4E8E;&#x8FDE;&#x63A5;&#x6570;&#x591A;&#x4E14;&#x8FDE;&#x63A5;&#x65F6;&#x95F4;&#x957F;&#x7684;&#x5E94;&#x7528;.</p>
+<p>&#x76EE;&#x524D;AIO&#x6CA1;&#x6709;&#x88AB;&#x5E7F;&#x6CDB;&#x5E94;&#x7528;.</p>
 <footer class="page-footer"><span class="copyright">Copyright &#xA9; yangb  all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x7AE0;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
-2020-05-11 14:28:47
+2020-05-15 14:11:53
 </span></footer>
                                 
                                 </section>
@@ -1907,7 +1983,7 @@ raf.close();
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"NIO","level":"1.2.11.2","depth":3,"next":{"title":"单片机","level":"1.2.12","depth":2,"path":"program/mcu/MicroControllerUnit.md","ref":"program/mcu/MicroControllerUnit.md","articles":[{"title":"芯片","level":"1.2.12.1","depth":3,"path":"program/mcu/chip.md","ref":"program/mcu/chip.md","articles":[]}]},"previous":{"title":"BIO","level":"1.2.11.1","depth":3,"path":"program/netty/bio.md","ref":"program/netty/bio.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","back-to-top-button","chapter-fold","sharing","donate","search-pro","insert-logo","theme-default","theme-comscore","code","splitter","tbfed-pagefooter","github","hide-element","katex"],"styles":{"website":"website.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy yangb ","modify_label":"该文章修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"github":{"url":"https://github.com/yangb92"},"splitter":{},"search-pro":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"donate":{"alipay":"https://gitee.com/yangb92/book/raw/gh-pages/alipay.png","alipayText":"支付宝打赏","button":"赏","title":"","wechat":"https://gitee.com/yangb92/book/raw/gh-pages/wxpay.png","wechatText":"微信打赏"},"hide-element":{"elements":[".gitbook-link"]},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"back-to-top-button":{},"sharing":{"all":["facebook","google","twitter","weibo","instapaper"],"facebook":true,"google":false,"instapaper":false,"twitter":true,"vk":false,"weibo":false},"theme-default":{"showLevel":true,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"insert-logo":{"style":"background: none; max-height: 80px; min-height: 10px","url":"https://gitee.com/yangb92/book/raw/gh-pages/favorite.png"}},"theme":"default","author":"杨斌","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"学习笔记","language":"zh-hans","gitbook":"*"},"file":{"path":"program/netty/nio.md","mtime":"2020-05-11T06:28:47.854Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-12T02:53:39.462Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"NIO","level":"1.2.11.2","depth":3,"next":{"title":"单片机","level":"1.2.12","depth":2,"path":"program/mcu/MicroControllerUnit.md","ref":"program/mcu/MicroControllerUnit.md","articles":[{"title":"芯片","level":"1.2.12.1","depth":3,"path":"program/mcu/chip.md","ref":"program/mcu/chip.md","articles":[]}]},"previous":{"title":"BIO","level":"1.2.11.1","depth":3,"path":"program/netty/bio.md","ref":"program/netty/bio.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","back-to-top-button","chapter-fold","sharing","donate","search-pro","insert-logo","theme-default","theme-comscore","code","splitter","tbfed-pagefooter","github","hide-element","katex","mermaid"],"styles":{"website":"website.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy yangb ","modify_label":"该文章修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"github":{"url":"https://github.com/yangb92"},"splitter":{},"search-pro":{},"mermaid":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"donate":{"alipay":"https://gitee.com/yangb92/book/raw/gh-pages/alipay.png","alipayText":"支付宝打赏","button":"赏","title":"","wechat":"https://gitee.com/yangb92/book/raw/gh-pages/wxpay.png","wechatText":"微信打赏"},"hide-element":{"elements":[".gitbook-link"]},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"back-to-top-button":{},"sharing":{"all":["facebook","google","twitter","weibo","instapaper"],"facebook":true,"google":false,"instapaper":false,"twitter":true,"vk":false,"weibo":false},"theme-default":{"showLevel":true,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"insert-logo":{"style":"background: none; max-height: 80px; min-height: 10px","url":"https://gitee.com/yangb92/book/raw/gh-pages/favorite.png"}},"theme":"default","author":"杨斌","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"学习笔记","language":"zh-hans","gitbook":"*"},"file":{"path":"program/netty/nio.md","mtime":"2020-05-15T06:11:53.851Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-15T06:30:09.933Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

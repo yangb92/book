@@ -85,7 +85,7 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="Compose.html" />
+    <link rel="next" href="docker-sever.html" />
     
     
     <link rel="prev" href="./" />
@@ -224,27 +224,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.1.5" data-path="../../SpringBoot/thymeleaf.md">
+        <li class="chapter " data-level="1.2.1.5" data-path="../springboot/SpringDataJPA.html">
             
-                <span>
+                <a href="../springboot/SpringDataJPA.html">
             
                     
                         <b>1.2.1.5.</b>
-                    
-                    thymeleaf 模板引擎
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.2.1.6" data-path="../SpringBoot/SpringDataJPA.html">
-            
-                <a href="../SpringBoot/SpringDataJPA.html">
-            
-                    
-                        <b>1.2.1.6.</b>
                     
                     SpringDataJPA
             
@@ -254,12 +239,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.1.7" data-path="../SpringBoot/SpringDataJdbc.html">
+        <li class="chapter " data-level="1.2.1.6" data-path="../springboot/SpringDataJdbc.html">
             
-                <a href="../SpringBoot/SpringDataJdbc.html">
+                <a href="../springboot/SpringDataJdbc.html">
             
                     
-                        <b>1.2.1.7.</b>
+                        <b>1.2.1.6.</b>
                     
                     SpringDataJDBC
             
@@ -269,14 +254,29 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.1.8" data-path="../SpringBoot/LinuxService.html">
+        <li class="chapter " data-level="1.2.1.7" data-path="../springboot/LinuxService.html">
             
-                <a href="../SpringBoot/LinuxService.html">
+                <a href="../springboot/LinuxService.html">
+            
+                    
+                        <b>1.2.1.7.</b>
+                    
+                    部署为linux服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.8" data-path="../springboot/to-war.html">
+            
+                <a href="../springboot/to-war.html">
             
                     
                         <b>1.2.1.8.</b>
                     
-                    部署为linux服务
+                    打成war包
             
                 </a>
             
@@ -578,12 +578,27 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.5.2" data-path="Compose.html">
+        <li class="chapter " data-level="1.2.5.2" data-path="docker-sever.html">
+            
+                <a href="docker-sever.html">
+            
+                    
+                        <b>1.2.5.2.</b>
+                    
+                    Docker 伺服
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.3" data-path="Compose.html">
             
                 <a href="Compose.html">
             
                     
-                        <b>1.2.5.2.</b>
+                        <b>1.2.5.3.</b>
                     
                     Docker-Compose安装卸载
             
@@ -593,12 +608,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.5.3" data-path="ComposeCommand.html">
+        <li class="chapter " data-level="1.2.5.4" data-path="ComposeCommand.html">
             
                 <a href="ComposeCommand.html">
             
                     
-                        <b>1.2.5.3.</b>
+                        <b>1.2.5.4.</b>
                     
                     Docker-Compose命令说明
             
@@ -608,12 +623,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.5.4" data-path="ComposeTemplate.html">
+        <li class="chapter " data-level="1.2.5.5" data-path="ComposeTemplate.html">
             
                 <a href="ComposeTemplate.html">
             
                     
-                        <b>1.2.5.4.</b>
+                        <b>1.2.5.5.</b>
                     
                     Docker-Compose模板文件
             
@@ -623,12 +638,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.5.5" data-path="demo.html">
+        <li class="chapter " data-level="1.2.5.6" data-path="demo.html">
             
                 <a href="demo.html">
             
                     
-                        <b>1.2.5.5.</b>
+                        <b>1.2.5.6.</b>
                     
                     Docker-Compose常用配置
             
@@ -1510,6 +1525,15 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="docker&#x5B89;&#x88C5;">Docker&#x5B89;&#x88C5;</h1>
+<h2 id="centos-&#x5B89;&#x88C5;">CentOS &#x5B89;&#x88C5;</h2>
+<p>&#x811A;&#x672C;&#x81EA;&#x52A8;&#x5B89;&#x88C5;</p>
+<pre><code class="lang-sh">$ curl -fsSL get.docker.com -o get-docker.sh
+$ sudo sh get-docker.sh --mirror Aliyun
+</code></pre>
+<p>&#x542F;&#x52A8;Docker</p>
+<pre><code class="lang-sh">$ sudo systemctl <span class="hljs-built_in">enable</span> docker
+$ sudo systemctl start docker
+</code></pre>
 <h2 id="ubuntu-&#x5B89;&#x88C5;">Ubuntu &#x5B89;&#x88C5;</h2>
 <p>&#x811A;&#x672C;&#x81EA;&#x52A8;&#x5B89;&#x88C5;:</p>
 <pre><code class="lang-sh"> curl -fsSL get.docker.com -o get-docker.sh
@@ -1523,10 +1547,46 @@
 <pre><code>docker pull &#x955C;&#x50CF;&#x540D;&#x79F0;
 </code></pre><p>&#x542F;&#x52A8;&#x955C;&#x50CF;</p>
 <pre><code> docker run -p 80:8080 tomcat
-</code></pre><h2 id="docker-&#x4ED3;&#x5E93;">Docker &#x4ED3;&#x5E93;</h2>
-<p>&#x516C;&#x5171;&#x4ED3;&#x5E93;: <a href="https://hub.docker.com" target="_blank">https://hub.docker.com</a> </p>
+</code></pre><h2 id="&#x5EFA;&#x7ACB;-docker-&#x7528;&#x6237;&#x7EC4;">&#x5EFA;&#x7ACB; docker &#x7528;&#x6237;&#x7EC4;</h2>
+<p>&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;docker &#x547D;&#x4EE4;&#x4F1A;&#x4F7F;&#x7528; Unix socket &#x4E0E; Docker &#x5F15;&#x64CE;&#x901A;&#x8BAF;&#x3002;&#x800C;&#x53EA;&#x6709; root &#x7528;&#x6237;&#x548C; docker &#x7EC4;&#x7684;&#x7528;&#x6237;&#x624D;&#x53EF;&#x4EE5;&#x8BBF;&#x95EE; Docker &#x5F15;&#x64CE;&#x7684; Unix socket&#x3002;&#x51FA;&#x4E8E;&#x5B89;&#x5168;&#x8003;&#x8651;&#xFF0C;&#x4E00;&#x822C; Linux &#x7CFB;&#x7EDF;&#x4E0A;&#x4E0D;&#x4F1A;&#x76F4;&#x63A5;&#x4F7F;&#x7528; root &#x7528;&#x6237;&#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x66F4;&#x597D;&#x5730;&#x505A;&#x6CD5;&#x662F;&#x5C06;&#x9700;&#x8981;&#x4F7F;&#x7528; docker &#x7684;&#x7528;&#x6237;&#x52A0;&#x5165; docker &#x7528;&#x6237;&#x7EC4;&#x3002;</p>
+<p>&#x5EFA;&#x7ACB; docker &#x7EC4;&#xFF1A;</p>
+<pre><code>$ sudo groupadd docker
+</code></pre><p>&#x5C06;&#x5F53;&#x524D;&#x7528;&#x6237;&#x52A0;&#x5165; docker &#x7EC4;&#xFF1A;</p>
+<pre><code>$ sudo usermod -aG docker $USER
+</code></pre><p>&#x9000;&#x51FA;&#x5F53;&#x524D;&#x7EC8;&#x7AEF;&#x5E76;&#x91CD;&#x65B0;&#x767B;&#x5F55;&#xFF0C;&#x8FDB;&#x884C;&#x5982;&#x4E0B;&#x6D4B;&#x8BD5;</p>
+<h2 id="&#x6D4B;&#x8BD5;-docker-&#x662F;&#x5426;&#x5B89;&#x88C5;&#x6B63;&#x786E;">&#x6D4B;&#x8BD5; Docker &#x662F;&#x5426;&#x5B89;&#x88C5;&#x6B63;&#x786E;</h2>
+<pre><code class="lang-bash">$ docker run hello-world
+
+Unable to find image <span class="hljs-string">&apos;hello-world:latest&apos;</span> locally
+latest: Pulling from library/hello-world
+ca4f61b1923c: Pull complete
+Digest: sha256:be0<span class="hljs-built_in">cd</span>392e45be79ffeffa6b05338b98ebb16c87b255f48e297ec7f98e123905c
+Status: Downloaded newer image <span class="hljs-keyword">for</span> hello-world:latest
+
+Hello from Docker!
+This message shows that your installation appears to be working correctly.
+
+To generate this message, Docker took the following steps:
+ 1. The Docker client contacted the Docker daemon.
+ 2. The Docker daemon pulled the <span class="hljs-string">&quot;hello-world&quot;</span> image from the Docker Hub.
+    (amd64)
+ 3. The Docker daemon created a new container from that image <span class="hljs-built_in">which</span> runs the
+    executable that produces the output you are currently reading.
+ 4. The Docker daemon streamed that output to the Docker client, <span class="hljs-built_in">which</span> sent it
+    to your terminal.
+
+To try something more ambitious, you can run an Ubuntu container with:
+ $ docker run -it ubuntu bash
+
+Share images, automate workflows, and more with a free Docker ID:
+ https://cloud.docker.com/
+
+For more examples and ideas, visit:
+ https://docs.docker.com/engine/userguide/
+</code></pre>
+<p>&#x82E5;&#x80FD;&#x6B63;&#x5E38;&#x8F93;&#x51FA;&#x4EE5;&#x4E0A;&#x4FE1;&#x606F;&#xFF0C;&#x5219;&#x8BF4;&#x660E;&#x5B89;&#x88C5;&#x6210;&#x529F;&#x3002; </p>
 <footer class="page-footer"><span class="copyright">Copyright &#xA9; yangb  all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x7AE0;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
-2020-04-16 13:41:59
+2020-05-14 09:33:17
 </span></footer>
                                 
                                 </section>
@@ -1559,7 +1619,7 @@
                 </a>
                 
                 
-                <a href="Compose.html" class="navigation navigation-next " aria-label="Next page: Docker-Compose安装卸载">
+                <a href="docker-sever.html" class="navigation navigation-next " aria-label="Next page: Docker 伺服">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -1570,7 +1630,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Docker 安装","level":"1.2.5.1","depth":3,"next":{"title":"Docker-Compose安装卸载","level":"1.2.5.2","depth":3,"path":"program/docker/Compose.md","ref":"program/docker/Compose.md","articles":[]},"previous":{"title":"Docker","level":"1.2.5","depth":2,"path":"program/docker/index.md","ref":"program/docker/index.md","articles":[{"title":"Docker 安装","level":"1.2.5.1","depth":3,"path":"program/docker/install.md","ref":"program/docker/install.md","articles":[]},{"title":"Docker-Compose安装卸载","level":"1.2.5.2","depth":3,"path":"program/docker/Compose.md","ref":"program/docker/Compose.md","articles":[]},{"title":"Docker-Compose命令说明","level":"1.2.5.3","depth":3,"path":"program/docker/ComposeCommand.md","ref":"program/docker/ComposeCommand.md","articles":[]},{"title":"Docker-Compose模板文件","level":"1.2.5.4","depth":3,"path":"program/docker/ComposeTemplate.md","ref":"program/docker/ComposeTemplate.md","articles":[]},{"title":"Docker-Compose常用配置","level":"1.2.5.5","depth":3,"path":"program/docker/demo.md","ref":"program/docker/demo.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-search","back-to-top-button","chapter-fold","sharing","donate","search-pro","insert-logo","theme-default","theme-comscore","code","splitter","tbfed-pagefooter","github","hide-element","katex"],"styles":{"website":"website.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy yangb ","modify_label":"该文章修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"github":{"url":"https://github.com/yangb92"},"splitter":{},"search-pro":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"donate":{"alipay":"https://gitee.com/yangb92/book/raw/gh-pages/alipay.png","alipayText":"支付宝打赏","button":"赏","title":"","wechat":"https://gitee.com/yangb92/book/raw/gh-pages/wxpay.png","wechatText":"微信打赏"},"hide-element":{"elements":[".gitbook-link"]},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"back-to-top-button":{},"sharing":{"all":["facebook","google","twitter","weibo","instapaper"],"facebook":true,"google":false,"instapaper":false,"twitter":true,"vk":false,"weibo":false},"theme-default":{"showLevel":true,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"insert-logo":{"style":"background: none; max-height: 80px; min-height: 10px","url":"https://gitee.com/yangb92/book/raw/gh-pages/favorite.png"}},"theme":"default","author":"杨斌","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"学习笔记","language":"zh-hans","gitbook":"*"},"file":{"path":"program/docker/install.md","mtime":"2020-04-16T05:41:59.252Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-12T02:53:39.462Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Docker 安装","level":"1.2.5.1","depth":3,"next":{"title":"Docker 伺服","level":"1.2.5.2","depth":3,"path":"program/docker/docker-sever.md","ref":"program/docker/docker-sever.md","articles":[]},"previous":{"title":"Docker","level":"1.2.5","depth":2,"path":"program/docker/index.md","ref":"program/docker/index.md","articles":[{"title":"Docker 安装","level":"1.2.5.1","depth":3,"path":"program/docker/install.md","ref":"program/docker/install.md","articles":[]},{"title":"Docker 伺服","level":"1.2.5.2","depth":3,"path":"program/docker/docker-sever.md","ref":"program/docker/docker-sever.md","articles":[]},{"title":"Docker-Compose安装卸载","level":"1.2.5.3","depth":3,"path":"program/docker/Compose.md","ref":"program/docker/Compose.md","articles":[]},{"title":"Docker-Compose命令说明","level":"1.2.5.4","depth":3,"path":"program/docker/ComposeCommand.md","ref":"program/docker/ComposeCommand.md","articles":[]},{"title":"Docker-Compose模板文件","level":"1.2.5.5","depth":3,"path":"program/docker/ComposeTemplate.md","ref":"program/docker/ComposeTemplate.md","articles":[]},{"title":"Docker-Compose常用配置","level":"1.2.5.6","depth":3,"path":"program/docker/demo.md","ref":"program/docker/demo.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-search","back-to-top-button","chapter-fold","sharing","donate","search-pro","insert-logo","theme-default","theme-comscore","code","splitter","tbfed-pagefooter","github","hide-element","katex","mermaid"],"styles":{"website":"website.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy yangb ","modify_label":"该文章修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"github":{"url":"https://github.com/yangb92"},"splitter":{},"search-pro":{},"mermaid":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"donate":{"alipay":"https://gitee.com/yangb92/book/raw/gh-pages/alipay.png","alipayText":"支付宝打赏","button":"赏","title":"","wechat":"https://gitee.com/yangb92/book/raw/gh-pages/wxpay.png","wechatText":"微信打赏"},"hide-element":{"elements":[".gitbook-link"]},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"back-to-top-button":{},"sharing":{"all":["facebook","google","twitter","weibo","instapaper"],"facebook":true,"google":false,"instapaper":false,"twitter":true,"vk":false,"weibo":false},"theme-default":{"showLevel":true,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"insert-logo":{"style":"background: none; max-height: 80px; min-height: 10px","url":"https://gitee.com/yangb92/book/raw/gh-pages/favorite.png"}},"theme":"default","author":"杨斌","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"学习笔记","language":"zh-hans","gitbook":"*"},"file":{"path":"program/docker/install.md","mtime":"2020-05-14T01:33:17.254Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-15T06:30:09.933Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

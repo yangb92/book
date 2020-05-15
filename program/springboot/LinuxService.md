@@ -34,7 +34,7 @@ $ sudo ln -s /var/myapp/myapp.jar /etc/init.d/myapp
 $ service myapp start
 ```
 
-日志在/var/log/\<appname\>.log中可以查看.
+日志在/var/log/myapp.log中可以查看.
 
 
 
