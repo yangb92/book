@@ -1,5 +1,153 @@
 # Docker 实战
 
+## 前后分离项目结构
+
+目录结构
+```
+html
+  -|cadre-pc
+  -|cadre-wx
+  -|Dockerfile
+  -|nginx.conf
+server
+  -|cadre-msg.jar
+  -|Dockerfile
+docker-compose.yml
+.env
+```
+
+html-Dockerfile
+```dockerfile
+FROM nginx
+
+MAINTAINER YangBin
+
+COPY nginx.conf /etc/nginx/nginx.conf
+
+COPY cadre-wx /app/cadre-wx
+
+COPY cadre-pc /app/cadre-pc
+
+EXPOSE 80
+```
+
+html-nginx.conf
+
+```nginx
+user  nginx;
+worker_processes  1;
+
+error_log  /var/log/nginx/error.log warn;
+pid        /var/run/nginx.pid;
+
+
+events {
+    worker_connections  1024;
+}
+
+
+http {
+    include       /etc/nginx/mime.types;
+    default_type  application/octet-stream;
+
+    log_format  main  '$remote_addr - $remote_user [$time_local] "$request" '
+                      '$status $body_bytes_sent "$http_referer" '
+                      '"$http_user_agent" "$http_x_forwarded_for"';
+
+    access_log  /var/log/nginx/access.log  main;
+
+    sendfile        on;
+    #tcp_nopush     on;
+
+    keepalive_timeout  65;
+
+    #gzip  on;
+
+  server {
+    listen       80;
+    server_name  localhost;
+
+    charset utf-8;
+    #access_log  /var/log/nginx/host.access.log  main;
+
+    location ~ ^/cadre-wx+ {
+        root /app;
+    }
+    location ~ ^/cadre-pc+ {
+        root /app;
+    }
+    location ~ ^/cadre-msg+ {
+        proxy_pass http://cadre-msg:15068;
+    }
+
+  }
+}
+
+```
+
+server-Dockerfile
+
+```dockerfile
+FROM openjdk:8-jre
+
+MAINTAINER YangBin <http://yangb.xyz>
+
+COPY cadre-msg.jar /app/app.jar
+
+ENTRYPOINT ["java","-jar","/app/app.jar"]
+
+EXPOSE 15068
+```
+
+docker-compose.yml
+
+```yml
+version: '3'
+
+services: 
+    cadre-msg:
+        build: ./server
+        container_name: cadre-msg
+        networks: 
+            - cadre
+        expose: 
+            - 15068
+        
+    cadre-html:
+        build: ./html
+        container_name: cadre-html
+        networks: 
+            - cadre
+        ports: 
+            - '${SERVER-PORT:-12580}:80'
+
+networks: 
+    cadre: 
+
+```
+
+.env
+
+```properties
+SERVER-PORT=12580
+```
+
+部署:
+
+```bash
+docker-compose up -d
+```
+
+访问以下地址:
+
+```
+http://192.168.10.45:10085/cadre-wx/
+```
+
+
+
+
+
 ## Tomcat
 
 ```yml

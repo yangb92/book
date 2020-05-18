@@ -90,18 +90,12 @@ docker-compose down [--rmi all]
 ```
 关闭并移除构建的镜像
 
-### 环境变量
+### Docker-compose 环境变量
 
-compose file 中为容器设置环境变量：
- ```yml
-web:
-  environment:
-    DEBUG: 1
- ```
+设置环境变量默认值
 
-shell 写法
-```bash
-docker run -e DEBUG=1
+```
+${SERVER-PORT:-12580}
 ```
 
 使用文件设置环境变量
@@ -111,11 +105,14 @@ web:
     - web-variables.env
 ```
 
-shell写法:
-```bash
-docker run --env-file=web-variables.env
-```
+compose file 中为容器设置环境变量：
+ ```yml
+web:
+  environment:
+    DEBUG: 1
+ ```
 
+ 
 .env 文件为 docker-compose.yml 文件引用的所有环境变量设置默认值！
 
 ```properties
@@ -133,4 +130,18 @@ services:
   web:
     image: ${IMAGETAG}   
 ```
+
+### Docker 环境变量
+shell 写法
+```bash
+docker run -e DEBUG=1
+```
+
+
+
+shell写法:
+```bash
+docker run --env-file=web-variables.env
+```
+
 

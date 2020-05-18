@@ -1575,22 +1575,18 @@ $ chmod +x /usr/<span class="hljs-built_in">local</span>/bin/docker-compose
 <pre><code class="lang-sh">docker-compose down [--rmi all]
 </code></pre>
 <p>&#x5173;&#x95ED;&#x5E76;&#x79FB;&#x9664;&#x6784;&#x5EFA;&#x7684;&#x955C;&#x50CF;</p>
-<h3 id="&#x73AF;&#x5883;&#x53D8;&#x91CF;">&#x73AF;&#x5883;&#x53D8;&#x91CF;</h3>
-<p>compose file &#x4E2D;&#x4E3A;&#x5BB9;&#x5668;&#x8BBE;&#x7F6E;&#x73AF;&#x5883;&#x53D8;&#x91CF;&#xFF1A;</p>
-<pre><code class="lang-yml"><span class="hljs-attr">web:</span>
-<span class="hljs-attr">  environment:</span>
-<span class="hljs-attr">    DEBUG:</span> <span class="hljs-number">1</span>
-</code></pre>
-<p>shell &#x5199;&#x6CD5;</p>
-<pre><code class="lang-bash">docker run <span class="hljs-_">-e</span> DEBUG=1
-</code></pre>
-<p>&#x4F7F;&#x7528;&#x6587;&#x4EF6;&#x8BBE;&#x7F6E;&#x73AF;&#x5883;&#x53D8;&#x91CF;</p>
+<h3 id="docker-compose-&#x73AF;&#x5883;&#x53D8;&#x91CF;">Docker-compose &#x73AF;&#x5883;&#x53D8;&#x91CF;</h3>
+<p>&#x8BBE;&#x7F6E;&#x73AF;&#x5883;&#x53D8;&#x91CF;&#x9ED8;&#x8BA4;&#x503C;</p>
+<pre><code>${SERVER-PORT:-12580}
+</code></pre><p>&#x4F7F;&#x7528;&#x6587;&#x4EF6;&#x8BBE;&#x7F6E;&#x73AF;&#x5883;&#x53D8;&#x91CF;</p>
 <pre><code class="lang-yml"><span class="hljs-attr">web:</span>
 <span class="hljs-attr">  env_file:</span>
 <span class="hljs-bullet">    -</span> web-variables.env
 </code></pre>
-<p>shell&#x5199;&#x6CD5;:</p>
-<pre><code class="lang-bash">docker run --env-file=web-variables.env
+<p>compose file &#x4E2D;&#x4E3A;&#x5BB9;&#x5668;&#x8BBE;&#x7F6E;&#x73AF;&#x5883;&#x53D8;&#x91CF;&#xFF1A;</p>
+<pre><code class="lang-yml"><span class="hljs-attr">web:</span>
+<span class="hljs-attr">  environment:</span>
+<span class="hljs-attr">    DEBUG:</span> <span class="hljs-number">1</span>
 </code></pre>
 <p>.env &#x6587;&#x4EF6;&#x4E3A; docker-compose.yml &#x6587;&#x4EF6;&#x5F15;&#x7528;&#x7684;&#x6240;&#x6709;&#x73AF;&#x5883;&#x53D8;&#x91CF;&#x8BBE;&#x7F6E;&#x9ED8;&#x8BA4;&#x503C;&#xFF01;</p>
 <pre><code class="lang-properties"># define env var default value.
@@ -1605,8 +1601,15 @@ VERSION=default version is 1.0
 <span class="hljs-attr">  web:</span>
 <span class="hljs-attr">    image:</span> ${IMAGETAG}
 </code></pre>
+<h3 id="docker-&#x73AF;&#x5883;&#x53D8;&#x91CF;">Docker &#x73AF;&#x5883;&#x53D8;&#x91CF;</h3>
+<p>shell &#x5199;&#x6CD5;</p>
+<pre><code class="lang-bash">docker run <span class="hljs-_">-e</span> DEBUG=1
+</code></pre>
+<p>shell&#x5199;&#x6CD5;:</p>
+<pre><code class="lang-bash">docker run --env-file=web-variables.env
+</code></pre>
 <footer class="page-footer"><span class="copyright">Copyright &#xA9; yangb  all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x7AE0;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
-2020-04-29 14:15:59
+2020-05-15 17:42:25
 </span></footer>
                                 
                                 </section>
@@ -1650,7 +1653,7 @@ VERSION=default version is 1.0
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Docker-Compose安装卸载","level":"1.2.5.3","depth":3,"next":{"title":"Docker-Compose命令说明","level":"1.2.5.4","depth":3,"path":"program/docker/ComposeCommand.md","ref":"program/docker/ComposeCommand.md","articles":[]},"previous":{"title":"Docker 伺服","level":"1.2.5.2","depth":3,"path":"program/docker/docker-sever.md","ref":"program/docker/docker-sever.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","back-to-top-button","chapter-fold","sharing","donate","search-pro","insert-logo","theme-default","theme-comscore","code","splitter","tbfed-pagefooter","github","hide-element","katex","mermaid"],"styles":{"website":"website.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy yangb ","modify_label":"该文章修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"github":{"url":"https://github.com/yangb92"},"splitter":{},"search-pro":{},"mermaid":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"donate":{"alipay":"https://gitee.com/yangb92/book/raw/gh-pages/alipay.png","alipayText":"支付宝打赏","button":"赏","title":"","wechat":"https://gitee.com/yangb92/book/raw/gh-pages/wxpay.png","wechatText":"微信打赏"},"hide-element":{"elements":[".gitbook-link"]},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"back-to-top-button":{},"sharing":{"all":["facebook","google","twitter","weibo","instapaper"],"facebook":true,"google":false,"instapaper":false,"twitter":true,"vk":false,"weibo":false},"theme-default":{"showLevel":true,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"insert-logo":{"style":"background: none; max-height: 80px; min-height: 10px","url":"https://gitee.com/yangb92/book/raw/gh-pages/favorite.png"}},"theme":"default","author":"杨斌","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"学习笔记","language":"zh-hans","gitbook":"*"},"file":{"path":"program/docker/Compose.md","mtime":"2020-04-29T06:15:59.619Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-15T06:30:09.933Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Docker-Compose安装卸载","level":"1.2.5.3","depth":3,"next":{"title":"Docker-Compose命令说明","level":"1.2.5.4","depth":3,"path":"program/docker/ComposeCommand.md","ref":"program/docker/ComposeCommand.md","articles":[]},"previous":{"title":"Docker 伺服","level":"1.2.5.2","depth":3,"path":"program/docker/docker-sever.md","ref":"program/docker/docker-sever.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","back-to-top-button","chapter-fold","sharing","donate","search-pro","insert-logo","theme-default","theme-comscore","code","splitter","tbfed-pagefooter","github","hide-element","katex","mermaid"],"styles":{"website":"website.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy yangb ","modify_label":"该文章修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"github":{"url":"https://github.com/yangb92"},"splitter":{},"search-pro":{},"mermaid":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"donate":{"alipay":"https://gitee.com/yangb92/book/raw/gh-pages/alipay.png","alipayText":"支付宝打赏","button":"赏","title":"","wechat":"https://gitee.com/yangb92/book/raw/gh-pages/wxpay.png","wechatText":"微信打赏"},"hide-element":{"elements":[".gitbook-link"]},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"back-to-top-button":{},"sharing":{"all":["facebook","google","twitter","weibo","instapaper"],"facebook":true,"google":false,"instapaper":false,"twitter":true,"vk":false,"weibo":false},"theme-default":{"showLevel":true,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"insert-logo":{"style":"background: none; max-height: 80px; min-height: 10px","url":"https://gitee.com/yangb92/book/raw/gh-pages/favorite.png"}},"theme":"default","author":"杨斌","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"学习笔记","language":"zh-hans","gitbook":"*"},"file":{"path":"program/docker/Compose.md","mtime":"2020-05-15T09:42:25.901Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-18T09:20:06.527Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

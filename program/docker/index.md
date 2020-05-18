@@ -2,6 +2,16 @@
 
 Docker 文档: <https://www.funtl.com/zh/docs-docker/>
 
+## 小技巧
+
+### 访问宿主机网络
+
+宿主机IP: 172.17.0.1
+
+macOS下的网段则为192.168.65.0/24，网关为192.168.65.1
+
+使用域名获取宿主机网络`host.docker.internal`
+
 ## 基本概念
 
 Docker 包括三个基本概念
