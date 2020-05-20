@@ -9,8 +9,11 @@ passwd tomcat
 vim /etc/sudoers
 # 文件下面添加如下内容
 -----------
-# User privilege specification
+# 使用sudo的权限
 root    ALL=(ALL:ALL) ALL
 tomcat  ALL=(ALL:ALL) ALL
 
+----------
+# 提权root
+usermod -g root ftpapl
 ```

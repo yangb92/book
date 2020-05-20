@@ -8,6 +8,12 @@
 document.getElementById('multi_page').style="width:500px"
 ```
 
+**神奇的特殊字符**
+
+```js
+var a = 'N\u035a\u035a\u035a\u035a\u035a\u035a\u035a\u035a\u035a\u035a\u030a\u030a\u030a\u030a\u030a\u030a\u030a\u030a\u030a\u030a\u030a\u030a\u030a\u030a\u030a\u030a\u030a\u030a\u030a\u030a\u030a\u030aice'
+```
+
 ## Chrome 插件
 
 ### Infinity 标签页管理
