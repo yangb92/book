@@ -35,14 +35,16 @@ services:
       - /usr/local/docker/gitlab/data:/var/opt/gitlab
       - /usr/local/docker/logs:/var/log/gitlab
 ```
+自定端口配置 
+```yml
+ GITLAB_OMNIBUS_CONFIG: | 
+              external_url 'http://gitlab.yangb.xyz:8080' # 访问地址和端口
+              gitlab_rails['gitlab_shell_ssh_port'] = 2222 # ssh 访问端口,免密访问
+              unicorn['port'] = 8888 # 内部端口
+              nginx['listen_port'] = 8080 # nginx端口和上面端口需要一致
 
-> GITLAB_OMNIBUS_CONFIG: | 配置详解
->              external_url 'http://gitlab.yangb.xyz:8080' # 访问地址和端口
->              gitlab_rails['gitlab_shell_ssh_port'] = 2222 # ssh 访问端口,免密访问
->              unicorn['port'] = 8888 # 内部端口
->              nginx['listen_port'] = 8080 # nginx端口和上面端口需要一致
->
-> ports: #上面端口映射关系
->  - '8080:8080'
->  - '8443:443'
->  - '2222:22'
+ ports: #上面端口映射关系
+  - '8080:8080'
+  - '8443:443'
+  - '2222:22'
+```

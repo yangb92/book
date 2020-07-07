@@ -31,10 +31,21 @@ allow_writeable_chroot=YES
 useradd -d /data/ftp -g ftp -s /usr/sbin/nologin ftpuser
 ```
 
+设置密码
+
+```
+passwd ftpuser
+```
+
 设置ftp用户
 ```sh
 cd /etc/vsftpd
 echo ftpuser>chroot_list
+```
+
+如果上传下载权限不足
+```
+chown ftpuser:ftp -R /data/ftp
 ```
 
 # Nginx文件下载代理配置

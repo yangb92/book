@@ -296,7 +296,7 @@
                     
                         <b>1.2.2.</b>
                     
-                    Spring Cloud
+                    SpringCloud
             
                 </a>
             
@@ -422,6 +422,57 @@
                 </a>
             
 
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.9" data-path="../springcloud/seata.html">
+            
+                <a href="../springcloud/seata.html">
+            
+                    
+                        <b>1.2.2.9.</b>
+                    
+                    分布式事务Seata
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.10" data-path="../springcloud/springcloud-alibaba/">
+            
+                <a href="../springcloud/springcloud-alibaba/">
+            
+                    
+                        <b>1.2.2.10.</b>
+                    
+                    SpringCloud-Alibaba
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.10.1" data-path="../springcloud/springcloud-alibaba/nacos.html">
+            
+                <a href="../springcloud/springcloud-alibaba/nacos.html">
+            
+                    
+                        <b>1.2.2.10.1.</b>
+                    
+                    服务注册/配置中心Nacos
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
             
         </li>
     
@@ -1357,6 +1408,21 @@
             
         </li>
     
+        <li class="chapter " data-level="1.2.18" data-path="../websocket/">
+            
+                <a href="../websocket/">
+            
+                    
+                        <b>1.2.18.</b>
+                    
+                    WebSocket
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -1576,6 +1642,21 @@
             
         </li>
     
+        <li class="chapter " data-level="1.4.7" data-path="../../tool/idea.html">
+            
+                <a href="../../tool/idea.html">
+            
+                    
+                        <b>1.4.7.</b>
+                    
+                    IDEA插件
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -1654,21 +1735,20 @@
 <span class="hljs-bullet">      -</span> /usr/local/docker/gitlab/data:/var/opt/gitlab
 <span class="hljs-bullet">      -</span> /usr/local/docker/logs:/var/log/gitlab
 </code></pre>
-<blockquote>
-<p>GITLAB_OMNIBUS_CONFIG: | &#x914D;&#x7F6E;&#x8BE6;&#x89E3;
-             external_url &apos;<a href="http://gitlab.yangb.xyz:8080" target="_blank">http://gitlab.yangb.xyz:8080</a>&apos; # &#x8BBF;&#x95EE;&#x5730;&#x5740;&#x548C;&#x7AEF;&#x53E3;
-             gitlab_rails[&apos;gitlab_shell_ssh_port&apos;] = 2222 # ssh &#x8BBF;&#x95EE;&#x7AEF;&#x53E3;,&#x514D;&#x5BC6;&#x8BBF;&#x95EE;
-             unicorn[&apos;port&apos;] = 8888 # &#x5185;&#x90E8;&#x7AEF;&#x53E3;
-             nginx[&apos;listen_port&apos;] = 8080 # nginx&#x7AEF;&#x53E3;&#x548C;&#x4E0A;&#x9762;&#x7AEF;&#x53E3;&#x9700;&#x8981;&#x4E00;&#x81F4;</p>
-<p>ports: #&#x4E0A;&#x9762;&#x7AEF;&#x53E3;&#x6620;&#x5C04;&#x5173;&#x7CFB;</p>
-<ul>
-<li>&apos;8080:8080&apos;</li>
-<li>&apos;8443:443&apos;</li>
-<li>&apos;2222:22&apos; </li>
-</ul>
-</blockquote>
+<p>&#x81EA;&#x5B9A;&#x7AEF;&#x53E3;&#x914D;&#x7F6E; </p>
+<pre><code class="lang-yml"><span class="hljs-attr"> GITLAB_OMNIBUS_CONFIG:</span> <span class="hljs-string">| 
+              external_url &apos;http://gitlab.yangb.xyz:8080&apos; # &#x8BBF;&#x95EE;&#x5730;&#x5740;&#x548C;&#x7AEF;&#x53E3;
+              gitlab_rails[&apos;gitlab_shell_ssh_port&apos;] = 2222 # ssh &#x8BBF;&#x95EE;&#x7AEF;&#x53E3;,&#x514D;&#x5BC6;&#x8BBF;&#x95EE;
+              unicorn[&apos;port&apos;] = 8888 # &#x5185;&#x90E8;&#x7AEF;&#x53E3;
+              nginx[&apos;listen_port&apos;] = 8080 # nginx&#x7AEF;&#x53E3;&#x548C;&#x4E0A;&#x9762;&#x7AEF;&#x53E3;&#x9700;&#x8981;&#x4E00;&#x81F4;
+
+</span><span class="hljs-attr"> ports:</span> <span class="hljs-comment">#&#x4E0A;&#x9762;&#x7AEF;&#x53E3;&#x6620;&#x5C04;&#x5173;&#x7CFB;</span>
+<span class="hljs-bullet">  -</span> <span class="hljs-string">&apos;8080:8080&apos;</span>
+<span class="hljs-bullet">  -</span> <span class="hljs-string">&apos;8443:443&apos;</span>
+<span class="hljs-bullet">  -</span> <span class="hljs-string">&apos;2222:22&apos;</span>
+</code></pre>
 <footer class="page-footer"><span class="copyright">Copyright &#xA9; yangb  all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x7AE0;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
-2020-05-18 17:29:25
+2020-06-01 13:53:59
 </span></footer>
                                 
                                 </section>
@@ -1712,7 +1792,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Gitlab On Docker","level":"1.2.6.1","depth":3,"next":{"title":"GilabRunner","level":"1.2.6.2","depth":3,"path":"program/ci/GitLabRunnerDocker.md","ref":"program/ci/GitLabRunnerDocker.md","articles":[]},"previous":{"title":"持续集成","level":"1.2.6","depth":2,"path":"program/ci/index.md","ref":"program/ci/index.md","articles":[{"title":"Gitlab On Docker","level":"1.2.6.1","depth":3,"path":"program/ci/GitLabOnDocker.md","ref":"program/ci/GitLabOnDocker.md","articles":[]},{"title":"GilabRunner","level":"1.2.6.2","depth":3,"path":"program/ci/GitLabRunnerDocker.md","ref":"program/ci/GitLabRunnerDocker.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-search","back-to-top-button","chapter-fold","sharing","donate","search-pro","insert-logo","theme-default","theme-comscore","code","splitter","tbfed-pagefooter","github","hide-element","katex","mermaid"],"styles":{"website":"website.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy yangb ","modify_label":"该文章修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"github":{"url":"https://github.com/yangb92"},"splitter":{},"search-pro":{},"mermaid":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"donate":{"alipay":"https://gitee.com/yangb92/book/raw/gh-pages/alipay.png","alipayText":"支付宝打赏","button":"赏","title":"","wechat":"https://gitee.com/yangb92/book/raw/gh-pages/wxpay.png","wechatText":"微信打赏"},"hide-element":{"elements":[".gitbook-link"]},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"back-to-top-button":{},"sharing":{"all":["facebook","google","twitter","weibo","instapaper"],"facebook":true,"google":false,"instapaper":false,"twitter":true,"vk":false,"weibo":false},"theme-default":{"showLevel":true,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"insert-logo":{"style":"background: none; max-height: 80px; min-height: 10px","url":"https://gitee.com/yangb92/book/raw/gh-pages/favorite.png"}},"theme":"default","author":"杨斌","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"学习笔记","language":"zh-hans","gitbook":"*"},"file":{"path":"program/ci/GitLabOnDocker.md","mtime":"2020-05-18T09:29:25.082Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-20T09:53:09.243Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Gitlab On Docker","level":"1.2.6.1","depth":3,"next":{"title":"GilabRunner","level":"1.2.6.2","depth":3,"path":"program/ci/GitLabRunnerDocker.md","ref":"program/ci/GitLabRunnerDocker.md","articles":[]},"previous":{"title":"持续集成","level":"1.2.6","depth":2,"path":"program/ci/index.md","ref":"program/ci/index.md","articles":[{"title":"Gitlab On Docker","level":"1.2.6.1","depth":3,"path":"program/ci/GitLabOnDocker.md","ref":"program/ci/GitLabOnDocker.md","articles":[]},{"title":"GilabRunner","level":"1.2.6.2","depth":3,"path":"program/ci/GitLabRunnerDocker.md","ref":"program/ci/GitLabRunnerDocker.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-search","back-to-top-button","chapter-fold","sharing","donate","search-pro","insert-logo","theme-default","theme-comscore","code","splitter","tbfed-pagefooter","github","hide-element","katex","mermaid"],"styles":{"website":"website.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy yangb ","modify_label":"该文章修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"github":{"url":"https://github.com/yangb92"},"splitter":{},"search-pro":{},"mermaid":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"donate":{"alipay":"https://gitee.com/yangb92/book/raw/gh-pages/alipay.png","alipayText":"支付宝打赏","button":"赏","title":"","wechat":"https://gitee.com/yangb92/book/raw/gh-pages/wxpay.png","wechatText":"微信打赏"},"hide-element":{"elements":[".gitbook-link"]},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"back-to-top-button":{},"sharing":{"all":["facebook","google","twitter","weibo","instapaper"],"facebook":true,"google":false,"instapaper":false,"twitter":true,"vk":false,"weibo":false},"theme-default":{"showLevel":true,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"insert-logo":{"style":"background: none; max-height: 80px; min-height: 10px","url":"https://gitee.com/yangb92/book/raw/gh-pages/favorite.png"}},"theme":"default","author":"杨斌","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"学习笔记","language":"zh-hans","gitbook":"*"},"file":{"path":"program/ci/GitLabOnDocker.md","mtime":"2020-06-01T05:53:59.393Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-07-07T09:00:48.893Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
