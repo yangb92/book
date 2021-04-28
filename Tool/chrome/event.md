@@ -60,3 +60,47 @@ document.getElementById('b_video_list').onclick = function(e){
 }
 ```
 
+## 直接修改指定网站的DOM
+
+https://github.com/GoogleChrome/chrome-extensions-samples
+
+manifest.json
+
+```json
+{
+    "name": "zhihu",
+    "action": {},
+    "manifest_version": 3,
+    "version": "0.1",
+    "description": "Turns the page red when you click the icon",
+    "content_scripts": [
+        {
+            "matches": [
+                "https://www.zhihu.com/*"
+            ],
+            "js": [
+                "background.js"
+            ],
+            "all_frames": false
+        }
+    ],
+    "permissions": [
+        "https://www.zhihu.com/*",
+        "activeTab",
+        "scripting"
+    ]
+}
+```
+
+background.js
+
+```js
+
+function reddenPage() {
+    document.body.getElementsByClassName('Sticky AppHeader')[0].remove()
+    document.body.getElementsByClassName('GlobalSideBar GlobalSideBar--old')[0].remove()
+    document.body.getElementsByClassName('ModalExp-content')[0].remove()
+}
+reddenPage()
+```
+

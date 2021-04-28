@@ -1,5 +1,12 @@
 # PowerShell
 
+## 切换窗口到前台
+
+```ps1
+$wshell = New-Object -ComObject wscript.shell
+$wshell.AppActivate('Teams')
+```
+
 ## 美化 PowerShell
 
 美化效果:
