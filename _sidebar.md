@@ -1,4 +1,21 @@
 * [介绍](README.md)
+----------------
+* [工具插件](plugs/index.md)
+  * [PowerShell 美化主题](plugs/PowerShell.md)
+  * [Hexo 博客框架](plugs/hexo.md)
+  * [chrome](plugs/chrome/index.md)
+    * [插件-事件监听](plugs/chrome/event.md)
+  * [git](plugs/git/git.md)
+    * [在项目开发中使用git](plugs/git/gituse.md)
+  * [Gitbook 电子书](plugs/gitbook.md)
+  * [JMeter 压力测试](plugs/jmeter.md)
+  * [IDEA插件](plugs/idea.md)
+  * [内网穿透](plugs/ngrok.md)
+  * [油猴插件](plugs/tampermonkey.md)
+  * [推荐文档管理](plugs/docsify.md)
+
+----------------
+
 * [软件编程](program/index.md)
   * [Vue](program/vue/index.md)
     * [UI框架](program/vue/ui-frame.md)
@@ -89,24 +106,11 @@
   * [数据库](program/database/db.md)
   * [Nginx-主从热备](program/nginx/backups.md)
   * [WebSocket](program/websocket/index.md)
-
+----------------
 * [网络安全](security/security.md)
   * [漏洞利用](security/demo.md)
   * [Kali](security/kali.md)
   * [谷歌黑客语法](security/google.md)
 
-* [工具插件](tool/index.md)
-  * [PowerShell 美化主题](tool/PowerShell.md)
-  * [Hexo 博客框架](tool/hexo.md)
-  * [chrome](tool/chrome/index.md)
-    * [插件-事件监听](tool/chrome/event.md)
-  * [git](tool/git/git.md)
-    * [在项目开发中使用git](tool/git/gituse.md)
-  * [Gitbook 电子书](tool/gitbook.md)
-  * [JMeter 压力测试](tool/jmeter.md)
-  * [IDEA插件](tool/idea.md)
-  * [内网穿透](tool/ngrok.md)
-  * [油猴插件](tool/tampermonkey.md)
-  * [推荐文档管理](tool/docsify.md)
 
 
