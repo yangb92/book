@@ -1,8 +1,3 @@
-# 油猴插件开发
-
-Thief Book的小功能
-[Thief-book.js](thief-book.js)
-```js
 // ==UserScript==
 // @name         Thief Book
 // @namespace    http://tampermonkey.net/
@@ -82,5 +77,3 @@ $(document.body).append('<div class="tool" draggable="true" style="background-co
 
 window.onload=init();
 })(jQuery);
-
-```
